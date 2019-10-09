@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Todohuken:</strong>
+  <%= @place.todohuken %>
+</p>
+
+<p>
+  <strong>Localname1:</strong>
+  <%= @place.localname1 %>
+</p>
+
+<p>
+  <strong>Localname2:</strong>
+  <%= @place.localname2 %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

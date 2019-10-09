@@ -1,0 +1,2 @@
+class Mediation < ApplicationRecord
+end

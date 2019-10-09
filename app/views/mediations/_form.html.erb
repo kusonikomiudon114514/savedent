@@ -1,0 +1,22 @@
+<%= form_with(model: mediation, local: true) do |form| %>
+  <% if mediation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mediation.errors.count, "error") %> prohibited this mediation from being saved:</h2>
+
+      <ul>
+      <% mediation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :mediation_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
