@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20191009051037) do
+
   create_table "exams", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -58,25 +59,6 @@ ActiveRecord::Schema.define(version: 20191009051037) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "resumetrancerecs", force: :cascade do |t|
-    t.integer "resume_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name"
-    t.boolean "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "name"
-  end 
-
   create_table "reportjobs", force: :cascade do |t|
     t.integer "status"
     t.integer "user_id"
@@ -117,6 +99,27 @@ ActiveRecord::Schema.define(version: 20191009051037) do
     t.string "sakubun"
     t.string "bunnsyouryou"
     t.text "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resumetrancerecs", force: :cascade do |t|
+    t.integer "resume_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
