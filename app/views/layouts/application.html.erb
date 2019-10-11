@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+ <h1>~Savedent~ 　　　　　　　　　　　　　　　　　　　　　　　　　　　  <%= @name %></h1>　
+ <table border=0>
+ <tr>
+ <td style="width:500px;">
+ <h1><p> <%= link_to 'TOP', '' %></p></h1>
+ <h1><p> <%= link_to '履歴書', '' %></p></h1>
+ <h1><p> <%= link_to '就職', '' %></p></h1>              
+ <h1><p> <%= link_to '受験', '' %></p></h1>
+ <h1><p> <%= link_to '面接', '' %></p></h1>
+ <h1><p> <%= link_to 'メモ', '' %></p></h1>
+ </td>
+ <td style="width:300px;">
+ <%= yield %>
+ </td>
+ </tr>
+ </table>
   </body>
 </html>
