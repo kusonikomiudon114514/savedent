@@ -1,0 +1,2 @@
+class Rirekisyo < ApplicationRecord
+end

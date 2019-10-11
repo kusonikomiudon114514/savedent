@@ -1,0 +1,27 @@
+<%= form_with(model: rirekisyo, local: true) do |form| %>
+  <% if rirekisyo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rirekisyo.errors.count, "error") %> prohibited this rirekisyo from being saved:</h2>
+
+      <ul>
+      <% rirekisyo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :rirekisyo_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hizuke %>
+    <%= form.date_select :hizuke, id: :rirekisyo_hizuke %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

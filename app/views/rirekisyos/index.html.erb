@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>履歴書サポート</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>日付</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rirekisyos.each do |rirekisyo| %>
+      <tr>
+        <td><%= rirekisyo.title %></td>
+        <td><%= rirekisyo.hizuke %></td>
+        <td><%= link_to 'Show', rirekisyo %></td>
+        <td><%= link_to 'Edit', edit_rirekisyo_path(rirekisyo) %></td>
+        <td><%= link_to 'Destroy', rirekisyo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rirekisyo', new_rirekisyo_path %>

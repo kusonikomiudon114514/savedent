@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :rirekisyos
+  get 'home/top'
+
   devise_for :users
   resources :teachers
   resources :resumetrancerecs
