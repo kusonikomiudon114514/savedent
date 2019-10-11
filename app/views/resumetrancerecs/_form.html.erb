@@ -1,0 +1,27 @@
+<%= form_with(model: resumetrancerec, local: true) do |form| %>
+  <% if resumetrancerec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resumetrancerec.errors.count, "error") %> prohibited this resumetrancerec from being saved:</h2>
+
+      <ul>
+      <% resumetrancerec.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :resume_id %>
+    <%= form.number_field :resume_id, id: :resumetrancerec_resume_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :resumetrancerec_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

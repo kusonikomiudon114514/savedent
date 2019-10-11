@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reportjobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>User</th>
+      <th>Day</th>
+      <th>Syokusyu</th>
+      <th>Zigyousyo</th>
+      <th>Mediation</th>
+      <th>Syozaiti</th>
+      <th>Shikennzyou</th>
+      <th>Zyukennsyasuu</th>
+      <th>Ithizi hikki</th>
+      <th>Ithizi tekisei</th>
+      <th>Ithizi mensetsu</th>
+      <th>Zikan ithihi</th>
+      <th>Zikan ithime</th>
+      <th>Zikan ithisa</th>
+      <th>Nizi hikki</th>
+      <th>Nizi tekisei</th>
+      <th>Nizi mennsetsu</th>
+      <th>Zikan nihi</th>
+      <th>Zikan nite</th>
+      <th>Zikan nime</th>
+      <th>Zikan nisa</th>
+      <th>Subject</th>
+      <th>Zikan japanese</th>
+      <th>Zikan math</th>
+      <th>Zikan social</th>
+      <th>Zikan english</th>
+      <th>Zikan ippann</th>
+      <th>Zikan tekisei</th>
+      <th>Interview</th>
+      <th>Iin</th>
+      <th>Zikan mensetsu</th>
+      <th>Shitsumon</th>
+      <th>Mensetsusonota</th>
+      <th>Sakubun</th>
+      <th>Bunnsyouryou</th>
+      <th>Other</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reportjobs.each do |reportjob| %>
+      <tr>
+        <td><%= reportjob.status %></td>
+        <td><%= reportjob.user_id %></td>
+        <td><%= reportjob.day %></td>
+        <td><%= reportjob.syokusyu %></td>
+        <td><%= reportjob.zigyousyo %></td>
+        <td><%= reportjob.mediation_id %></td>
+        <td><%= reportjob.syozaiti %></td>
+        <td><%= reportjob.shikennzyou %></td>
+        <td><%= reportjob.zyukennsyasuu %></td>
+        <td><%= reportjob.ithizi_hikki %></td>
+        <td><%= reportjob.ithizi_tekisei %></td>
+        <td><%= reportjob.ithizi_mensetsu %></td>
+        <td><%= reportjob.zikan_ithihi %></td>
+        <td><%= reportjob.zikan_ithime %></td>
+        <td><%= reportjob.zikan_ithisa %></td>
+        <td><%= reportjob.nizi_hikki %></td>
+        <td><%= reportjob.nizi_tekisei %></td>
+        <td><%= reportjob.nizi_mennsetsu %></td>
+        <td><%= reportjob.zikan_nihi %></td>
+        <td><%= reportjob.zikan_nite %></td>
+        <td><%= reportjob.zikan_nime %></td>
+        <td><%= reportjob.zikan_nisa %></td>
+        <td><%= reportjob.subject_id %></td>
+        <td><%= reportjob.zikan_japanese %></td>
+        <td><%= reportjob.zikan_math %></td>
+        <td><%= reportjob.zikan_social %></td>
+        <td><%= reportjob.zikan_english %></td>
+        <td><%= reportjob.zikan_ippann %></td>
+        <td><%= reportjob.zikan_tekisei %></td>
+        <td><%= reportjob.interview_id %></td>
+        <td><%= reportjob.iin %></td>
+        <td><%= reportjob.zikan_mensetsu %></td>
+        <td><%= reportjob.shitsumon %></td>
+        <td><%= reportjob.mensetsusonota %></td>
+        <td><%= reportjob.sakubun %></td>
+        <td><%= reportjob.bunnsyouryou %></td>
+        <td><%= reportjob.other %></td>
+        <td><%= link_to 'Show', reportjob %></td>
+        <td><%= link_to 'Edit', edit_reportjob_path(reportjob) %></td>
+        <td><%= link_to 'Destroy', reportjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reportjob', new_reportjob_path %>
