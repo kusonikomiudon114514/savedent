@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <header>
+    
+ <h1>~Savedent~ 　　　　　　　　　　　　　　　　　　　　　　　　　　　  <%= @name %></h1>　
+ <header>
       <nav>
         <% if user_signed_in? %>
         <strong><%= link_to current_user.username, pages_show_path %></strong>
@@ -25,7 +27,22 @@
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+ <table border=0>
+ <tr>
+ <td style="width:500px;">
+ <h1><p> <%= link_to 'TOP', '' %></p></h1>
+ <h1><p> <%= link_to '履歴書', '' %></p></h1>
+ <h1><p> <%= link_to '就職', '' %></p></h1>              
+ <h1><p> <%= link_to '受験', '' %></p></h1>
+ <h1><p> <%= link_to '面接', '' %></p></h1>
+ <h1><p> <%= link_to 'メモ', '' %></p></h1>
+ </td>
+ <td style="width:100%;">
+ <%= yield %>
+ </td>
+ </tr>
+ </table>
+    
   
   </body>
 </html>

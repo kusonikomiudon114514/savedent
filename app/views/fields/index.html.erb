@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fields</h1>
+<h1>分野</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>分野</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @fields.each do |field| %>
       <tr>
         <td><%= field.name %></td>
-        <td><%= link_to 'Show', field %></td>
-        <td><%= link_to 'Edit', edit_field_path(field) %></td>
-        <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', field %></td>
+        <td><%= link_to '編集', edit_field_path(field) %></td>
+        <td><%= link_to '削除', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Field', new_field_path %>
+<%= link_to '新規作成', new_field_path %>

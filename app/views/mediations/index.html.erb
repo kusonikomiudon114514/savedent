@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Mediations</h1>
+<h1>斡旋方法</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>斡旋方法</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @mediations.each do |mediation| %>
       <tr>
         <td><%= mediation.name %></td>
-        <td><%= link_to 'Show', mediation %></td>
-        <td><%= link_to 'Edit', edit_mediation_path(mediation) %></td>
-        <td><%= link_to 'Destroy', mediation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', mediation %></td>
+        <td><%= link_to '編集', edit_mediation_path(mediation) %></td>
+        <td><%= link_to '削除', mediation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
