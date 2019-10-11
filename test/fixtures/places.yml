@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  todohuken: MyString
+  localname1: MyString
+  localname2: MyString
+
+two:
+  todohuken: MyString
+  localname1: MyString
+  localname2: MyString

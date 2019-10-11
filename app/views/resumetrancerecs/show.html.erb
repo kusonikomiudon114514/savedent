@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @resumetrancerec.resume_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @resumetrancerec.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_resumetrancerec_path(@resumetrancerec) %> |
+<%= link_to 'Back', resumetrancerecs_path %>

@@ -1,0 +1,2 @@
+module ReportjobsHelper
+end

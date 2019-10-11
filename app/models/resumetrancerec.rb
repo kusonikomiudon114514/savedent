@@ -1,0 +1,2 @@
+class Resumetrancerec < ApplicationRecord
+end

@@ -1,0 +1,79 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  user_id: 1
+  day: 2019-10-09
+  syokusyu: MyString
+  zigyousyo: MyString
+  mediation_id: 1
+  syozaiti: MyString
+  shikennzyou: MyString
+  zyukennsyasuu: 1
+  ithizi_hikki: false
+  ithizi_tekisei: false
+  ithizi_mensetsu: 
+  zikan_ithihi: 
+  zikan_ithime: 1
+  zikan_ithisa: 1
+  nizi_hikki: false
+  nizi_tekisei: false
+  nizi_mennsetsu: false
+  zikan_nihi: 1
+  zikan_nite: 1
+  zikan_nime: 1
+  zikan_nisa: 1
+  subject_id: 1
+  zikan_japanese: 1
+  zikan_math: 1
+  zikan_social: 1
+  zikan_english: 1
+  zikan_ippann: 1
+  zikan_tekisei: 1
+  interview_id: 1
+  iin: 1
+  zikan_mensetsu: 1
+  shitsumon: MyText
+  mensetsusonota: MyText
+  sakubun: MyString
+  bunnsyouryou: MyString
+  other: MyText
+
+two:
+  status: 1
+  user_id: 1
+  day: 2019-10-09
+  syokusyu: MyString
+  zigyousyo: MyString
+  mediation_id: 1
+  syozaiti: MyString
+  shikennzyou: MyString
+  zyukennsyasuu: 1
+  ithizi_hikki: false
+  ithizi_tekisei: false
+  ithizi_mensetsu: 
+  zikan_ithihi: 
+  zikan_ithime: 1
+  zikan_ithisa: 1
+  nizi_hikki: false
+  nizi_tekisei: false
+  nizi_mennsetsu: false
+  zikan_nihi: 1
+  zikan_nite: 1
+  zikan_nime: 1
+  zikan_nisa: 1
+  subject_id: 1
+  zikan_japanese: 1
+  zikan_math: 1
+  zikan_social: 1
+  zikan_english: 1
+  zikan_ippann: 1
+  zikan_tekisei: 1
+  interview_id: 1
+  iin: 1
+  zikan_mensetsu: 1
+  shitsumon: MyText
+  mensetsusonota: MyText
+  sakubun: MyString
+  bunnsyouryou: MyString
+  other: MyText

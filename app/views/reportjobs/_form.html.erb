@@ -1,0 +1,202 @@
+<%= form_with(model: reportjob, local: true) do |form| %>
+  <% if reportjob.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reportjob.errors.count, "error") %> prohibited this reportjob from being saved:</h2>
+
+      <ul>
+      <% reportjob.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :reportjob_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :reportjob_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_select :day, id: :reportjob_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :syokusyu %>
+    <%= form.text_field :syokusyu, id: :reportjob_syokusyu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zigyousyo %>
+    <%= form.text_field :zigyousyo, id: :reportjob_zigyousyo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mediation_id %>
+    <%= form.number_field :mediation_id, id: :reportjob_mediation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :syozaiti %>
+    <%= form.text_field :syozaiti, id: :reportjob_syozaiti %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shikennzyou %>
+    <%= form.text_field :shikennzyou, id: :reportjob_shikennzyou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zyukennsyasuu %>
+    <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ithizi_hikki %>
+    <%= form.check_box :ithizi_hikki, id: :reportjob_ithizi_hikki %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ithizi_tekisei %>
+    <%= form.check_box :ithizi_tekisei, id: :reportjob_ithizi_tekisei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ithizi_mensetsu %>
+    <%= form.text_field :ithizi_mensetsu, id: :reportjob_ithizi_mensetsu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_ithihi %>
+    <%= form.text_field :zikan_ithihi, id: :reportjob_zikan_ithihi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_ithime %>
+    <%= form.number_field :zikan_ithime, id: :reportjob_zikan_ithime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_ithisa %>
+    <%= form.number_field :zikan_ithisa, id: :reportjob_zikan_ithisa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nizi_hikki %>
+    <%= form.check_box :nizi_hikki, id: :reportjob_nizi_hikki %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nizi_tekisei %>
+    <%= form.check_box :nizi_tekisei, id: :reportjob_nizi_tekisei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nizi_mennsetsu %>
+    <%= form.check_box :nizi_mennsetsu, id: :reportjob_nizi_mennsetsu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_nihi %>
+    <%= form.number_field :zikan_nihi, id: :reportjob_zikan_nihi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_nite %>
+    <%= form.number_field :zikan_nite, id: :reportjob_zikan_nite %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_nime %>
+    <%= form.number_field :zikan_nime, id: :reportjob_zikan_nime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_nisa %>
+    <%= form.number_field :zikan_nisa, id: :reportjob_zikan_nisa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subject_id %>
+    <%= form.number_field :subject_id, id: :reportjob_subject_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_japanese %>
+    <%= form.number_field :zikan_japanese, id: :reportjob_zikan_japanese %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_math %>
+    <%= form.number_field :zikan_math, id: :reportjob_zikan_math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_social %>
+    <%= form.number_field :zikan_social, id: :reportjob_zikan_social %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_english %>
+    <%= form.number_field :zikan_english, id: :reportjob_zikan_english %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_ippann %>
+    <%= form.number_field :zikan_ippann, id: :reportjob_zikan_ippann %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_tekisei %>
+    <%= form.number_field :zikan_tekisei, id: :reportjob_zikan_tekisei %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interview_id %>
+    <%= form.number_field :interview_id, id: :reportjob_interview_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iin %>
+    <%= form.number_field :iin, id: :reportjob_iin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zikan_mensetsu %>
+    <%= form.number_field :zikan_mensetsu, id: :reportjob_zikan_mensetsu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shitsumon %>
+    <%= form.text_area :shitsumon, id: :reportjob_shitsumon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mensetsusonota %>
+    <%= form.text_area :mensetsusonota, id: :reportjob_mensetsusonota %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sakubun %>
+    <%= form.text_field :sakubun, id: :reportjob_sakubun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bunnsyouryou %>
+    <%= form.text_field :bunnsyouryou, id: :reportjob_bunnsyouryou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_area :other, id: :reportjob_other %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mediations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mediations.each do |mediation| %>
+      <tr>
+        <td><%= mediation.name %></td>
+        <td><%= link_to 'Show', mediation %></td>
+        <td><%= link_to 'Edit', edit_mediation_path(mediation) %></td>
+        <td><%= link_to 'Destroy', mediation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mediation', new_mediation_path %>
