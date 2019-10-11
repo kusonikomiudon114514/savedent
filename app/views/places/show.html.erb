@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Todohuken:</strong>
+  <strong>都道府県:</strong>
   <%= @place.todohuken %>
 </p>
 
 <p>
-  <strong>Localname1:</strong>
+  <strong>地方:</strong>
   <%= @place.localname1 %>
 </p>
 
 <p>
-  <strong>Localname2:</strong>
+  <strong>地域:</strong>
   <%= @place.localname2 %>
 </p>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+<%= link_to '編集', edit_place_path(@place) %> |
+<%= link_to '戻る', places_path %>

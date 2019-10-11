@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Resumetrancerecs</h1>
+<h1>転送画面</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Resume</th>
-      <th>User</th>
+      <th>報告書ＩＤ</th>
+      <th>ユーザーＩＤ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= resumetrancerec.resume_id %></td>
         <td><%= resumetrancerec.user_id %></td>
-        <td><%= link_to 'Show', resumetrancerec %></td>
-        <td><%= link_to 'Edit', edit_resumetrancerec_path(resumetrancerec) %></td>
-        <td><%= link_to 'Destroy', resumetrancerec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', resumetrancerec %></td>
+        <td><%= link_to '編集', edit_resumetrancerec_path(resumetrancerec) %></td>
+        <td><%= link_to '削除', resumetrancerec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Resumetrancerec', new_resumetrancerec_path %>
+<%= link_to '新規作成', new_resumetrancerec_path %>

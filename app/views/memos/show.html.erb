@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザー:</strong>
   <%= @memo.user_id %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @memo.content %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @memo.title %>
 </p>
 
 <p>
-  <strong>Important:</strong>
+  <strong>大事なメモ:</strong>
   <%= @memo.important %>
 </p>
 
-<%= link_to 'Edit', edit_memo_path(@memo) %> |
-<%= link_to 'Back', memos_path %>
+<%= link_to '編集', edit_memo_path(@memo) %> |
+<%= link_to '戻る'', memos_path %>

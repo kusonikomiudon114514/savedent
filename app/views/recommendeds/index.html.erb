@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recommendeds</h1>
+<h1>推薦形態</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>推薦形態</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @recommendeds.each do |recommended| %>
       <tr>
         <td><%= recommended.name %></td>
-        <td><%= link_to 'Show', recommended %></td>
-        <td><%= link_to 'Edit', edit_recommended_path(recommended) %></td>
-        <td><%= link_to 'Destroy', recommended, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', recommended %></td>
+        <td><%= link_to '編集', edit_recommended_path(recommended) %></td>
+        <td><%= link_to '削除', recommended, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Recommended', new_recommended_path %>
+<%= link_to '新規作成'', new_recommended_path %>

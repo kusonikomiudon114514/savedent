@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Teachers</h1>
+<h1>先生</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>Admin</th>
+      <th>ユーザーＩＤ</th>
+      <th>名前</th>
+      <th>管理者</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= teacher.user_id %></td>
         <td><%= teacher.name %></td>
         <td><%= teacher.admin %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', teacher %></td>
+        <td><%= link_to '編集', edit_teacher_path(teacher) %></td>
+        <td><%= link_to '削除', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+<%= link_to '新規作成', new_teacher_path %>
