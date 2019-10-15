@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191011054901) do
+ActiveRecord::Schema.define(version: 20191015015922) do
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -99,6 +99,35 @@ ActiveRecord::Schema.define(version: 20191011054901) do
     t.string "sakubun"
     t.string "bunnsyouryou"
     t.text "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reportschools", force: :cascade do |t|
+    t.integer "status"
+    t.integer "user_id"
+    t.integer "type_id"
+    t.integer "field_id"
+    t.string "gakkou"
+    t.string "gakubu"
+    t.string "gakka"
+    t.string "course"
+    t.string "syozaichi"
+    t.string "shikennzyou"
+    t.date "gokaku"
+    t.date "shikennbi"
+    t.integer "exam_id"
+    t.text "detail"
+    t.integer "japanese"
+    t.integer "math"
+    t.integer "social"
+    t.integer "science"
+    t.integer "english"
+    t.integer "recommended_id"
+    t.text "mennsetsu"
+    t.text "syoronnbunn"
+    t.text "shikenn"
+    t.text "kanso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

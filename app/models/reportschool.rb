@@ -1,0 +1,2 @@
+class Reportschool < ApplicationRecord
+end
