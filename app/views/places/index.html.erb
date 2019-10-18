@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Places</h1>
+<h1>地方</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Todohuken</th>
-      <th>Localname1</th>
-      <th>Localname2</th>
+      <th>都道府県</th>
+      <th>地方</th>
+      <th>地域</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= place.todohuken %></td>
         <td><%= place.localname1 %></td>
         <td><%= place.localname2 %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', place %></td>
+        <td><%= link_to '編集', edit_place_path(place) %></td>
+        <td><%= link_to '削除', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Place', new_place_path %>
+<%= link_to '新規作成', new_place_path %>
