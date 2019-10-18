@@ -1,14 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @rirekisyo.title %>
 </p>
 
 <p>
-  <strong>Hizuke:</strong>
+  <strong>日付:</strong>
   <%= @rirekisyo.hizuke %>
 </p>
 
-<%= link_to 'Edit', edit_rirekisyo_path(@rirekisyo) %> |
-<%= link_to 'Back', rirekisyos_path %>
+<p>
+  <strong>志望理由:</strong>
+  <%= @rirekisyo.reason %>
+</p>
+
+<p>
+  <strong>趣味・特技:</strong>
+  <%= @rirekisyo.syumi %>
+</p>
+
+<p>
+  <strong>校内外の諸活動:</strong>
+  <%= @rirekisyo.katsudo %>
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @rirekisyo.biko %>
+</p>
+
+<p>
+  <strong>連絡先:</strong>
+  <%= @rirekisyo.renraku %>
+</p>
+
+<p>
+  <strong>連絡先ふりがな:</strong>
+  <%= @rirekisyo.renhuri %>
+</p>
+
+
+
+
+
+<%= link_to '編集', edit_rirekisyo_path(@rirekisyo) %> |
+<%= link_to '戻る', rirekisyos_path %>
