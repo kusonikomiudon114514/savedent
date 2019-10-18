@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def top
-    @name = '変数'
+    @name = 'email'
   end
 end
