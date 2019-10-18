@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  namehurigana: MyString
+  seinen: 2019-10-15
+  'no': MyString
+  seibetsu: MyString
+  zyusho: MyString
+  zyushohurigana: MyString
+  filename: MyString
+  shikaku: MyText
+  syutokubi: MyText
+  gakureki1: MyString
+  gakureki2: MyString
+  gakureki3: MyString
+  gakureki4: MyString
+  gakureki5: MyString
+  gakureki6: MyString
+  hiduke1: 1
+  hiduke2: 1
+  hiduke3: 1
+  hiduke4: 1
+  hiduke5: 1
+  hiduke6: 1
+
+two:
+  name: MyString
+  namehurigana: MyString
+  seinen: 2019-10-15
+  'no': MyString
+  seibetsu: MyString
+  zyusho: MyString
+  zyushohurigana: MyString
+  filename: MyString
+  shikaku: MyText
+  syutokubi: MyText
+  gakureki1: MyString
+  gakureki2: MyString
+  gakureki3: MyString
+  gakureki4: MyString
+  gakureki5: MyString
+  gakureki6: MyString
+  hiduke1: 1
+  hiduke2: 1
+  hiduke3: 1
+  hiduke4: 1
+  hiduke5: 1
+  hiduke6: 1

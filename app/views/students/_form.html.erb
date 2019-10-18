@@ -1,0 +1,132 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ユーザーID %>
+    <%= form.number_field :user_id, id: :student_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :氏名 %>
+    <%= form.text_field :name, id: :student_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ふりがな（名前） %>
+    <%= form.text_field :namehurigana, id: :student_namehurigana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :生年月日 %>
+    <%= form.date_select :seinen, id: :student_seinen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :生徒番号 %>
+    <%= form.text_field :no, id: :student_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :性別 %>
+    <%= form.text_field :seibetsu, id: :student_seibetsu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :住所 %>
+    <%= form.text_field :zyusho, id: :student_zyusho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ふりがな（住所） %>
+    <%= form.text_field :zyushohurigana, id: :student_zyushohurigana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ファイルネーム %>
+    <%= form.text_field :filename, id: :student_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :資格名称 %>
+    <%= form.text_area :shikaku, id: :student_shikaku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :資格取得日 %>
+    <%= form.text_area :syutokubi, id: :student_syutokubi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴１ %>
+    <%= form.text_field :gakureki1, id: :student_gakureki1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴２ %>
+    <%= form.text_field :gakureki2, id: :student_gakureki2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴３ %>
+    <%= form.text_field :gakureki3, id: :student_gakureki3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴４ %>
+    <%= form.text_field :gakureki4, id: :student_gakureki4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴５ %>
+    <%= form.text_field :gakureki5, id: :student_gakureki5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴・就歴６ %>
+    <%= form.text_field :gakureki6, id: :student_gakureki6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付１ %>
+    <%= form.number_field :hiduke1, id: :student_hiduke1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付２ %>
+    <%= form.number_field :hiduke2, id: :student_hiduke2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付３ %>
+    <%= form.number_field :hiduke3, id: :student_hiduke3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付４ %>
+    <%= form.number_field :hiduke4, id: :student_hiduke4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付５ %>
+    <%= form.number_field :hiduke5, id: :student_hiduke5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :学歴日付 %>
+    <%= form.number_field :hiduke6, id: :student_hiduke6 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
