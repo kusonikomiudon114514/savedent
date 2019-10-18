@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reportmenu/menu'
+
   resources :students
   resources :reportschools
   resources :rirekisyos
