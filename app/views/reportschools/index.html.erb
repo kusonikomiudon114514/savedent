@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>進学受験報告書</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>状況</th>
+      <th>生徒</th>
+      <th>学校種</th>
+      <th>分野</th>
+      <th>学校名</th>
+      <th>学部</th>
+      <th>学科</th>
+      <th>コース</th>
+      <th>所在地</th>
+      <th>試験場</th>
+      <th>合格発表</th>
+      <th>試験日</th>
+      <th>入試形態</th>
+      <th>問題の内容</th>
+      <th>国語の試験時間</th>
+      <th>数学の試験時間</th>
+      <th>社会の試験時間</th>
+      <th>理科の試験時間</th>
+      <th>英語の試験時間</th>
+      <th>形態</th>
+      <th>面接の質問内容</th>
+      <th>小論文（作文）テーマ</th>
+      <th>試験</th>
+      <th>感想</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reportschools.each do |reportschool| %>
+      <tr>
+        <td><%= reportschool.status %></td>
+        <td><%= reportschool.user_id %></td>
+        <td><%= reportschool.type_id %></td>
+        <td><%= reportschool.field_id %></td>
+        <td><%= reportschool.gakkou %></td>
+        <td><%= reportschool.gakubu %></td>
+        <td><%= reportschool.gakka %></td>
+        <td><%= reportschool.course %></td>
+        <td><%= reportschool.syozaichi %></td>
+        <td><%= reportschool.shikennzyou %></td>
+        <td><%= reportschool.gokaku %></td>
+        <td><%= reportschool.shikennbi %></td>
+        <td><%= reportschool.exam_id %></td>
+        <td><%= reportschool.detail %></td>
+        <td><%= reportschool.japanese %></td>
+        <td><%= reportschool.math %></td>
+        <td><%= reportschool.social %></td>
+        <td><%= reportschool.science %></td>
+        <td><%= reportschool.english %></td>
+        <td><%= reportschool.recommended_id %></td>
+        <td><%= reportschool.mennsetsu %></td>
+        <td><%= reportschool.syoronnbunn %></td>
+        <td><%= reportschool.shikenn %></td>
+        <td><%= reportschool.kanso %></td>
+        <td><%= link_to '詳細', reportschool %></td>
+        <td><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
+        <td><%= link_to '削除', reportschool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規作成', new_reportschool_path %>
