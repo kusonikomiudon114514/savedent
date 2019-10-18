@@ -10,189 +10,189 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :status %>
+  
+   <div class="field">
+    <%= form.label :状態 %>
     <%= form.number_field :status, id: :reportjob_status %>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザーID %>
     <%= form.number_field :user_id, id: :reportjob_user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :day %>
+    <%= form.label :受験日 %>
     <%= form.date_select :day, id: :reportjob_day %>
   </div>
 
   <div class="field">
-    <%= form.label :syokusyu %>
+    <%= form.label :職種 %>
     <%= form.text_field :syokusyu, id: :reportjob_syokusyu %>
   </div>
 
   <div class="field">
-    <%= form.label :zigyousyo %>
+    <%= form.label :事業所 %>
     <%= form.text_field :zigyousyo, id: :reportjob_zigyousyo %>
   </div>
 
   <div class="field">
-    <%= form.label :mediation_id %>
+    <%= form.label :斡旋方法 %>
     <%= form.number_field :mediation_id, id: :reportjob_mediation_id %>
   </div>
 
   <div class="field">
-    <%= form.label :syozaiti %>
+    <%= form.label :所在地 %>
     <%= form.text_field :syozaiti, id: :reportjob_syozaiti %>
   </div>
 
   <div class="field">
-    <%= form.label :shikennzyou %>
+    <%= form.label :試験場 %>
     <%= form.text_field :shikennzyou, id: :reportjob_shikennzyou %>
   </div>
 
   <div class="field">
-    <%= form.label :zyukennsyasuu %>
+    <%= form.label :受験者数 %>
     <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
   </div>
 
   <div class="field">
-    <%= form.label :ithizi_hikki %>
+    <%= form.label :一次筆記 %>
     <%= form.check_box :ithizi_hikki, id: :reportjob_ithizi_hikki %>
   </div>
 
   <div class="field">
-    <%= form.label :ithizi_tekisei %>
+    <%= form.label :一次適性 %>
     <%= form.check_box :ithizi_tekisei, id: :reportjob_ithizi_tekisei %>
   </div>
 
   <div class="field">
-    <%= form.label :ithizi_mensetsu %>
+    <%= form.label :一次面接 %>
     <%= form.text_field :ithizi_mensetsu, id: :reportjob_ithizi_mensetsu %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_ithihi %>
+    <%= form.label :一次筆記・時間 %>
     <%= form.text_field :zikan_ithihi, id: :reportjob_zikan_ithihi %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_ithime %>
+    <%= form.label :一次面接・時間 %>
     <%= form.number_field :zikan_ithime, id: :reportjob_zikan_ithime %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_ithisa %>
+    <%= form.label :一次作文・時間 %>
     <%= form.number_field :zikan_ithisa, id: :reportjob_zikan_ithisa %>
   </div>
 
   <div class="field">
-    <%= form.label :nizi_hikki %>
+    <%= form.label :二次筆記 %>
     <%= form.check_box :nizi_hikki, id: :reportjob_nizi_hikki %>
   </div>
 
   <div class="field">
-    <%= form.label :nizi_tekisei %>
+    <%= form.label :二次適性 %>
     <%= form.check_box :nizi_tekisei, id: :reportjob_nizi_tekisei %>
   </div>
 
   <div class="field">
-    <%= form.label :nizi_mennsetsu %>
+    <%= form.label :二次面接 %>
     <%= form.check_box :nizi_mennsetsu, id: :reportjob_nizi_mennsetsu %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_nihi %>
+    <%= form.label :二次筆記・時間 %>
     <%= form.number_field :zikan_nihi, id: :reportjob_zikan_nihi %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_nite %>
+    <%= form.label :二次適性・時間 %>
     <%= form.number_field :zikan_nite, id: :reportjob_zikan_nite %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_nime %>
+    <%= form.label :二次面接・時間 %>
     <%= form.number_field :zikan_nime, id: :reportjob_zikan_nime %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_nisa %>
+    <%= form.label :二次作文・時間 %>
     <%= form.number_field :zikan_nisa, id: :reportjob_zikan_nisa %>
   </div>
 
   <div class="field">
-    <%= form.label :subject_id %>
+    <%= form.label :試験科目 %>
     <%= form.number_field :subject_id, id: :reportjob_subject_id %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_japanese %>
+    <%= form.label :国語・時間 %>
     <%= form.number_field :zikan_japanese, id: :reportjob_zikan_japanese %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_math %>
+    <%= form.label :数学・時間 %>
     <%= form.number_field :zikan_math, id: :reportjob_zikan_math %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_social %>
+    <%= form.label :社会・時間 %>
     <%= form.number_field :zikan_social, id: :reportjob_zikan_social %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_english %>
+    <%= form.label :英語・時間 %>
     <%= form.number_field :zikan_english, id: :reportjob_zikan_english %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_ippann %>
+    <%= form.label :一般常識・時間 %>
     <%= form.number_field :zikan_ippann, id: :reportjob_zikan_ippann %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_tekisei %>
+    <%= form.label :適性試験・時間 %>
     <%= form.number_field :zikan_tekisei, id: :reportjob_zikan_tekisei %>
   </div>
 
   <div class="field">
-    <%= form.label :interview_id %>
+    <%= form.label :面接方法 %>
     <%= form.number_field :interview_id, id: :reportjob_interview_id %>
   </div>
 
   <div class="field">
-    <%= form.label :iin %>
+    <%= form.label :面接委員・人数 %>
     <%= form.number_field :iin, id: :reportjob_iin %>
   </div>
 
   <div class="field">
-    <%= form.label :zikan_mensetsu %>
+    <%= form.label :面接試験・時間 %>
     <%= form.number_field :zikan_mensetsu, id: :reportjob_zikan_mensetsu %>
   </div>
 
   <div class="field">
-    <%= form.label :shitsumon %>
+    <%= form.label :質問内容 %>
     <%= form.text_area :shitsumon, id: :reportjob_shitsumon %>
   </div>
 
   <div class="field">
-    <%= form.label :mensetsusonota %>
+    <%= form.label :面接その他 %>
     <%= form.text_area :mensetsusonota, id: :reportjob_mensetsusonota %>
   </div>
 
   <div class="field">
-    <%= form.label :sakubun %>
+    <%= form.label :作文 %>
     <%= form.text_field :sakubun, id: :reportjob_sakubun %>
   </div>
 
   <div class="field">
-    <%= form.label :bunnsyouryou %>
+    <%= form.label :文章量 %>
     <%= form.text_field :bunnsyouryou, id: :reportjob_bunnsyouryou %>
   </div>
 
   <div class="field">
-    <%= form.label :other %>
+    <%= form.label :その他 %>
     <%= form.text_area :other, id: :reportjob_other %>
   </div>
 

@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>履歴書サポート</h1>
-
+<h1>　　　　　履歴書サポート　　　　　　</h1>
 <table>
   <thead>
     <tr>
@@ -16,9 +15,9 @@
       <tr>
         <td><%= rirekisyo.title %></td>
         <td><%= rirekisyo.hizuke %></td>
-        <td><%= link_to 'Show', rirekisyo %></td>
-        <td><%= link_to 'Edit', edit_rirekisyo_path(rirekisyo) %></td>
-        <td><%= link_to 'Destroy', rirekisyo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', rirekisyo %></td>
+        <td><%= link_to '編集', edit_rirekisyo_path(rirekisyo) %></td>
+        <td><%= link_to '削除', rirekisyo, method: :delete, data: { confirm: '履歴書を削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Rirekisyo', new_rirekisyo_path %>
+<%= link_to '新規作成', new_rirekisyo_path %>

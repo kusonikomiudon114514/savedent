@@ -12,16 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :タイトル %>
     <%= form.text_field :title, id: :rirekisyo_title %>
   </div>
 
   <div class="field">
-    <%= form.label :hizuke %>
+    <%= form.label :指定日%>
     <%= form.date_select :hizuke, id: :rirekisyo_hizuke %>
   </div>
 
+  <div class="field">
+    <%= form.label :志望理由%>
+    <%= form.text_field :reason, id: :rirekisyo_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :趣味・特技 %>
+    <%= form.text_field :syumi, id: :rirekisyo_syumi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :校内外の諸活動 %>
+    <%= form.text_field :katsudo, id: :rirekisyo_katsudo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :備考%>
+    <%= form.text_field :biko, id: :rirekisyo_biko %>
+  </div>
+
+  <div class="field">
+    <%= form.label :連絡先 %>
+    <%= form.text_field :renraku, id: :rirekisyo_renraku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :連絡先ふりがな %>
+    <%= form.text_field :renhuri, id: :rirekisyo_renhuri %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit:作成 %>
   </div>
 <% end %>

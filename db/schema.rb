@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191015015922) do
+ActiveRecord::Schema.define(version: 20191015020804) do
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -144,6 +144,40 @@ ActiveRecord::Schema.define(version: 20191015015922) do
     t.date "hizuke"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "reason"
+    t.text "syumi"
+    t.text "katsudo"
+    t.text "biko"
+    t.string "renraku"
+    t.string "renhuri"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "namehurigana"
+    t.date "seinen"
+    t.string "no"
+    t.string "seibetsu"
+    t.string "zyusho"
+    t.string "zyushohurigana"
+    t.string "filename"
+    t.text "shikaku"
+    t.text "syutokubi"
+    t.string "gakureki1"
+    t.string "gakureki2"
+    t.string "gakureki3"
+    t.string "gakureki4"
+    t.string "gakureki5"
+    t.string "gakureki6"
+    t.integer "hiduke1"
+    t.integer "hiduke2"
+    t.integer "hiduke3"
+    t.integer "hiduke4"
+    t.integer "hiduke5"
+    t.integer "hiduke6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "teachers", force: :cascade do |t|

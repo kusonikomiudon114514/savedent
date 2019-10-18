@@ -69,6 +69,6 @@ class RirekisyosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rirekisyo_params
-      params.require(:rirekisyo).permit(:title, :hizuke)
+      params.require(:rirekisyo).permit(:title, :hizuke,:reason,:syumi,:katsudo,:biko,:renraku,:renhuri)
     end
 end
