@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>生徒</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ユーザーID</th>
+      <th>氏名</th>
+      <th>ふりがな（名前）</th>
+      <th>生年月日</th>
+      <th>生徒番号</th>
+      <th>性別</th>
+      <th>住所</th>
+      <th>ふりがな（住所）</th>
+      <th>ファイルネーム</th>
+      <th>資格名称</th>
+      <th>資格取得日</th>
+      <th>学歴・就歴１</th>
+      <th>学歴・就歴２</th>
+      <th>学歴・就歴３</th>
+      <th>学歴・就歴４</th>
+      <th>学歴・就歴５</th>
+      <th>学歴・就歴６</th>
+      <th>学歴日付１</th>
+      <th>学歴日付２</th>
+      <th>学歴日付３</th>
+      <th>学歴日付４</th>
+      <th>学歴日付５</th>
+      <th>学歴日付６</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.namehurigana %></td>
+        <td><%= student.seinen %></td>
+        <td><%= student.no %></td>
+        <td><%= student.seibetsu %></td>
+        <td><%= student.zyusho %></td>
+        <td><%= student.zyushohurigana %></td>
+        <td><%= student.filename %></td>
+        <td><%= student.shikaku %></td>
+        <td><%= student.syutokubi %></td>
+        <td><%= student.gakureki1 %></td>
+        <td><%= student.gakureki2 %></td>
+        <td><%= student.gakureki3 %></td>
+        <td><%= student.gakureki4 %></td>
+        <td><%= student.gakureki5 %></td>
+        <td><%= student.gakureki6 %></td>
+        <td><%= student.hiduke1 %></td>
+        <td><%= student.hiduke2 %></td>
+        <td><%= student.hiduke3 %></td>
+        <td><%= student.hiduke4 %></td>
+        <td><%= student.hiduke5 %></td>
+        <td><%= student.hiduke6 %></td>
+        <td><%= link_to '閲覧', student %></td>
+        <td><%= link_to '編集', edit_student_path(student) %></td>
+        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規作成', new_student_path %>
