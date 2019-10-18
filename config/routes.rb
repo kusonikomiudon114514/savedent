@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reportmenu/menu'
+
   resources :teachers
   resources :resumetrancerecs
   resources :memos
