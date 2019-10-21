@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      memo: メモ
+
+  attributes:
+    memo:
+      user_id: ユーザ
+      content: 内容
+      title: タイトル
+      important: 大事なメモ
+
