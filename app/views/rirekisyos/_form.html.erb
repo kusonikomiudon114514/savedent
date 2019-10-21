@@ -23,22 +23,22 @@
 
   <div class="field">
     <%= form.label :志望理由%>
-    <%= form.text_field :reason, id: :rirekisyo_reason %>
+    <%= form.text_area :reason,  id: :rirekisyo_reason,:size => "60×15" %>
   </div>
 
   <div class="field">
     <%= form.label :趣味・特技 %>
-    <%= form.text_field :syumi, id: :rirekisyo_syumi %>
+    <%= form.text_area :syumi, id: :rirekisyo_syumi %>
   </div>
 
   <div class="field">
     <%= form.label :校内外の諸活動 %>
-    <%= form.text_field :katsudo, id: :rirekisyo_katsudo %>
+    <%= form.text_area :katsudo, id: :rirekisyo_katsudo %>
   </div>
 
   <div class="field">
     <%= form.label :備考%>
-    <%= form.text_field :biko, id: :rirekisyo_biko %>
+    <%= form.text_area :biko, id: :rirekisyo_biko %>
   </div>
 
   <div class="field">
