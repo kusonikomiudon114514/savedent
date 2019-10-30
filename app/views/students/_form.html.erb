@@ -98,32 +98,32 @@
 
   <div class="field">
     <%= form.label :学歴日付１ %>
-    <%= form.number_field :hiduke1, id: :student_hiduke1 %>
+    <%= form.date_select :hiduke1,{:discard_day => true}  %>
   </div>
 
   <div class="field">
     <%= form.label :学歴日付２ %>
-    <%= form.number_field :hiduke2, id: :student_hiduke2 %>
+    <%= form.date_select :hiduke2, {:discard_day => true} %>
   </div>
 
   <div class="field">
     <%= form.label :学歴日付３ %>
-    <%= form.number_field :hiduke3, id: :student_hiduke3 %>
+    <%= form.date_select :hiduke3, {:discard_day => true} %>
   </div>
 
   <div class="field">
     <%= form.label :学歴日付４ %>
-    <%= form.number_field :hiduke4, id: :student_hiduke4 %>
+    <%= form.date_select :hiduke4, {:discard_day => true} %>
   </div>
 
   <div class="field">
     <%= form.label :学歴日付５ %>
-    <%= form.number_field :hiduke5, id: :student_hiduke5 %>
+    <%= form.date_select :hiduke5, {:discard_day => true} %>
   </div>
 
   <div class="field">
-    <%= form.label :学歴日付 %>
-    <%= form.number_field :hiduke6, id: :student_hiduke6 %>
+    <%= form.label :学歴日付6 %>
+    <%= form.date_select :hiduke6, {:discard_day => true} %>
   </div>
 
   <div class="actions">
