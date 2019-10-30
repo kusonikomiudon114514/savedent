@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :生徒 %>
-    <%= form.number_field :user_id, id: :reportschool_user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :学校種 %>
     <%= form.select :type_id, Type.all.map {|r| [r.name,r.id] } %>
   </div>
@@ -109,7 +104,7 @@
   <div class="field">
     <%= form.label :形態 %>
     <%= form.select :recommended_id, Recommended.all.map {|r| [r.name,r.id] } %>
-  </div>
+    </div>
 
   <div class="field">
     <%= form.label :面接の質問内容 %>
