@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191015020804) do
+ActiveRecord::Schema.define(version: 20191028012651) do
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20191015020804) do
     t.text "biko"
     t.string "renraku"
     t.string "renhuri"
+    t.integer "user_id"
   end
 
   create_table "students", force: :cascade do |t|

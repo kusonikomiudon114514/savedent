@@ -8,5 +8,6 @@ class User < ApplicationRecord
          has_many :reportschools
          has_many :rirekisyos
          has_many :memos
+         has_many :students
 
 end
