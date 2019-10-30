@@ -12,12 +12,12 @@
 
 <p>
   <strong>学校種:</strong>
-  <%= @reportschool.type_id %>
+  <%= @reportschool.type.name %>
 </p>
 
 <p>
   <strong>分野:</strong>
-  <%= @reportschool.field_id %>
+  <%= @reportschool.field.name %>
 </p>
 
 <p>
@@ -62,7 +62,7 @@
 
 <p>
   <strong>入試形態:</strong>
-  <%= @reportschool.exam_id %>
+  <%= @reportschool.exam.name %>
 </p>
 
 <p>
@@ -97,7 +97,7 @@
 
 <p>
   <strong>形態:</strong>
-  <%= @reportschool.recommended_id %>
+  <%= @reportschool.recommended.name %>
 </p>
 
 <p>

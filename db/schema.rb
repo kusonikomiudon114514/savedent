@@ -170,7 +170,7 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.string "gakureki4"
     t.string "gakureki5"
     t.string "gakureki6"
-    t.date "hiduke1"
+    t.integer "hiduke1"
     t.integer "hiduke2"
     t.integer "hiduke3"
     t.integer "hiduke4"
