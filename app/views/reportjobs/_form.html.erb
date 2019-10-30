@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :職種 %>
-    <%= form.text_field :syokusyu, id: :reportjob_syokusyu %>
+    <%= form.select :field_id, Field.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :斡旋方法 %>
-    <%= form.number_field :mediation_id, id: :reportjob_mediation_id %>
+    <%= form.select :mediation_id, Mediation.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">

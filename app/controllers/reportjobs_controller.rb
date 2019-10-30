@@ -69,6 +69,6 @@ class ReportjobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reportjob_params
-      params.require(:reportjob).permit(:status, :user_id, :day, :syokusyu, :zigyousyo, :mediation_id, :syozaiti, :shikennzyou, :zyukennsyasuu, :ithizi_hikki, :ithizi_tekisei, :ithizi_mensetsu, :zikan_ithihi, :zikan_ithime, :zikan_ithisa, :nizi_hikki, :nizi_tekisei, :nizi_mennsetsu, :zikan_nihi, :zikan_nite, :zikan_nime, :zikan_nisa, :subject_id, :zikan_japanese, :zikan_math, :zikan_social, :zikan_english, :zikan_ippann, :zikan_tekisei, :interview_id, :iin, :zikan_mensetsu, :shitsumon, :mensetsusonota, :sakubun, :bunnsyouryou, :other)
+      params.require(:reportjob).permit(:status, :user_id, :field_id, :day, :syokusyu, :zigyousyo, :mediation_id, :syozaiti, :shikennzyou, :zyukennsyasuu, :ithizi_hikki, :ithizi_tekisei, :ithizi_mensetsu, :zikan_ithihi, :zikan_ithime, :zikan_ithisa, :nizi_hikki, :nizi_tekisei, :nizi_mennsetsu, :zikan_nihi, :zikan_nite, :zikan_nime, :zikan_nisa, :subject_id, :zikan_japanese, :zikan_math, :zikan_social, :zikan_english, :zikan_ippann, :zikan_tekisei, :interview_id, :iin, :zikan_mensetsu, :shitsumon, :mensetsusonota, :sakubun, :bunnsyouryou, :other)
     end
 end
