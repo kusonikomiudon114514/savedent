@@ -25,6 +25,7 @@ class ReportjobsController < ApplicationController
   # POST /reportjobs.json
   def create
     @reportjob = Reportjob.new(reportjob_params)
+    @reportjob.user_id=current_user.id
 
     respond_to do |format|
       if @reportjob.save

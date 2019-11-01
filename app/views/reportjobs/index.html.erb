@@ -2,6 +2,14 @@
 
 <h1>就職試験受験報告書</h1>
 
+<%= form_tag('/books_search') do %>
+  <p>
+  職種
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
 <table>
   <thead>
     <tr>
@@ -14,32 +22,29 @@
       <th>所在地</th>
       <th>試験会場</th>
       <th>受験者数</th>
-      <th>一次筆記</th>
-      <th>一次適性</th>
-      <th>一次面接</th>
-      <th>一次筆記・時間</th>
-      <th>一次面接・時間</th>
-      <th>一次作文・時間</th>
-      <th>二次筆記</th>
-      <th>二次適性</th>
-      <th>二次面接</th>
-      <th>二次筆記・時間</th>
-      <th>二次適性・時間</th>
-      <th>二次面接・時間</th>
-      <th>二次作文・時間</th>
+
+      <th>筆記</th>
+      <th>筆記・時間</th>
+      <th>適性</th>
+      <th>適性・時間</th>
+      <th>面接</th>
+      <th>面接・時間</th>
+      <th>作文</th>
+      <th>一般常識</th>
+      <th>一般常識・時間</th>
+
       <th>試験科目</th>
       <th>国語・時間</th>
       <th>数学・時間</th>
       <th>社会・時間</th>
       <th>英語・時間</th>
-      <th>一般常識・時間</th>
-      <th>適性試験・時間</th>
+      
       <th>面接</th>
       <th>面接委員(人)</th>
       <th>面接時間</th>
       <th>質問内容</th>
       <th>面接その他</th>
-      <th>作文</th>
+      <th>作文の題</th>
       <th>文章量</th>
       <th>その他</th>
       <th colspan="3"></th>

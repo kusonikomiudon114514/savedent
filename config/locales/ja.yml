@@ -1,0 +1,141 @@
+ja:
+  activerecord:
+    models:
+      memo: メモ
+      teacher: 先生
+      reportschool: 進学受験報告書
+      user: ユーザー
+      student: 生徒
+      resumetrancerec: 転送
+      rireisyo: 履歴書
+
+    attributes:
+      memo:
+        user_id: ユーザーＩＤ
+        content: 内容
+        title: タイトル
+        important: 大事なメモ
+        user: ユーザー
+
+      teacher:
+        user_id: ユーザー
+        name: 氏名
+        admin: 管理者
+        user: ユーザー
+
+      reportschool:
+        status: 状況
+        user_id: 生徒
+        type_id: 学校種
+        field_id: 分野
+        gakkou: 学校名
+        gakubu: 学部
+        gakka: 学科
+        course: コース
+        syozaichi: 所在地
+        shikennzyou: 試験場
+        gokaku: 合格発表
+        shikennbi: 試験日
+        exam_id: 入試形態
+        detail: 問題の内容
+        japanses: 国語（分）
+        math: 数学（分）
+        social: 社会（分）
+        science: 理科（分）
+        english: 英語（分）
+        recommended_id: 形態
+        mennsetsu: 面接　質問内容
+        syorinnbunn: 小論文（作文）テーマ
+        shikenn: 試験内容
+        kanso: 感想
+        user: 生徒
+
+      user:
+        email: email
+
+      student:
+        user_id: ユーザー 
+        name: 氏名
+        namehurigana: ふりがな（氏名） 
+        seinen: 生年月日
+        no: 生徒番号
+        seibetsu: 性別
+        syusho: 住所
+        zyushohurigana: ふりがな（住所）
+        filename: ファイルネーム
+        shikaku: 資格名称
+        syutokubi: 資格取得日
+        gakureki1: 学歴・就歴１
+        gakureki2: 学歴・就歴２
+        gakureki3: 学歴・就歴３
+        gakureki4: 学歴・就歴４
+        gakureki5: 学歴・就歴５
+        gakureki6: 学歴・就歴６
+        hiduke1: 学歴日付１
+        hiduke2: 学歴日付２
+        hiduke3: 学歴日付３
+        hiduke4: 学歴日付４
+        hiduke5: 学歴日付５
+        hiduke6: 学歴日付６
+        user: ユーザー
+
+      resumetrancerec:
+        resume_id: 報告書ＩＤ
+        user_id: ユーザーＩＤ
+        user: ユーザー
+
+      reportjob: 
+        status: 状況
+        user_id: 生徒
+        day: 受験日
+        syokusyu: 職種
+        zigyousyo: 事業所名
+        mediation_id: 斡旋方法
+        syozaithi: 所在地
+        shikennsyou: 試験場
+        zyukennsyashuu: 受験者数
+        ithizi_hikki: 一次筆記
+        ithizi_tekisei: 一次適性
+        ithizi_mennsetsu: 一次面接
+        ithizi_sakubunn: 一次作文
+        zikan_ithihi: 一次筆記時間
+        zikan_ithite: 一次適性時間
+        zikan_ithime: 一次面接時間
+        zikan_ithisa: 一次作文時間
+        nizi_hikki: 二次筆記
+        nizi_tekisei: 二次適性
+        nizi_mennsetsu: 二次面接
+        nizi_sakubunn: 二次作文
+        zikan_nihi: 二次筆記時間
+        zikan_nite: 二次適性時間
+        zikan_nime: 二次面接時間
+        zikan_nisa: 二次作文時間
+        subject_id: 試験科目
+        zikan_japanese: 国語
+        zikan_math: 数学
+        zikan_social: 社会
+        zikan_science: 理科
+        zikan_english: 英語
+        zikan_ippann: 一般常識
+        zikan_tekisei: 適性試験
+        interviewid: 面接方法
+        iin: 面接委員
+        zikan_mensetsu: 面接時間
+        shitsumon: 面接質問内容
+        mensetsusonota: 面接その他
+        sakubun: 作文
+        bunnsyouryou: 作文　文章量
+        other: 就職試験その他
+        user: ユーザー
+
+      rirekisyo:
+        user_id: ユーザーID
+        title: タイトル
+        siteibi: 指定日
+        reason: 志望理由
+        syumi: 趣味・特技
+        katudo: 校内外の諸活動
+        biko: 備考
+        renraku: 連絡先
+        renhuri: 連絡先ふりがな
+        user: ユーザー

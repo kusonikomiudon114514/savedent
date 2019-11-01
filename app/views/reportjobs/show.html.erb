@@ -7,7 +7,7 @@
 
 <p>
   <strong>ユーザー:</strong>
-  <%= @reportjob.user_id %>
+  <%= @reportjob.user.students[0].name %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>職種:</strong>
-  <%= @reportjob.field_id %>
+  <%= @reportjob.syokusyu %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>斡旋方法:</strong>
-  <%= @reportjob.mediation_id %>
+  <%= @reportjob.mediation.name %>
 </p>
 
 <p>
@@ -147,7 +147,7 @@
 
 <p>
   <strong>面接:</strong>
-  <%= @reportjob.interview_id %>
+  <%= @reportjob.interview.name %>
 </p>
 
 <p>

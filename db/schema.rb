@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191021023404) do
+=======
+ActiveRecord::Schema.define(version: 20191021013714) do
+>>>>>>> 45aa0a19512f81dfb15580f6691e09d4209ce123
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -170,7 +174,7 @@ ActiveRecord::Schema.define(version: 20191021023404) do
     t.string "gakureki4"
     t.string "gakureki5"
     t.string "gakureki6"
-    t.integer "hiduke1"
+    t.date "hiduke1"
     t.integer "hiduke2"
     t.integer "hiduke3"
     t.integer "hiduke4"
