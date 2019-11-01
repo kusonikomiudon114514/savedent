@@ -17,18 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :生徒 %>
-    <%= form.number_field :user_id, id: :reportschool_user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :学校種 %>
-    <%= form.number_field :type_id, id: :reportschool_type_id %>
+    <%= form.select :type_id, Type.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">
     <%= form.label :分野 %>
-    <%= form.number_field :field_id, id: :reportschool_field_id %>
+    <%= form.select :field_id, Field.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">
@@ -73,7 +68,7 @@
 
   <div class="field">
     <%= form.label :入試形態 %>
-    <%= form.number_field :exam_id, id: :reportschool_exam_id %>
+    <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">
@@ -82,34 +77,34 @@
   </div>
 
   <div class="field">
-    <%= form.label :国語の試験時間 %>
+    <%= form.label :国語（分） %>
     <%= form.number_field :japanese, id: :reportschool_japanese %>
   </div>
 
   <div class="field">
-    <%= form.label :数学の試験時間 %>
+    <%= form.label :数学（分） %>
     <%= form.number_field :math, id: :reportschool_math %>
   </div>
 
   <div class="field">
-    <%= form.label :社会の試験時間 %>
+    <%= form.label :社会（分） %>
     <%= form.number_field :social, id: :reportschool_social %>
   </div>
 
   <div class="field">
-    <%= form.label :理科の試験時間 %>
+    <%= form.label :理科（分） %>
     <%= form.number_field :science, id: :reportschool_science %>
   </div>
 
   <div class="field">
-    <%= form.label :英語の試験時間 %>
+    <%= form.label :英語（分） %>
     <%= form.number_field :english, id: :reportschool_english %>
   </div>
 
   <div class="field">
     <%= form.label :形態 %>
-    <%= form.number_field :recommended_id, id: :reportschool_recommended_id %>
-  </div>
+    <%= form.select :recommended_id, Recommended.all.map {|r| [r.name,r.id] } %>
+    </div>
 
   <div class="field">
     <%= form.label :面接の質問内容 %>

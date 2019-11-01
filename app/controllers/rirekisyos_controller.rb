@@ -25,7 +25,7 @@ class RirekisyosController < ApplicationController
   # POST /rirekisyos.json
   def create
     @rirekisyo = Rirekisyo.new(rirekisyo_params)
-
+    @rirekisyo.user_id = current_user.id
     respond_to do |format|
       if @rirekisyo.save
         format.html { redirect_to @rirekisyo, notice: 'Rirekisyo was successfully created.' }

@@ -25,7 +25,7 @@ class ReportschoolsController < ApplicationController
   # POST /reportschools.json
   def create
     @reportschool = Reportschool.new(reportschool_params)
-
+    @reportschool.user_id=current_user.id
     respond_to do |format|
       if @reportschool.save
         format.html { redirect_to @reportschool, notice: 'Reportschool was successfully created.' }

@@ -19,10 +19,11 @@ Mediation.create(name: "その他")
 
 Recommended.delete_all
 Recommended.connection.execute("delete from sqlite_sequence where name= 'recommendeds' ")
-Recommended.create(name:"書類審査")
-Recommended.create(name:"面接")
-Recommended.create(name:"試験")
-Recommended.create(name:"小論文（作文）")
+Recommended.create(name:"書類選考のみ")
+Recommended.create(name:"書類選考＋面接")
+Recommended.create(name:"書類選考＋面接＋試験")
+Recommended.create(name:"書類選考＋面接＋小論文（作文）")
+Recommended.create(name:"書類選考＋面接＋小論文（作文）＋試験")
 
 Exam.delete_all
 Exam.connection.execute("delete from sqlite_sequence where name= 'exams' ")
