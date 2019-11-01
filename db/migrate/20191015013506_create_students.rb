@@ -8,7 +8,6 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :seibetsu
       t.string :zyusho
       t.string :zyushohurigana
-      t.string :filename
       t.text :shikaku
       t.text :syutokubi
       t.string :gakureki1

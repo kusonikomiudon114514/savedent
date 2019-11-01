@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191028012651) do
+ActiveRecord::Schema.define(version: 20191101060040) do
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -161,7 +161,6 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.string "seibetsu"
     t.string "zyusho"
     t.string "zyushohurigana"
-    t.string "filename"
     t.text "shikaku"
     t.text "syutokubi"
     t.string "gakureki1"
@@ -170,7 +169,7 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.string "gakureki4"
     t.string "gakureki5"
     t.string "gakureki6"
-    t.date "hiduke1"
+    t.integer "hiduke1"
     t.integer "hiduke2"
     t.integer "hiduke3"
     t.integer "hiduke4"
@@ -178,6 +177,7 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.integer "hiduke6"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "filename"
     t.integer "user_id"
   end
 
