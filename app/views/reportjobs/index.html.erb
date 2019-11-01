@@ -10,6 +10,22 @@
   </p>
 <% end %> 
 
+<%= form_tag('/books_search') do %>
+  <p>
+  事業所
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+<%= form_tag('/books_search') do %>
+  <p>
+  検索(部分一致)
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
 <table>
   <thead>
     <tr>
