@@ -25,7 +25,12 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-    @student.user_id = current_user.id
+    @student.user_id=current_user.id
+    if params[:student][:filename].present?
+      @student.filename = params[:student][:filename].original_filename
+
+      File.open("app/assets/images/#{@student.filename}", 'w+b') {|f|f.write(params[:student][:filename].read)}
+    end
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }

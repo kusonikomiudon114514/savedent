@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :氏名 %>
     <%= form.text_field :name, id: :student_name %>
@@ -47,8 +48,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :ファイルネーム %>
-    <%= form.text_field :filename, id: :student_filename %>
+    <%= form.label :プロフィール画像 %>
+    <%= form.file_field :filename %>
   </div>
 
   <div class="field">
