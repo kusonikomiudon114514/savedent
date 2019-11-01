@@ -14,6 +14,11 @@
   <header>
       <nav>
         <% if user_signed_in? %>
+           <% if current_user.students[0].filename.present? %>
+              <%= image_tag current_user.students[0].filename,:size => "100x100" %>
+           <% else %>
+              <%= image_tag "initprofile.png",:size => "100x100" %>
+           <% end %> 
         <strong><%= current_user.email%></strong>
         <%= link_to 'プロフィール変更', edit_user_registration_path %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
@@ -26,14 +31,21 @@
     </header>
 
     <h1>Savedent</h1>
+
     
+      
+            
+      
+    
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
    <table border=0>
     <tr>
     <td style="width:500px;">
      <h1><p> <%= link_to 'TOP',home_top_path %></p></h1>
-     <h1><p> <%= link_to '履歴書',resumetrancerecs_path %></p></h1>
+     <h1><p> <%= link_to '履歴書作成',rirekisyos_path %></p></h1>
+     <h1><p> <%= link_to '履歴書転送',resumetrancerecs_path %></p></h1>
      <h1><p> <%= link_to '受験報告書',reportmenu_menu_path %></p></h1>
      <h1><p> <%= link_to '面接サポート',mensetu_top_path %></p></h1>
      <h1><p> <%= link_to 'メモ', memos_path %></p></h1>

@@ -1,3 +1,5 @@
 class Student < ApplicationRecord
-    belongs_to :user
+    has_many :users
+    validates :user_id, uniqueness: true
+    validates :name, presence: true
 end
