@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :ユーザーID %>
-    <%= form.number_field :user_id, id: :student_user_id %>
-  </div>
 
   <div class="field">
     <%= form.label :氏名 %>
@@ -52,8 +48,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :ファイルネーム %>
-    <%= form.text_field :filename, id: :student_filename %>
+    <%= form.label :プロフィール画像 %>
+    <%= form.file_field :filename %>
   </div>
 
   <div class="field">
