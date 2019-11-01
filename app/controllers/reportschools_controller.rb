@@ -4,8 +4,9 @@ class ReportschoolsController < ApplicationController
   # GET /reportschools
   # GET /reportschools.json
   def index
-    @reportschools = Reportschool.all
-  end
+#   @reportschools = Reportschool.all
+    @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+end
 
   # GET /reportschools/1
   # GET /reportschools/1.json
@@ -25,7 +26,7 @@ class ReportschoolsController < ApplicationController
   # POST /reportschools.json
   def create
     @reportschool = Reportschool.new(reportschool_params)
-
+    @reportschool.user_id = current_user.id
     respond_to do |format|
       if @reportschool.save
         format.html { redirect_to @reportschool, notice: 'Reportschool was successfully created.' }
@@ -71,4 +72,4 @@ class ReportschoolsController < ApplicationController
     def reportschool_params
       params.require(:reportschool).permit(:status, :user_id, :type_id, :field_id, :gakkou, :gakubu, :gakka, :course, :syozaichi, :shikennzyou, :gokaku, :shikennbi, :exam_id, :detail, :japanese, :math, :social, :science, :english, :recommended_id, :mennsetsu, :syoronnbunn, :shikenn, :kanso)
     end
-end
+  end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mensetu/top'
+
   get 'reportmenu/menu'
 
   resources :students
