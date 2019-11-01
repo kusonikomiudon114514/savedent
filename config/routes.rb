@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :students
   resources :reportschools
   resources :rirekisyos
+  get 'rirekisyo_tenso', to: 'rirekisyos#tenso'
   get 'home/top'
 
   devise_for :users
