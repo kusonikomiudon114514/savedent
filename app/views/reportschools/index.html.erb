@@ -2,6 +2,38 @@
 
 <h1>進学受験報告書</h1>
 
+<%= form_tag('/books_search') do %>
+  <p>
+  地方・都道府県
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+<%= form_tag('/books_search') do %>
+  <p>
+  学校種
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+<%= form_tag('/books_search') do %>
+  <p>
+  分野別
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+<%= form_tag('/books_search') do %>
+  <p>
+  検索（部分一致）
+  <br>
+  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
 <table>
   <thead>
     <tr>

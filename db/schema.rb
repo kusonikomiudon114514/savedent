@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191101060040) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20191028012651) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20191101060040) do
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20191021023404) do
+=======
+ActiveRecord::Schema.define(version: 20191021013714) do
+>>>>>>> 45aa0a19512f81dfb15580f6691e09d4209ce123
+=======
+ActiveRecord::Schema.define(version: 20191028012651) do
+>>>>>>> b343d8cac7bcfc5213aa9f746a5f2049b45c7c73
+>>>>>>> 61e616bf2d08586cfb2d890423a2e32a62c1b8d3
+>>>>>>> c66a79eb59f5a1c7835d34384716ce0e9801b825
+>>>>>>> 7e896710de66419b5a77b52f98d847f9d784d641
 
   create_table "exams", force: :cascade do |t|
     t.string "name"

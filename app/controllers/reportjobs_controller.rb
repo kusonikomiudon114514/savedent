@@ -64,6 +64,17 @@ class ReportjobsController < ApplicationController
     end
   end
 
+  def field_search
+   @reportjobs = Reportjob.all
+
+   if params[:search][:field].present?
+     @reportjobs = Reportjob.where(user_id: current_user.id).order(created_at: :desc)
+    else
+     @reportjobs = Reportjob.all
+    end
+   render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reportjob
