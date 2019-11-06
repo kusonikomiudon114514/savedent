@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-    
+
    <div class="field">
     <%= form.label :状態 %>
     <%= form.number_field :status, id: :reportjob_status %>
@@ -51,6 +51,16 @@
     <%= form.label :受験者数 %>
     <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
   </div>
+  
+  <div class="field">
+    <%= form.label :筆記 %>
+    <%= form.check_box :hikki, id: :reportjob_hikki %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :筆記・時間 %>
+    <%= form.text_field :zikan_hikki, id: :reportjob_zikan_hikki %>
+  </div>
 
   <div class="field">
     <%= form.label :適性 %>
@@ -61,16 +71,6 @@
   <%= form.label :適性・時間 %>
   <%= form.number_field :zikan_tekisei, id: :reportjob_zikan_tekisei %>
 </div>
-
-  <div class="field">
-    <%= form.label :筆記 %>
-    <%= form.check_box :hikki, id: :reportjob_hikki %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :筆記・時間 %>
-    <%= form.text_field :zikan_hikki, id: :reportjob_zikan_hikki %>
-  </div>
 
   <div class="field">
     <%= form.label :面接 %>
