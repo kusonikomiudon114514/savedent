@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :rirekisyos
   get 'home/top'
 
+  post '/reportjobs_field_search',to:'reportjobs#field_search'
+
   devise_for :users
   resources :teachers
   resources :resumetrancerecs

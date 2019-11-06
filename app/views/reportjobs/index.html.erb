@@ -2,11 +2,11 @@
 
 <h1>就職試験受験報告書</h1>
 
-<%= form_tag('/books_search') do %>
+<%= form_tag('/reportjobs_field_search') do %>
   <p>
   職種
   <br>
-  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  <%= select_tag 'search[field]', options_for_select(Field.all.map {|r| [r.name,r.id] }, 0), include_blank: true %><%= submit_tag '検索' %>
   </p>
 <% end %> 
 
