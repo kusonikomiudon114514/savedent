@@ -72,11 +72,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :問題の内容 %>
-    <%= form.text_area :detail, id: :reportschool_detail %>
-  </div>
-
-  <div class="field">
     <%= form.label :国語（分） %>
     <%= form.number_field :japanese, id: :reportschool_japanese %>
   </div>
@@ -99,6 +94,11 @@
   <div class="field">
     <%= form.label :英語（分） %>
     <%= form.number_field :english, id: :reportschool_english %>
+  </div>
+
+  <div class="field">
+    <%= form.label :問題の内容 %>
+    <%= form.text_area :detail, id: :reportschool_detail %>
   </div>
 
   <div class="field">
