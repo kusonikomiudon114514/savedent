@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-    @student.user_id=current_user.id
+    @student.user_id = current_user.id
     if params[:student][:filename].present?
       @student.filename = params[:student][:filename].original_filename
 

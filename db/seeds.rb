@@ -71,6 +71,7 @@ Field.create(name:"福祉")
 Field.create(name:"自動車・航空・宇宙")
 Field.create(name:"自然・環境・バイオ")
 Field.create(name:"機械・電気・電子・化学")
+Field.create(name:"その他")
 
 Place.delete_all
 Place.connection.execute("delete from sqlite_sequence where name= 'places' ")

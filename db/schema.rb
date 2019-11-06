@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191028012651) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20191101060040) do
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20191021023404) do
+=======
+ActiveRecord::Schema.define(version: 20191021013714) do
+>>>>>>> 45aa0a19512f81dfb15580f6691e09d4209ce123
+=======
+ActiveRecord::Schema.define(version: 20191028012651) do
+>>>>>>> b343d8cac7bcfc5213aa9f746a5f2049b45c7c73
+>>>>>>> 61e616bf2d08586cfb2d890423a2e32a62c1b8d3
+>>>>>>> c66a79eb59f5a1c7835d34384716ce0e9801b825
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -162,7 +178,6 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.string "seibetsu"
     t.string "zyusho"
     t.string "zyushohurigana"
-    t.string "filename"
     t.text "shikaku"
     t.text "syutokubi"
     t.string "gakureki1"
@@ -179,6 +194,7 @@ ActiveRecord::Schema.define(version: 20191028012651) do
     t.integer "hiduke6"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "filename"
     t.integer "user_id"
   end
 

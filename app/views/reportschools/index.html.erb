@@ -64,14 +64,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @reportschools.each do |reportschool| %>
       <tr>
         <td><%= reportschool.status %></td>
-        <td><%= reportschool.user_id %></td>
-        <td><%= reportschool.type_id %></td>
-        <td><%= reportschool.field_id %></td>
+        <td><%= reportschool.user.students[0].name %></td>
+        <td><%= reportschool.type.name %></td>
+        <td><%= reportschool.field.name %></td>
         <td><%= reportschool.gakkou %></td>
         <td><%= reportschool.gakubu %></td>
         <td><%= reportschool.gakka %></td>
@@ -80,14 +79,14 @@
         <td><%= reportschool.shikennzyou %></td>
         <td><%= reportschool.gokaku %></td>
         <td><%= reportschool.shikennbi %></td>
-        <td><%= reportschool.exam_id %></td>
+        <td><%= reportschool.exam.name %></td>
         <td><%= reportschool.detail %></td>
         <td><%= reportschool.japanese %></td>
         <td><%= reportschool.math %></td>
         <td><%= reportschool.social %></td>
         <td><%= reportschool.science %></td>
         <td><%= reportschool.english %></td>
-        <td><%= reportschool.recommended_id %></td>
+        <td><%= reportschool.recommended.name %></td>
         <td><%= reportschool.mennsetsu %></td>
         <td><%= reportschool.syoronnbunn %></td>
         <td><%= reportschool.shikenn %></td>

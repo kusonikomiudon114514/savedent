@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>　　　　　履歴書サポート　　　　　　</h1>
+<h1>       履歴書サポート        </h1>
 <table>
   <thead>
     <tr>
@@ -18,6 +18,8 @@
         <td><%= link_to '閲覧', rirekisyo %></td>
         <td><%= link_to '編集', edit_rirekisyo_path(rirekisyo) %></td>
         <td><%= link_to '削除', rirekisyo, method: :delete, data: { confirm: '履歴書を削除しますか？' } %></td>
+        <td><%= link_to '転送', rirekisyo_tenso_path(id: rirekisyo) %></td>
+
       </tr>
     <% end %>
   </tbody>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :students
   resources :reportschools
   resources :rirekisyos
+  get 'rirekisyo_tenso', to: 'rirekisyos#tenso'
   get 'home/top'
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
