@@ -51,7 +51,7 @@
     <%= form.label :受験者数 %>
     <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
   </div>
-  
+
   <div class="field">
     <%= form.label :筆記 %>
     <%= form.check_box :hikki, id: :reportjob_hikki %>
@@ -96,7 +96,7 @@
 
   <div class="field">
     <%= form.label :試験科目 %>
-    <%= form.number_field :subject_id, id: :reportjob_subject_id %>
+    <%= form.select :subject_id, Subject.all.map {|r| [r.name,r.id] } %>
   </div>
 
   <div class="field">
