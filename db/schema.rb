@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191106052353) do
+=======
+ActiveRecord::Schema.define(version: 20191108051137) do
+>>>>>>> ac401144513061aa2c5180497e20948431fdd1f9
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -134,7 +138,7 @@ ActiveRecord::Schema.define(version: 20191106052353) do
   end
 
   create_table "resumetrancerecs", force: :cascade do |t|
-    t.integer "resume_id"
+    t.integer "rirekisyo_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

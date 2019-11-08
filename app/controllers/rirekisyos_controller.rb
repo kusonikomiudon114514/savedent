@@ -62,6 +62,19 @@ class RirekisyosController < ApplicationController
   end
 
   def tenso
+    @okuru = params[:id]
+  end
+
+  def tensosave
+    @resumetrancerec = Resumetrancerec.new
+    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_teacher]
+    @resumetrancerec.user_id     = params[:tenso][:select_rirekisyo]
+
+     if @resumetrancerec.save
+      redirect_to rirekisyos_path
+     else
+      render :tenso
+     end
   end
 
   private

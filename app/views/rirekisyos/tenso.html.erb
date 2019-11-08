@@ -1,5 +1,13 @@
 <h1>     転送先の先生を選ぶ      </h1>
 
+<%= form_tag('/tenso_save') do %>
+    <p>
+       名前
+    <br>
+    <%= select_tag('tenso[select_teacher]',options_for_select(Teacher.all.map { |teacher| [teacher.user.students[0].name,teacher.user_id]}))%> <%= submit_tag '送信' %> 
+    <%= hidden_field_tag 'tenso[select_rirekisyo]',@okuru %>
+    </p>
+<% end %>    
 
 
 <%= link_to '戻る', rirekisyos_path %>

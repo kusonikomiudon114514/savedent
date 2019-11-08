@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :rirekisyos
   get 'rirekisyo_tenso', to: 'rirekisyos#tenso'
   get 'home/top'
+  post 'tenso_save',to: 'rirekisyos#tensosave'
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
