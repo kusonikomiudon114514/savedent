@@ -93,12 +93,6 @@
     <%= form.number_field :zikan_ippann, id: :reportjob_zikan_ippann %>
   </div>
 
-
-  <div class="field">
-    <%= form.label :試験科目 %>
-    <%= form.select :subject_id, Subject.all.map {|r| [r.name,r.id] } %>
-  </div>
-
   <div class="field">
     <%= form.label :国語・時間 %>
     <%= form.number_field :zikan_japanese, id: :reportjob_zikan_japanese %>

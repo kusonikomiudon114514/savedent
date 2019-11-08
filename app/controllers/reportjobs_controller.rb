@@ -65,14 +65,25 @@ class ReportjobsController < ApplicationController
   end
 
   def field_search
-   @reportjobs = Reportjob.all
 
    if params[:search][:field].present?
      @reportjobs = Reportjob.where(user_id: current_user.id).order(created_at: :desc)
+     @reportjobs = @reportjobs.where(field_id: params[:search][:field])
     else
      @reportjobs = Reportjob.all
     end
    render :index
+  end
+
+  def zigyousyo_search
+
+    if params[:search][:zigyousyo].present?
+      @reportjobs = Reportjob.where(user_id: current_user.id).order(created_at: :desc)
+      @reportjobs = @reportjobs.where(zigyousyo: params[:search][:zigyousyo])
+     else
+      @reportjobs = Reportjob.all
+     end
+    render :index
   end
 
   private

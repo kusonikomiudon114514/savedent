@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   get 'home/top'
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
+  get '/reportjobs_field_search',to:'reportjobs#index'
+ 
+  post '/reportjobs_zigyousyo_search',to:'reportjobs#zigyousyo_search'
+  get '/reportjobs_zigyousyo_search',to:'reportjobs#index'
+
+  post '/reportjobs_field_search',to:'reportjobs#field_search'
+  get '/reportjobs_field_search',to:'reportjobs#index'
 
   devise_for :users
   resources :teachers

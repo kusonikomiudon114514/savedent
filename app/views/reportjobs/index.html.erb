@@ -10,11 +10,11 @@
   </p>
 <% end %> 
 
-<%= form_tag('/books_search') do %>
+<%= form_tag('/reportjobs_zigyousyo_search') do %>
   <p>
-  事業所
+  事業所(完全一致)
   <br>
-  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  <%= text_field_tag 'search[zigyousyo]' %><%= submit_tag '検索' %>
   </p>
 <% end %> 
 
@@ -74,7 +74,7 @@
         <td><%= reportjob.status %></td>
         <td><%= reportjob.user_id %></td>
         <td><%= reportjob.day %></td>
-        <td><%= reportjob.syokusyu %></td>
+        <td><%= reportjob.field.name %></td>
         <td><%= reportjob.zigyousyo %></td>
         <td><%= reportjob.mediation_id %></td>
         <td><%= reportjob.syozaiti %></td>
@@ -88,7 +88,7 @@
         <td><%= reportjob.sakubun %></td>
 
 
-        <td><%= reportjob.subject_id %></td>
+        <td><%= reportjob.subject %></td>
         <td><%= reportjob.zikan_japanese %></td>
         <td><%= reportjob.zikan_math %></td>
         <td><%= reportjob.zikan_social %></td>
