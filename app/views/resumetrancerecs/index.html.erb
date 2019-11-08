@@ -14,7 +14,7 @@
   <tbody>
     <% @resumetrancerecs.each do |resumetrancerec| %>
       <tr>
-        <td><%= resumetrancerec.resume_id %></td>
+        <td><%= resumetrancerec.rirekisyo_id %></td>
         <td><%= resumetrancerec.user_id %></td>
         <td><%= link_to '詳細', resumetrancerec %></td>
         <td><%= link_to '編集', edit_resumetrancerec_path(resumetrancerec) %></td>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :rirekisyos
   get 'rirekisyo_tenso', to: 'rirekisyos#tenso'
   get 'home/top'
+  post 'tenso_save',to: 'rirekisyos#tensosave'
 
   devise_for :users
   resources :teachers
