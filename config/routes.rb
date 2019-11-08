@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'home/top'
   post 'tenso_save',to: 'rirekisyos#tensosave'
 
+  post '/reportjobs_field_search',to:'reportjobs#field_search'
+
   devise_for :users
   resources :teachers
   resources :resumetrancerecs
