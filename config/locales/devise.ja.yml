@@ -3,15 +3,15 @@
 ja:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "あなたのメールアドレスは正常に確認されました"
+      send_instructions: "数分後にあなたのメールアドレスを確認する方法の手順を記載したメールが届きます"
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "ログインしてあります"
-      inactive: "Your account is not activated yet."
+      inactive: "アカウントはまだ有効化されていません"
       invalid: "Invalid %{authentication_keys} or password."
       locked: "あなたのアカウントはロックされています"
-      last_attempt: "You have one more attempt before your account is locked."
+      last_attempt: "アカウントがロックされる前にもう1回試行されます"
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "もう一度サインインして下さい"
       unauthenticated: "ログインしてください"
@@ -24,7 +24,7 @@ ja:
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
-        subject: "Email Changed"
+        subject: "Email の変更"
       password_change:
         subject: "Password Changed"
     omniauth_callbacks:

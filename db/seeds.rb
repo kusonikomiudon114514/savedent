@@ -130,3 +130,11 @@ Type.create(name:"４年制大学")
 Type.create(name:"短期大学")
 Type.create(name:"専門学校")
 
+Subject.delete_all
+Subject.connection.execute("delete from sqlite_sequence where name= 'subjects' ")
+Subject.create(name:"国語")
+Subject.create(name:"数学")
+Subject.create(name:"英語")
+Subject.create(name:"理科")
+Subject.create(name:"社会")
+Subject.create(name:"一般教養")
