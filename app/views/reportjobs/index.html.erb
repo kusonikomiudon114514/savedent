@@ -18,14 +18,6 @@
   </p>
 <% end %> 
 
-<%= form_tag('/books_search') do %>
-  <p>
-  検索(部分一致)
-  <br>
-  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
-  </p>
-<% end %> 
-
 <table>
   <thead>
     <tr>
@@ -70,7 +62,7 @@
 
         <td><%= reportjob.zikan_ithihi %></td>
         <td><%= reportjob.zikan_ithite %></td>
-        <td><%= reportjob.naiyou %></td>
+       
 
         <td><%= reportjob.interview.name %></td>
         <td><%= reportjob.iin %></td>
