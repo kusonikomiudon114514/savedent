@@ -2,11 +2,30 @@
 
 <h1>入学試験受験報告書</h1>
 
+<%= form_tag('/reportschools_localname1_search') do %>
+  <p>
+  地方
+  <br>
+  <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
+  <%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+<%= form_tag('/reportschools_localname2_search') do %>
+  <p>
+  地域
+  <br>
+  <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
+  <%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
+
 <%= form_tag('/reportschools_place_search') do %>
   <p>
-  地方・都道府県
+  都道府県
   <br>
-  <%= text_field_tag 'search[place]' , session[:search_place]%>
+  <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
   <%= submit_tag '検索' %>
   </p>
 <% end %> 
@@ -15,7 +34,7 @@
   <p>
   学校種
   <br>
-  <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } ,0) , include_blank:true %>
+  <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
   <%= submit_tag '検索' %>
   </p>
 <% end %> 
@@ -24,7 +43,7 @@
   <p>
   分野別
   <br>
-  <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , 0) , include_blank:true%>
+  <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , {:selected => session[:search_field]}) , include_blank:true%>
   <%= submit_tag '検索' %>
   </p>
 <% end %> 
