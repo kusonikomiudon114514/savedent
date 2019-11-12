@@ -10,11 +10,11 @@
   </p>
 <% end %> 
 
-<%= form_tag('/books_search') do %>
+<%= form_tag('/reportjobs_zigyousyo_search') do %>
   <p>
-  事業所
+  事業所(完全一致)
   <br>
-  <%= text_field_tag 'search[title]' %><%= submit_tag '検索' %>
+  <%= text_field_tag 'search[zigyousyo]' %><%= submit_tag '検索' %>
   </p>
 <% end %> 
 
@@ -39,27 +39,15 @@
       <th>試験会場</th>
       <th>受験者数</th>
 
-      <th>筆記</th>
       <th>筆記・時間</th>
-      <th>適性</th>
       <th>適性・時間</th>
-      <th>面接</th>
-      <th>面接・時間</th>
-      <th>作文</th>
-      <th>一般常識</th>
-      <th>一般常識・時間</th>
-
-      <th>試験科目</th>
-      <th>国語・時間</th>
-      <th>数学・時間</th>
-      <th>社会・時間</th>
-      <th>英語・時間</th>
+      <th>試験内容</th>
       
-      <th>面接</th>
+      <th>面接方法</th>
       <th>面接委員(人)</th>
       <th>面接時間</th>
       <th>質問内容</th>
-      <th>面接その他</th>
+
       <th>作文の題</th>
       <th>文章量</th>
       <th>その他</th>
@@ -73,40 +61,26 @@
         <td><%= reportjob.status %></td>
         <td><%= reportjob.user_id %></td>
         <td><%= reportjob.day %></td>
-        <td><%= reportjob.syokusyu %></td>
+        <td><%= reportjob.field.name %></td>
         <td><%= reportjob.zigyousyo %></td>
-        <td><%= reportjob.mediation_id %></td>
+        <td><%= reportjob.mediation.name %></td>
         <td><%= reportjob.syozaiti %></td>
         <td><%= reportjob.shikennzyou %></td>
         <td><%= reportjob.zyukennsyasuu %></td>
-        <td><%= reportjob.ithizi_hikki %></td>
-        <td><%= reportjob.ithizi_tekisei %></td>
-        <td><%= reportjob.ithizi_mensetsu %></td>
+
         <td><%= reportjob.zikan_ithihi %></td>
-        <td><%= reportjob.zikan_ithime %></td>
-        <td><%= reportjob.zikan_ithisa %></td>
-        <td><%= reportjob.nizi_hikki %></td>
-        <td><%= reportjob.nizi_tekisei %></td>
-        <td><%= reportjob.nizi_mennsetsu %></td>
-        <td><%= reportjob.zikan_nihi %></td>
-        <td><%= reportjob.zikan_nite %></td>
-        <td><%= reportjob.zikan_nime %></td>
-        <td><%= reportjob.zikan_nisa %></td>
-        <td><%= reportjob.subject_id %></td>
-        <td><%= reportjob.zikan_japanese %></td>
-        <td><%= reportjob.zikan_math %></td>
-        <td><%= reportjob.zikan_social %></td>
-        <td><%= reportjob.zikan_english %></td>
-        <td><%= reportjob.zikan_ippann %></td>
-        <td><%= reportjob.zikan_tekisei %></td>
-        <td><%= reportjob.interview_id %></td>
+        <td><%= reportjob.zikan_ithite %></td>
+        <td><%= reportjob.naiyou %></td>
+
+        <td><%= reportjob.interview.name %></td>
         <td><%= reportjob.iin %></td>
         <td><%= reportjob.zikan_mensetsu %></td>
         <td><%= reportjob.shitsumon %></td>
-        <td><%= reportjob.mensetsusonota %></td>
-        <td><%= reportjob.sakubun %></td>
+
+        <td><%= reportjob.zikan_ithisa %></td>
         <td><%= reportjob.bunnsyouryou %></td>
         <td><%= reportjob.other %></td>
+
         <td><%= link_to '詳細', reportjob %></td>
         <td><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
         <td><%= link_to '削除', reportjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>

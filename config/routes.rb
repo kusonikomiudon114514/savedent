@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subjects
   get 'mensetu/top'
 
   get 'reportmenu/menu'
@@ -11,7 +12,29 @@ Rails.application.routes.draw do
   post 'tenso_save',to: 'rirekisyos#tensosave'
   get 'home/sensei' 
 
+  post '/reportschools_place_search',to:'reportschools#place_search'							
+  get '/reportschools_place_search',to:'reportschools#index'																										
+  post '/reportschools_place_search',to:'reportschools#place_search'
+
+  post '/reportschools_type_search',to:'reportschools#type_search'							
+  get '/reportschools_type_search',to:'reportschools#index'																										
+  post '/reportschools_type_search',to:'reportschools#type_search'
+
+  post '/reportschools_field_search',to:'reportschools#field_search'							
+  get '/reportschools_field_search',to:'reportschools#index'																										
+  post '/reportschools_field_search',to:'reportschools#field_search'
+
+  post '/reportschools_search',to:'reportschools#search'							
+  get '/reportschools_search',to:'reportschools#index'																										
+  post '/reportschools_search',to:'reportschools#search'
   post '/reportjobs_field_search',to:'reportjobs#field_search'
+  get '/reportjobs_field_search',to:'reportjobs#index'
+ 
+  post '/reportjobs_zigyousyo_search',to:'reportjobs#zigyousyo_search'
+  get '/reportjobs_zigyousyo_search',to:'reportjobs#index'
+
+  post '/reportjobs_field_search',to:'reportjobs#field_search'
+  get '/reportjobs_field_search',to:'reportjobs#index'
 
   devise_for :users
   resources :teachers

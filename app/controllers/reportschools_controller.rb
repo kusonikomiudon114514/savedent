@@ -62,6 +62,52 @@ end
     end
   end
 
+  def place_search																																																				
+    if params[:search][:place].present?
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%'")
+      session[:search_place] = params[:search][:place]
+    else																										
+      @reportschools = Reportschool.all	
+      session[:search_place] = params[:search][:place]
+    end																										
+     render :index																										
+  end					
+
+  def type_search																																																				
+    if params[:search][:type].present?
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = @reportschools.where(type_id: params[:search][:type])
+      session[:search_type] = params[:search][:type]
+    else																										
+      @reportschools = Reportschool.all																										
+      session[:search_type] = params[:search][:type]
+    end																										
+     render :index																										
+  end					
+
+  def field_search																																																				
+    if params[:search][:field].present?
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = @reportschools.where(field_id: params[:search][:field])
+    else																										
+      @reportschools = Reportschool.all		
+    end																										
+     render :index																										
+  end					
+
+  def search																																																				
+    if params[:search][:gakkou].present?
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = @reportschools.where("gakkou like '%" + params[:search][:gakkou] + "%'")
+      session[:search_gakkou] = params[:search][:gakkou]
+    else																										
+      @reportschools = Reportschool.all								
+      session[search_gakkou] = nil				
+    end																										
+     render :index																										
+  end					
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reportschool

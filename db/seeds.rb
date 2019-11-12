@@ -19,6 +19,7 @@ Mediation.create(name: "その他")
 
 Recommended.delete_all
 Recommended.connection.execute("delete from sqlite_sequence where name= 'recommendeds' ")
+Recommended.create(name:"ー")
 Recommended.create(name:"書類選考のみ")
 Recommended.create(name:"書類選考＋面接")
 Recommended.create(name:"書類選考＋面接＋試験")
@@ -129,3 +130,11 @@ Type.create(name:"４年制大学")
 Type.create(name:"短期大学")
 Type.create(name:"専門学校")
 
+Subject.delete_all
+Subject.connection.execute("delete from sqlite_sequence where name= 'subjects' ")
+Subject.create(name:"国語")
+Subject.create(name:"数学")
+Subject.create(name:"英語")
+Subject.create(name:"理科")
+Subject.create(name:"社会")
+Subject.create(name:"一般教養")
