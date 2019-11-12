@@ -21,6 +21,9 @@ class RirekisyosController < ApplicationController
   def edit
   end
 
+  def sensei
+    
+  end
   # POST /rirekisyos
   # POST /rirekisyos.json
   def create

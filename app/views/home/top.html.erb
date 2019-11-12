@@ -2,3 +2,24 @@
  <%= link_to '受験報告書',reportmenu_menu_path %></p></h1>
 <p>           <a href = ''><%= link_to '面接',mensetu_top_path %></a>
 <a href = ''>メモ</a></p></h1>
+
+<h3>届いたメール</h3>
+
+<table border="1">
+       <tr>
+        <th>報告書ID</th>
+        <th>名前</th>
+        <th>タイトル</th>
+        <th>登録日時</th>
+       </tr>
+
+  <% @resumetrancerecs.each do |resumetrancerec| %>
+    <tr>
+     <td><%= resumetrancerec.rirekisyo_id %></td>
+     <td><%= resumetrancerec.user.students[0].name %></td>
+     <td><%= link_to resumetrancerec.rirekisyo.title,home_sensei_path(id: resumetrancerec.rirekisyo_id) %></td>
+     <td><%= resumetrancerec.created_at %></td>
+
+    </tr>
+  <% end %>
+</table>
