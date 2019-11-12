@@ -71,10 +71,7 @@
     <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] } %>
   </div>
 
-  <div class="field">
-    <%= form.label :問題の内容 %>
-    <%= form.text_area :detail, id: :reportschool_detail %>
-  </div>
+  <h2>一般入試</h2>
 
   <div class="field">
     <%= form.label :国語（分） %>
@@ -100,6 +97,13 @@
     <%= form.label :英語（分） %>
     <%= form.number_field :english, id: :reportschool_english %>
   </div>
+
+  <div class="field">
+    <%= form.label :問題の内容 %>
+    <%= form.text_area :detail, id: :reportschool_detail %>
+  </div>
+
+  <h2>推薦入試</h2>
 
   <div class="field">
     <%= form.label :形態 %>

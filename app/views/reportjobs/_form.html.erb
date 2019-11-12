@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-    
+
    <div class="field">
     <%= form.label :状態 %>
     <%= form.number_field :status, id: :reportjob_status %>
@@ -43,13 +43,23 @@
   
 
   <div class="field">
-    <%= form.label :試験場 %>
+    <%= form.label :試験会場 %>
     <%= form.text_field :shikennzyou, id: :reportjob_shikennzyou %>
   </div>
 
   <div class="field">
     <%= form.label :受験者数 %>
     <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :筆記 %>
+    <%= form.check_box :hikki, id: :reportjob_hikki %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :筆記・時間 %>
+    <%= form.text_field :zikan_hikki, id: :reportjob_zikan_hikki %>
   </div>
 
   <div class="field">
@@ -63,16 +73,6 @@
 </div>
 
   <div class="field">
-    <%= form.label :筆記 %>
-    <%= form.check_box :hikki, id: :reportjob_hikki %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :筆記・時間 %>
-    <%= form.text_field :zikan_hikki, id: :reportjob_zikan_hikki %>
-  </div>
-
-  <div class="field">
     <%= form.label :面接 %>
     <%= form.check_box :mensetsu, id: :reportjob_mensetsu %>
   </div>
@@ -83,41 +83,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :一般常識 %>
-    <%= form.check_box :ippann, id: :reportjob_ippann %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :一般常識・時間 %>
+    <%= form.label :教養・時間 %>
     <%= form.number_field :zikan_ippann, id: :reportjob_zikan_ippann %>
   </div>
 
-
   <div class="field">
-    <%= form.label :試験科目 %>
-    <%= form.number_field :subject_id, id: :reportjob_subject_id %>
+    <%= form.label :筆記試験内容 %>
+    <%= form.text_area :naiyou, id: :reportjob_naiyou %>
   </div>
-
-  <div class="field">
-    <%= form.label :国語・時間 %>
-    <%= form.number_field :zikan_japanese, id: :reportjob_zikan_japanese %>
-  </div>
-
-  <div class="field">
-    <%= form.label :数学・時間 %>
-    <%= form.number_field :zikan_math, id: :reportjob_zikan_math %>
-  </div>
-
-  <div class="field">
-    <%= form.label :社会・時間 %>
-    <%= form.number_field :zikan_social, id: :reportjob_zikan_social %>
-  </div>
-
-  <div class="field">
-    <%= form.label :英語・時間 %>
-    <%= form.number_field :zikan_english, id: :reportjob_zikan_english %>
-  </div>    
 
   <div class="field">
     <%= form.label :面接方法 %>
