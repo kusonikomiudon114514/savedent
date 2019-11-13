@@ -6,11 +6,16 @@ class ReportschoolsController < ApplicationController
   def index
 #   @reportschools = Reportschool.all
     @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+    @schoollogs = Rslog.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /reportschools/1
   # GET /reportschools/1.json
   def show
+    rslog = Rslog.new
+    rslog.user_id = current_user.id
+    rslog.reportschool_id = params[:id]
+    rslog.save
   end
 
   # GET /reportschools/new

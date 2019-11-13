@@ -57,7 +57,7 @@
   </p>
 <% end %> 
 
-<h1>報告書作成履歴</h1>
+<h1>入学試験報告書作成履歴</h1>
 
 <table>
   <thead>
@@ -100,16 +100,32 @@
 
 <h1>閲覧履歴</h1>
 <table>
-<thead>
-<tr>
-  <th>状況</th>
-  <th>学校種</th>
-  <th>分野</th>
-  <th>学校名</th>
-  <th>学部</th>
-  <th>学科</th>
-  <th>コース</th>
-  <th colspan="3"></th>
-</tr>
-</thead>
+  <thead>
+    <tr>
+      <th>状況</th>
+      <th>学校種</th>
+      <th>分野</th>
+      <th>学校名</th>
+      <th>学部</th>
+      <th>学科</th>
+      <th>コース</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schoollogs.each do |schoollog| %>
+      <tr>
+        <td><%= schoollog.reportschool.status %></td>
+        <td><%= schoollog.reportschool.type.name %></td>
+        <td><%= schoollog.reportschool.field.name %></td>
+        <td><%= schoollog.reportschool.gakkou %></td>
+        <td><%= schoollog.reportschool.gakubu %></td>
+        <td><%= schoollog.reportschool.gakka %></td>
+        <td><%= schoollog.reportschool.course %></td>
+        <td><%= link_to '詳細', schoollog %></td>
+        <td><%= link_to '編集', edit_reportschool_path(schoollog) %></td>
+        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
