@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :ユーザーＩＤ %>
-    <%= form.number_field :user_id, id: :memo_user_id %>
+    <%= form.label :タイトル %>
+    <%= form.text_field :title, id: :memo_title %>
   </div>
-
+  
   <div class="field">
     <%= form.label :内容 %>
     <%= form.text_area :content, id: :memo_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :タイトル %>
-    <%= form.text_field :title, id: :memo_title %>
   </div>
 
   <div class="field">

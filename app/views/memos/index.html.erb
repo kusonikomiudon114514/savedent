@@ -5,9 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>ユーザー</th>
-      <th>内容</th>
       <th>タイトル</th>
+      <th>更新日</th>
       <th>大事なメモ</th>
       <th colspan="3"></th>
     </tr>
@@ -16,9 +15,8 @@
   <tbody>
     <% @memos.each do |memo| %>
       <tr>
-        <td><%= memo.user_id %></td>
-        <td><%= memo.content %></td>
         <td><%= memo.title %></td>
+        <td><%= memo.updated_at %></td>
         <td><%= memo.important %></td>
         <td><%= link_to '詳細', memo %></td>
         <td><%= link_to '編集', edit_memo_path(memo) %></td>
