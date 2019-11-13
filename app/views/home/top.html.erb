@@ -1,6 +1,7 @@
-<h1><p><a href = ''>履歴書</a>
+<h1><p><%= link_to '履歴書',rirekisyos_path %>
  <%= link_to '受験報告書',reportmenu_menu_path %></p></h1>
 <p>           <a href = ''><%= link_to '面接',mensetu_top_path %></a>
+<%= link_to 'メモ',memos_path %></p></h1>
 <a href = ''>メモ</a></p></h1>
     <%if @sensei == false %>
      
@@ -28,4 +29,17 @@
 
 
 
+<<<<<<< HEAD
 </table>
+=======
+  <% @resumetrancerecs.each do |resumetrancerec| %>
+    <tr>
+     <td><%= resumetrancerec.rirekisyo_id %></td>
+     <td><%= resumetrancerec.user.students[0].name %></td>
+     <td><%= link_to resumetrancerec.rirekisyo.title,home_sensei_path(id: resumetrancerec.rirekisyo_id) %></td>
+     <td><%= resumetrancerec.created_at %></td>
+
+    </tr>
+  <% end %>
+</table>
+>>>>>>> fa50b5c99a968369ddb2b472d74efa347c6b9df3

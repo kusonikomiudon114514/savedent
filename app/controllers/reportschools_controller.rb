@@ -6,7 +6,7 @@ class ReportschoolsController < ApplicationController
   def index
 #   @reportschools = Reportschool.all
     @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
-end
+  end
 
   # GET /reportschools/1
   # GET /reportschools/1.json
@@ -62,7 +62,51 @@ end
     end
   end
 
-  def place_search																																																				
+  def localname1_search																																																				
+    if params[:search][:localname1].present?
+      condition_localname1 = params[:search][:localname1]
+      places = Place.where(localname1: condition_localname1)
+      condition = ""
+      places.each_with_index do |p, i|
+        if i != 0
+          condition = condition + " or "
+        end
+        condition = condition + "syozaichi = '" + p.todohuken + "'"
+      end
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+#      @reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%' ")
+      @reportschools = @reportschools.where(condition)
+
+      session[:search_localname1] = params[:search][:localname1]
+    else																										
+      @reportschools = Reportschool.all	
+      session[:search_localname1] = nil
+    end																										
+     render :index																										
+  end					
+
+  def localname2_search																																																				
+    if params[:search][:localname2].present?
+      condition_localname2 = params[:search][:localname2]
+      places = Place.where(localname2: condition_localname2)
+      condition = ""
+      places.each_with_index do |p, i|
+        if i != 0
+          condition = condition + " or "
+        end
+        condition = condition + "syozaichi = '" + p.todohuken + "'"
+      end
+      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = @reportschools.where(condition)
+      session[:search_localname2] = params[:search][:localname2]
+    else																										
+      @reportschools = Reportschool.all	
+      session[:search_localname2] = nil
+    end																										
+     render :index																										
+  end					
+
+  def place_search							
     if params[:search][:place].present?
       @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
       @reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%'")
@@ -90,8 +134,10 @@ end
     if params[:search][:field].present?
       @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
       @reportschools = @reportschools.where(field_id: params[:search][:field])
+      session[:search_field] = params[:search][:field]
     else																										
       @reportschools = Reportschool.all		
+      session[:search_field] = params[:search][:field]
     end																										
      render :index																										
   end					
@@ -103,7 +149,7 @@ end
       session[:search_gakkou] = params[:search][:gakkou]
     else																										
       @reportschools = Reportschool.all								
-      session[search_gakkou] = nil				
+      session[:search_gakkou] = nil		
     end																										
      render :index																										
   end					
