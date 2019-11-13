@@ -50,16 +50,16 @@ ja:
       signed_out: "サインアウトに成功しました"
       already_signed_out: "サインアウトに成功しました"
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "数分でアカウントのロックを解除する方法が記載されたメールが届きます"
+      send_paranoid_instructions: "アカウントが存在する場合、数分でロックを解除する方法を説明したメールが届きます"
+      unlocked: "アカウントは正常にロック解除されました。続行するにはサインインしてください"
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
+      already_confirmed: "すでにサインインされています"
+      confirmation_period_expired: "以内に確認する必要があります %{period} ,新しいものをリクエストしてください"
+      expired: "有効期限が切れています。新しいものをリクエストしてください"
+      not_found: "見つかりません"
       not_locked: "はロックされていません"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
+        one: "１つのエラーにより %{resource}の保存が禁止されました"
         other: "%{count} errors prohibited this %{resource} from being saved:"
