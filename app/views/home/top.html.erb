@@ -29,17 +29,4 @@
 
 
 
-<<<<<<< HEAD
 </table>
-=======
-  <% @resumetrancerecs.each do |resumetrancerec| %>
-    <tr>
-     <td><%= resumetrancerec.rirekisyo_id %></td>
-     <td><%= resumetrancerec.user.students[0].name %></td>
-     <td><%= link_to resumetrancerec.rirekisyo.title,home_sensei_path(id: resumetrancerec.rirekisyo_id) %></td>
-     <td><%= resumetrancerec.created_at %></td>
-
-    </tr>
-  <% end %>
-</table>
->>>>>>> fa50b5c99a968369ddb2b472d74efa347c6b9df3
