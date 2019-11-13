@@ -16,7 +16,7 @@
     <% @memos.each do |memo| %>
       <tr>
         <td><%= memo.title %></td>
-        <td><%= memo.created_at %></td>
+        <td><%= memo.updated_at %></td>
         <td><%= memo.important %></td>
         <td><%= link_to '詳細', memo %></td>
         <td><%= link_to '編集', edit_memo_path(memo) %></td>
