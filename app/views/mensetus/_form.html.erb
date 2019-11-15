@@ -1,0 +1,27 @@
+<%= form_with(model: mensetu, local: true) do |form| %>
+  <% if mensetu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mensetu.errors.count, "error") %> prohibited this mensetu from being saved:</h2>
+
+      <ul>
+      <% mensetu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :mensetu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time, id: :mensetu_start_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

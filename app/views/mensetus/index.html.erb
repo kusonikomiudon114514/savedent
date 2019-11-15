@@ -1,0 +1,59 @@
+<h1>面接練習サポートシステム</h1>
+
+<p>あなたの面接予定</p>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Mensetus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <%= month_calendar events: mensetus do |date, mensetus| %>
+    <%= date %>
+
+  <tbody>
+    <% @mensetus.each do |mensetu| %>
+      <tr>
+        <td><%= mensetu.name %></td>
+        <td><%= mensetu.start_time %></td>
+        <td><%= link_to 'Show', mensetu %></td>
+        <td><%= link_to 'Edit', edit_mensetu_path(mensetu) %></td>
+        <td><%= link_to 'Destroy', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mensetu', new_mensetu_path %>
+
+<p>面接OKの先生</p>
+ <%= form_tag('/reportjobs_zigyousyo_search') do %>
+  <%= submit_tag '検索' %>
+ <% end %>
+
+
+
+<p>予約状況</p>
+<%= form_tag('/reportjobs_zigyousyo_search') do %>
+    <%= submit_tag '検索' %>
+   <% end %>
+
+<p>確認中</p>
+<%= form_tag('/reportjobs_zigyousyo_search') do %>
+    <%= submit_tag '検索' %>
+   <% end %>
+<br><br>
+
+<p>生徒用掲示板</p>
+ <p>・</p>
+ <p>・</p>
+ <p>・</p>

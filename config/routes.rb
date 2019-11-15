@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mensetus
   resources :subjects
   get 'mensetu/top'
 
