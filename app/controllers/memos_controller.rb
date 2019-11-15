@@ -25,7 +25,7 @@ class MemosController < ApplicationController
   # POST /memos.json
   def create
     @memo = Memo.new(memo_params)
-
+    @memo.user_id=current_user.id
     respond_to do |format|
       if @memo.save
         format.html { redirect_to @memo, notice: 'Memo was successfully created.' }
@@ -41,6 +41,7 @@ class MemosController < ApplicationController
   # PATCH/PUT /memos/1.json
   def update
     respond_to do |format|
+ 
       if @memo.update(memo_params)
         format.html { redirect_to @memo, notice: 'Memo was successfully updated.' }
         format.json { render :show, status: :ok, location: @memo }

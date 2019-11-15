@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>入学試験報告書履歴</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>利用者</th>
+      <th>報告書</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rslogs.each do |rslog| %>
+      <tr>
+        <td><%= rslog.user_id %></td>
+        <td><%= rslog.reportschool_id %></td>
+        <td><%= link_to '詳細', rslog %></td>
+        <td><%= link_to '編集', edit_rslog_path(rslog) %></td>
+        <td><%= link_to '削除', rslog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規作成', new_rslog_path %>
