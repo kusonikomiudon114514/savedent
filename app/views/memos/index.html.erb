@@ -20,7 +20,7 @@
         <td><%= memo.important %></td>
         <td><%= link_to '詳細', memo %></td>
         <td><%= link_to '編集', edit_memo_path(memo) %></td>
-        <td><%= link_to '削除', memo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', memo, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>

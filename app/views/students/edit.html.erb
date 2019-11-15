@@ -2,5 +2,6 @@
 
 <%= render 'form', student: @student %>
 
-<%= link_to '閲覧', @student %> |
-<%= link_to '戻る', students_path %>
+<%= link_to '閲覧', @student %> 
+<%= link_to '戻る', students_path,data: { confirm: "本当に戻りますか？更新する場合はキャンセルを押してください。" } %></td>
+

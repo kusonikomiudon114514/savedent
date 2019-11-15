@@ -2,5 +2,6 @@
 
 <%= render 'form', memo: @memo %>
 
-<%= link_to '詳細', @memo %> |
-<%= link_to '戻る', memos_path %>
+<%= link_to '詳細', @memo %> 
+<%= link_to '戻る', memos_path,data: { confirm: "本当に戻りますか？更新する場合はキャンセルを押してください" } %></td>
+
