@@ -1,0 +1,27 @@
+<%= form_with(model: rslog, local: true) do |form| %>
+  <% if rslog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rslog.errors.count, "error") %> prohibited this rslog from being saved:</h2>
+
+      <ul>
+      <% rslog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :生徒 %>
+    <%= form.number_field :user_id, id: :rslog_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :報告書 %>
+    <%= form.number_field :reportschool_id, id: :rslog_reportschool_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

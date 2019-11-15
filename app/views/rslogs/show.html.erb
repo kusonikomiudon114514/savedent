@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>利用者:</strong>
+  <%= @rslog.user_id %>
+</p>
+
+<p>
+  <strong>報告書:</strong>
+  <%= @rslog.reportschool_id %>
+</p>
+
+<%= link_to '編集', edit_rslog_path(@rslog) %> |
+<%= link_to '戻る', rslogs_path %>
