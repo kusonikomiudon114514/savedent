@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20191112045436) do
   end
 
   create_table "mensetus", force: :cascade do |t|
+    t.integer "status"
     t.string "name"
     t.datetime "start_time"
     t.datetime "created_at", null: false

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status_id, id: :mensetu_status, Status.all.map {|r| [r.name,r.id] }  %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :mensetu_name %>
   </div>

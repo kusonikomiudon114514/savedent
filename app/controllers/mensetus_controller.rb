@@ -4,7 +4,7 @@ class MensetusController < ApplicationController
   # GET /mensetus
   # GET /mensetus.json
   def index
-    @mensetus = Mensetu.all
+    @mensetus = Mensetu.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /mensetus/1
@@ -25,6 +25,8 @@ class MensetusController < ApplicationController
   # POST /mensetus.json
   def create
     @mensetu = Mensetu.new(mensetu_params)
+    #@mensetu.user_id=current_user.id
+    @mensetu.status = 0
 
     respond_to do |format|
       if @mensetu.save
@@ -61,14 +63,24 @@ class MensetusController < ApplicationController
     end
   end
 
+  def status_search
+    if params[:search][:status].present?
+      @mensetus = Mensetu.where(status: current_user.id).order(created_at: :desc)
+      @mensetus = @mensetus.where(status: params[:search][:status])
+     else
+      @mensetus = Mensetu.all
+    end
+    render :index
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+   #  Use callbacks to share common setup or constraints between actions.
     def set_mensetu
       @mensetu = Mensetu.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mensetu_params
-      params.require(:mensetu).permit(:name, :start_time)
+      params.require(:mensetu).permit(:name, :start_time, :status)
     end
 end

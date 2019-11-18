@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
 
+  post '/mensetus_status_search',to:'mensetus#status_search'
+  get '/mensetus_status_search',to:'mensetus#index'
+
   devise_for :users
   resources :teachers
   resources :resumetrancerecs
