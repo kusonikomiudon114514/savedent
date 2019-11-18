@@ -41,4 +41,9 @@
 }
 
 table, td, th { vertical-align: middle; border: none; }
- 
+
+.haikei1 { 
+    height: 250px;                  /* 高さ指定 */
+    padding:  20px;                 /* 余白指定 */
+    background-color: powderblue;   /* 背景色指定 */
+}
