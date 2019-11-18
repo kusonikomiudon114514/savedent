@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Status:</strong>
+  <%= @mensetu.status %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mensetu.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @mensetu.start_time %>
+</p>
+
+<%= link_to 'Edit', edit_mensetu_path(@mensetu) %> |
+<%= link_to 'Back', mensetus_path %>

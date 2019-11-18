@@ -6,10 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    
+    </head>
 
   <body>
-  <div class="container">
+  <div class="container-fluid">
     <h1>Savedent</h1>
     <header>
       <nav>
@@ -38,12 +39,12 @@
     <div class="row">
       <div class="col-md-2">
       <div class="box22">
-      <p>
+      <ul>
         <li><%= link_to 'TOP',home_top_path %></li>
         <li><%= link_to '履歴書作成',rirekisyos_path %></li>
         <li><%= link_to '履歴書転送',resumetrancerecs_path %></li>
         <li><%= link_to '受験報告書',reportmenu_menu_path %></li>
-        <li><%= link_to '面接サポート',mensetu_top_path %></li>
+        <li><%= link_to '面接サポート',mensetus_path %></li>
         <li><%= link_to 'メモ', memos_path %></li>
         <li><%= link_to '入試形態', exams_path %></li>
         <li><%= link_to '面接方法',interviews_path %></li>
@@ -54,9 +55,10 @@
         <li><%= link_to '推薦形態', recommendeds_path %></li>
         <li><%= link_to '先生', teachers_path %></li>
         <li><%= link_to '利用者', students_path %></li>
-      </p>
+      </ul>
       </div>
-      </div>  
+      </div>
+
       <div class="col-md-10">
         <%= yield %> 
       </div>

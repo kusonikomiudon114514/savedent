@@ -61,3 +61,5 @@ gem 'jquery-turbolinks'
 gem 'rails-i18n'
 
 gem 'letter_opener'
+
+gem 'simple_calendar', '~> 2.0'
