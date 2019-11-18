@@ -17,7 +17,7 @@
       <tr>
         <td><%= memo.title %></td>
         <td><%= memo.updated_at %></td>
-        <td><%= memo.important %></td>
+        <td><%= check_box_tag :important, memo.important,memo.important %></td>
         <td><%= link_to '詳細', memo %></td>
         <td><%= link_to '編集', edit_memo_path(memo) %></td>
         <td><%= link_to '削除', memo, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
