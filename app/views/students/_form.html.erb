@@ -34,7 +34,7 @@
 
   <div class="field">
     <%= form.label :性別 %>
-    <%= form.text_field :seibetsu, id: :student_seibetsu %>
+    <%= form.select :seibetsu, ['女'], {include_blank: '男'}, class: 'seibetsu' %>
   </div>
 
   <div class="field">
@@ -94,7 +94,7 @@
 
   <div class="field">
     <%= form.label :学歴日付１ %>
-    <%= form.date_select :hiduke1,{:discard_day => true}  %>
+    <%= form.date_select :hiduke1, {:discard_day => true} %>
   </div>
 
   <div class="field">

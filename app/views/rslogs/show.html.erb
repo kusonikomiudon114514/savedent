@@ -1,128 +1,129 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>状況:</strong>
-  <%= @reportschool.status %>
+  <%= @rslog.reportschool.status %>
 </p>
 
 <p>
   <strong>生徒:</strong>
-  <%= @reportschool.user.students[0].name %>
+  <%= @rslog.reportschool.user.students[0].name %>
 </p>
 
 <p>
   <strong>学校種:</strong>
-  <%= @reportschool.type.name %>
+  <%= @rslog.reportschool.type.name %>
 </p>
 
 <p>
   <strong>分野:</strong>
-  <%= @reportschool.field.name %>
+  <%= @rslog.reportschool.field.name %>
 </p>
 
 <p>
   <strong>学校名:</strong>
-  <%= @reportschool.gakkou %>
+  <%= @rslog.reportschool.gakkou %>
 </p>
 
 <p>
   <strong>学部:</strong>
-  <%= @reportschool.gakubu %>
+  <%= @rslog.reportschool.gakubu %>
 </p>
 
 <p>
   <strong>学科:</strong>
-  <%= @reportschool.gakka %>
+  <%= @rslog.reportschool.gakka %>
 </p>
 
 <p>
   <strong>コース:</strong>
-  <%= @reportschool.course %>
+  <%= @rslog.reportschool.course %>
 </p>
 
 <p>
   <strong>所在地:</strong>
-  <%= @reportschool.syozaichi %>
+  <%= @rslog.reportschool.syozaichi %>
 </p>
 
 <p>
   <strong>試験場:</strong>
-  <%= @reportschool.shikennzyou %>
+  <%= @rslog.reportschool.shikennzyou %>
 </p>
 
 <p>
   <strong>合格発表:</strong>
-  <%= @reportschool.gokaku %>
+  <%= @rslog.reportschool.gokaku %>
 </p>
 
 <p>
   <strong>試験日:</strong>
-  <%= @reportschool.shikennbi %>
+  <%= @rslog.reportschool.shikennbi %>
 </p>
 
 <p>
   <strong>入試形態:</strong>
-  <%= @reportschool.exam.name %>
+  <%= @rslog.reportschool.exam.name %>
 </p>
 
 <h2>一般入試</h2>
 
 <p>
   <strong>国語（分）:</strong>
-  <%= @reportschool.japanese %>
+  <%= @rslog.reportschool.japanese %>
 </p>
 
 <p>
   <strong>数学（分）:</strong>
-  <%= @reportschool.math %>
+  <%= @rslog.reportschool.math %>
 </p>
 
 <p>
   <strong>社会（分）:</strong>
-  <%= @reportschool.social %>
+  <%= @rslog.reportschool.social %>
 </p>
 
 <p>
   <strong>理科（分）:</strong>
-  <%= @reportschool.science %>
+  <%= @rslog.reportschool.science %>
 </p>
 
 <p>
   <strong>英語（分）:</strong>
-  <%= @reportschool.english %>
+  <%= @rslog.reportschool.english %>
 </p>
 
 <p>
   <strong>問題の内容:</strong>
-  <%= @reportschool.detail %>
+  <%= @rslog.reportschool.detail %>
 </p>
 
 <h2>推薦入試</h2>
 
 <p>
   <strong>形態:</strong>
-  <%= @reportschool.recommended.name %>
+  <%= @rslog.reportschool.recommended.name %>
 </p>
 
 <p>
   <strong>面接 質問内容:</strong>
-  <%= @reportschool.mennsetsu %>
+  <%= @rslog.reportschool.mennsetsu %>
 </p>
 
 <p>
   <strong>小論文（作文）テーマ:</strong>
-  <%= @reportschool.syoronnbunn %>
+  <%= @rslog.reportschool.syoronnbunn %>
 </p>
 
 <p>
   <strong>試験内容:</strong>
-  <%= @reportschool.shikenn %>
+  <%= @rslog.reportschool.shikenn %>
 </p>
 
 <p>
   <strong>感想:</strong>
-  <%= @reportschool.kanso %>
+  <%= @rslog.reportschool.kanso %>
 </p>
 
-<%= link_to '編集', edit_reportschool_path(@reportschool) %> |
+<!--
+<%= link_to '編集', edit_rslog_path(@rslog) %> |
+-->
 <%= link_to '戻る', reportschools_path %>

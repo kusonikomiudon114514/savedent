@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>ユーザー:</strong>
-  <%= @memo.user_id %>
+  <strong>タイトル:</strong>
+  <%= @memo.title %>
 </p>
 
 <p>
@@ -11,14 +11,9 @@
 </p>
 
 <p>
-  <strong>タイトル:</strong>
-  <%= @memo.title %>
-</p>
-
-<p>
   <strong>大事なメモ:</strong>
   <%= @memo.important %>
 </p>
 
 <%= link_to '編集', edit_memo_path(@memo) %> |
-<%= link_to '戻る'', memos_path %>
+<%= link_to '戻る', memos_path %>

@@ -1,7 +1,7 @@
 <%= form_with(model: reportschool, local: true) do |form| %>
   <% if reportschool.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(reportschool.errors.count, "error") %> prohibited this reportschool from being saved:</h2>
+      <h2><%= pluralize(reportschool.errors.count,"") %> 項目記入してください</h2>
 
       <ul>
       <% reportschool.errors.full_messages.each do |message| %>
@@ -71,6 +71,8 @@
     <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] } %>
   </div>
 
+  <h2>一般入試</h2>
+
   <div class="field">
     <%= form.label :国語（分） %>
     <%= form.number_field :japanese, id: :reportschool_japanese %>
@@ -100,6 +102,8 @@
     <%= form.label :問題の内容 %>
     <%= form.text_area :detail, id: :reportschool_detail %>
   </div>
+
+  <h2>推薦入試</h2>
 
   <div class="field">
     <%= form.label :形態 %>

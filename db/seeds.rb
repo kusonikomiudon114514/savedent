@@ -19,6 +19,7 @@ Mediation.create(name: "その他")
 
 Recommended.delete_all
 Recommended.connection.execute("delete from sqlite_sequence where name= 'recommendeds' ")
+Recommended.create(name:"ー")
 Recommended.create(name:"書類選考のみ")
 Recommended.create(name:"書類選考＋面接")
 Recommended.create(name:"書類選考＋面接＋試験")
