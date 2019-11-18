@@ -4,72 +4,88 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>面接予定</h1>
+<%= link_to '面接予定追加', new_mensetu_path %>
 
-<%= month_calendar events: @mensetus do |date, mensetus| %>
-  <%= date %>
-<% end %>
-
+<p>面接OKの先生</p>
 <table>
   <thead>
     <tr>
+      <th>状況</th>
       <th>名前</th>
       <th>日時</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
-    <% @mensetus.each do |mensetu| %>
+    <% @mensetus_ok_teacher.each do |mensetu| %>
       <tr>
+        <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to 'Show', mensetu %></td>
-        <td><%= link_to 'Edit', edit_mensetu_path(mensetu) %></td>
-        <td><%= link_to 'Destroy', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '面接予定追加', new_mensetu_path %>
-
-<br><br>
-
-<p>面接OKの先生</p>
-<%= form_tag('/mensetus_status_search') do %>
-  <%= select_tag 'search[status]' , options_for_select(Status.all.map {|r| [r.name,r.id] }, ), include_blank: true %><%= submit_tag '検索' %>
- <% end %>
-
- <table>
- <thead>
-   <tr>
-     <th>Status</th>
-     <th>名前</th>
-     <th>日時</th>
-     <th colspan="3"></th>
-   </tr>
- </thead>
-
- <tbody>
-   <% @mensetus.each do |mensetu| %>
-     <tr>
-       <td><%= mensetu.status.name %></td>
-       <td><%= mensetu.name %></td>
-       <td><%= mensetu.start_time %></td>
-     </tr>
-   <% end %>
- </tbody>
+<p>確認中</p>
+<table>
+  <thead>
+    <tr>
+      <th>状況</th>
+      <th>名前</th>
+      <th>日時</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mensetus_kakunin_teacher.each do |mensetu| %>
+      <tr>
+        <td><%= mensetu.status %></td>
+        <td><%= mensetu.name %></td>
+        <td><%= mensetu.start_time %></td>
+        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <p>予約状況</p>
-
-<br><br>
-
-<p>確認中</p>
-
-<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>状況</th>
+      <th>名前</th>
+      <th>日時</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mensetus_yoyaku_teacher.each do |mensetu| %>
+      <tr>
+        <td><%= mensetu.status %></td>
+        <td><%= mensetu.name %></td>
+        <td><%= mensetu.start_time %></td>
+        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <p>生徒用掲示板</p>
- <p>・</p>
- <p>・</p>
- <p>・</p>
+ <p>
+ ・ <br>
+ ・ <br>
+ ・ <br>
+ </p>
+
+
+ <%= month_calendar events: @mensetus do |date, mensetus| %>
+  <%= date %>
+<% end %>

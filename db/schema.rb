@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20191112045436) do
     t.integer "status"
     t.string "name"
     t.datetime "start_time"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

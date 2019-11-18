@@ -5,6 +5,9 @@ class MensetusController < ApplicationController
   # GET /mensetus.json
   def index
     @mensetus = Mensetu.where(user_id: current_user.id).order(created_at: :desc)
+    @mensetus_ok_teacher = Mensetu.where(status: 0).order(created_at: :desc)
+    @mensetus_kakunin_teacher = Mensetu.where(status: 1).order(created_at: :desc)
+    @mensetus_yoyaku_teacher = Mensetu.where(status: 2).order(created_at: :desc)
   end
 
   # GET /mensetus/1
@@ -25,8 +28,8 @@ class MensetusController < ApplicationController
   # POST /mensetus.json
   def create
     @mensetu = Mensetu.new(mensetu_params)
-    #@mensetu.user_id=current_user.id
-    @mensetu.status = 0
+    @mensetu.user_id=current_user.id
+    #@mensetu.status = 0
 
     respond_to do |format|
       if @mensetu.save
@@ -65,7 +68,7 @@ class MensetusController < ApplicationController
 
   def status_search
     if params[:search][:status].present?
-      @mensetus = Mensetu.where(status: current_user.id).order(created_at: :desc)
+      @mensetus = Mensetu.where(status: current_status.id).order(created_at: :desc)
       @mensetus = @mensetus.where(status: params[:search][:status])
      else
       @mensetus = Mensetu.all
