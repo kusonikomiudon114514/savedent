@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     def checksensei
      teacher = Teacher.where(user_id: current_user.id)
       if teacher.blank?
-       false
+        false
       else
-       true
+        true
       end
 
     end 
