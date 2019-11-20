@@ -33,7 +33,7 @@ class MensetusController < ApplicationController
 
     respond_to do |format|
       if @mensetu.save
-        format.html { redirect_to @mensetu, notice: 'Mensetu was successfully created.' }
+        format.html { redirect_to @mensetu, notice: '作成しました.' }
         format.json { render :show, status: :created, location: @mensetu }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class MensetusController < ApplicationController
   def update
     respond_to do |format|
       if @mensetu.update(mensetu_params)
-        format.html { redirect_to @mensetu, notice: 'Mensetu was successfully updated.' }
+        format.html { redirect_to @mensetu, notice: '更新しました.' }
         format.json { render :show, status: :ok, location: @mensetu }
       else
         format.html { render :edit }
@@ -61,19 +61,9 @@ class MensetusController < ApplicationController
   def destroy
     @mensetu.destroy
     respond_to do |format|
-      format.html { redirect_to mensetus_url, notice: 'Mensetu was successfully destroyed.' }
+      format.html { redirect_to mensetus_url, notice: '削除しました.' }
       format.json { head :no_content }
     end
-  end
-
-  def status_search
-    if params[:search][:status].present?
-      @mensetus = Mensetu.where(status: current_status.id).order(created_at: :desc)
-      @mensetus = @mensetus.where(status: params[:search][:status])
-     else
-      @mensetus = Mensetu.all
-    end
-    render :index
   end
 
   private

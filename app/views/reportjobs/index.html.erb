@@ -18,55 +18,34 @@
   </p>
 <% end %> 
 
-<table>
+<table border="1">
   <thead>
-    <tr>
-      <th>Status</th>
-      <th>ユーザー</th>
-      <th>受験日</th>
-      <th>職種</th>
-      <th>事業所名</th>
-      <th>斡旋方法</th>
-      <th>所在地</th>
-      <th>試験会場</th>
-
-      <th>筆記・時間</th>
-      <th>適性・時間</th>
-      
-      <th>面接方法</th>
-      <th>面接委員(人)</th>
-      <th>面接時間</th>
-
-      <th>作文・時間</th>
+  <tr>
+      <th>　受験日　</th>
+      <th>　職種　</th>
+      <th>　事業所名　</th>
+      <th>　斡旋方法</th>
+      <th>　所在地　</th>
+      <th>　試験会場　</th>
+      <th>　面接方法　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @reportjobs.each do |reportjob| %>
-      <tr>
-        <td><%= reportjob.status %></td>
-        <td><%= reportjob.user_id %></td>
+      <tr align="center">
         <td><%= reportjob.day %></td>
         <td><%= reportjob.field.name %></td>
         <td><%= reportjob.zigyousyo %></td>
         <td><%= reportjob.mediation.name %></td>
         <td><%= reportjob.syozaiti %></td>
         <td><%= reportjob.shikennzyou %></td>
-
-        <td><%= reportjob.zikan_ithihi %></td>
-        <td><%= reportjob.zikan_ithite %></td>
-       
-
         <td><%= reportjob.interview.name %></td>
-        <td><%= reportjob.iin %></td>
-        <td><%= reportjob.zikan_mensetsu %></td>
 
-        <td><%= reportjob.zikan_ithisa %></td>
-
-        <td><%= link_to '詳細', reportjob %></td>
-        <td><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
-        <td><%= link_to '削除', reportjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '　詳細', reportjob %></td>
+        <td><%= link_to '　編集', edit_reportjob_path(reportjob) %></td>
+        <td><%= link_to '　削除', reportjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

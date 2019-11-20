@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   post '/reportschools_search',to:'reportschools#search'							
   get '/reportschools_search',to:'reportschools#index'																										
 
-  post '/manage_school_search_year',to:'manage#school#search_year'							
-  get '/manage_school_search_year',to:'manage#school#index'																										
+  post '/manage_school_search_year',to:'manage#search_year'							
+  get '/manage_school_search_year',to:'manage#school'																										
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'

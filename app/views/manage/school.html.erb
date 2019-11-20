@@ -7,14 +7,14 @@
 
 <%= form_tag('/manage_school_search_year') do %>
     <p>
-    検索（部分一致）
+    年度検索
     <br>
-    <%= text_field_tag 'search[year]' , session[:search_year] %>
+    <%= number_field_tag 'search[year]' , session[:search_year] %>
     <%= submit_tag '検索' %>
     </p>
   <% end %> 
 
-
+  <%= submit_tag "一括削除" %>
 
 <table>
   <thead>
@@ -40,7 +40,7 @@
           <td><%= reportschool.course %></td>
           <td><%= link_to '詳細', reportschool %></td>
           <td><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
-          <td><%= link_to '削除', reportschool, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
+          <td><%= link_to '削除', reportschool, method: :delete, data: { confirm: '削除しますか？' } %></td>
         </tr>
       <% end %>
     <% end %>
