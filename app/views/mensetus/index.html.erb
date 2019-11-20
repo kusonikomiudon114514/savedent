@@ -9,51 +9,53 @@
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+    <th>　状況　</th>
+    <th>　　名前　　</th>
+    <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_ok_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '　詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
 
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br><br>
 
 <p>確認中</p>
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+      <th>　状況　</th>
+      <th>　　名前　　</th>
+      <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_kakunin_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '　詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
 
       </tr>
@@ -61,27 +63,29 @@
   </tbody>
 </table>
 
+<br><br>
+
 <p>予約状況</p>
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+    <th>　状況　</th>
+    <th>　　名前　　</th>
+    <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_yoyaku_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
+        <td><%= link_to '　詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
 
         </tr>
@@ -99,3 +103,5 @@
  <%= month_calendar events: @mensetus do |date, mensetus| %>
   <%= date %>
 <% end %>
+
+<br><br>
