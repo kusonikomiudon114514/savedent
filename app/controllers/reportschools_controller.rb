@@ -34,7 +34,7 @@ class ReportschoolsController < ApplicationController
     @reportschool.user_id = current_user.id
     respond_to do |format|
       if @reportschool.save
-        format.html { redirect_to @reportschool, notice: 'Reportschool was successfully created.' }
+        format.html { redirect_to @reportschool, notice: '作成しました' }
         format.json { render :show, status: :created, location: @reportschool }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class ReportschoolsController < ApplicationController
   def update
     respond_to do |format|
       if @reportschool.update(reportschool_params)
-        format.html { redirect_to @reportschool, notice: 'Reportschool was successfully updated.' }
+        format.html { redirect_to @reportschool, notice: '更新しました' }
         format.json { render :show, status: :ok, location: @reportschool }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class ReportschoolsController < ApplicationController
   def destroy
     @reportschool.destroy
     respond_to do |format|
-      format.html { redirect_to reportschools_url, notice: 'Reportschool was successfully destroyed.' }
+      format.html { redirect_to reportschools_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end
