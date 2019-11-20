@@ -10,9 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+  
  .box13 {
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -30,11 +31,19 @@
     padding: 0.0em 0em;
     margin: 1em 0;
     background: #f4f4f4;
-    border-left: solid 6px #5bb7ae;
+    border-left: solid 2px #5bb7ae;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
-    width: 100px;
+    width: 125px;
 }
 .box22 p {
     margin: 10; 
     padding: 10;
+}
+
+table, td, th { vertical-align: middle; border: none; }
+
+.haikei1 { 
+    height: 250px;                  /* 高さ指定 */
+    padding:  20px;                 /* 余白指定 */
+    background-color: powderblue;   /* 背景色指定 */
 }
