@@ -3,8 +3,13 @@ class MemosController < ApplicationController
 
   # GET /memos
   # GET /memos.json
+
   def index
     @memos = Memo.all
+  end
+
+  def importantmemo
+    @memos = Memo.find()
   end
 
   # GET /memos/1
