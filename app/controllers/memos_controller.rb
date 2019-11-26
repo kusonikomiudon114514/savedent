@@ -9,7 +9,7 @@ class MemosController < ApplicationController
   end
 
   def importantmemo
-    @memos = Memo.all
+    @memos = Memo.where(important: true)
   end
 
   # GET /memos/1
