@@ -9,7 +9,7 @@ class MemosController < ApplicationController
   end
 
   def importantmemo
-    @memos = Memo.find()
+    @memos = Memo.all
   end
 
   # GET /memos/1
@@ -33,7 +33,7 @@ class MemosController < ApplicationController
     @memo.user_id=current_user.id
     respond_to do |format|
       if @memo.save
-        format.html { redirect_to @memo, notice: 'Memo was successfully created.' }
+        format.html { redirect_to @memo, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @memo }
       else
         format.html { render :new }

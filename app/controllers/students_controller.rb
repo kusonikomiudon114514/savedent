@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
     end
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
