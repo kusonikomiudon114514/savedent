@@ -70,8 +70,8 @@ class RirekisyosController < ApplicationController
 
   def tensosave
     @resumetrancerec = Resumetrancerec.new
-    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_teacher]
-    @resumetrancerec.user_id     = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.user_id     = params[:tenso][:select_teacher]
 
      if @resumetrancerec.save
       redirect_to rirekisyos_path
