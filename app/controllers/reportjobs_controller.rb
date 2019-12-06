@@ -5,7 +5,7 @@ class ReportjobsController < ApplicationController
   # GET /reportjobs.json
   def index
  #  @reportjobs = Reportjob.all
-    @reportjobs = Reportjob.where(user_id: current_user.id).order(created_at: :desc)
+    @reportjobs = Reportjob.all.order(created_at: :desc)
 
   end
 

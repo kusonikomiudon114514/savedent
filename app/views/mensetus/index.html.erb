@@ -1,91 +1,107 @@
 <h1>面接練習サポートシステム</h1>
 
-<p>あなたの面接予定</p>
-
 <p id="notice"><%= notice %></p>
-
-<%= link_to '面接予定追加', new_mensetu_path %>
+<%if @sensei == true %>
+ <%= link_to '面接予定追加', new_mensetu_path %>
+<% end %>
 
 <p>面接OKの先生</p>
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+    <th>　状況　</th>
+    <th>　　名前　　</th>
+    <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_ok_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
-        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '　詳細', mensetu %></td>
+
+        <%if @sensei == true %>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br><br>
 
 <p>確認中</p>
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+      <th>　状況　</th>
+      <th>　　名前　　</th>
+      <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_kakunin_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
-        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '　詳細', mensetu %></td>
+
+        <%if @sensei == true %>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br><br>
 
 <p>予約状況</p>
 <table>
   <thead>
     <tr>
-      <th>状況</th>
-      <th>名前</th>
-      <th>日時</th>
+    <th>　状況　</th>
+    <th>　　名前　　</th>
+    <th>　日時　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @mensetus_yoyaku_teacher.each do |mensetu| %>
-      <tr>
+      <tr align="center">
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '詳細', mensetu %></td>
-        <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
-        <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to '　詳細', mensetu %></td>
+
+        <%if @sensei == true %>
+         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+        </tr>
     <% end %>
   </tbody>
 </table>
 
-<p>生徒用掲示板</p>
- <p>
- ・ <br>
- ・ <br>
- ・ <br>
+<p>掲示板</p>
+ ・10/7~10/11 は商業の先生は全員不在です <br>
+ ・11/18 本日坂本先生は風邪でお休みです<br>
+ ・11/15 放課後に放送委員会の集まりがあります。委員の人は面接予定を入れないでください。<br>
  </p>
 
-
+ <p>あなたの面接予定</p>
  <%= month_calendar events: @mensetus do |date, mensetus| %>
   <%= date %>
 <% end %>
+
+<br><br>
