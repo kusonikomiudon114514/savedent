@@ -1,6 +1,6 @@
 class ResumetrancerecsController < ApplicationController
   before_action :set_resumetrancerec, only: [:show, :edit, :update, :destroy]
-
+  before_action :permissionsensei_yes
   # GET /resumetrancerecs
   # GET /resumetrancerecs.json
   def index

@@ -20,7 +20,7 @@
         <td><%= teacher.admin %></td>
         <td><%= link_to '閲覧', teacher %></td>
         <td><%= link_to '編集', edit_teacher_path(teacher) %></td>
-        <td><%= link_to '削除', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', teacher, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

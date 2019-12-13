@@ -1,6 +1,6 @@
 class RirekisyosController < ApplicationController
   before_action :set_rirekisyo, only: [:show, :edit, :update, :destroy]
-
+  before_action :permissionsensei_yes,only: [:edit,:update,:destroy,:tenso]
   # GET /rirekisyos
   # GET /rirekisyos.json
   def index
@@ -74,7 +74,7 @@ class RirekisyosController < ApplicationController
     @resumetrancerec.user_id     = params[:tenso][:select_teacher]
 
      if @resumetrancerec.save
-      redirect_to rirekisyos_path
+      redirect_to rirekisyos_path, notice: '履歴書の転送に成功しました'
      else
       render :tenso
      end
