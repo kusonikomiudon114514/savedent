@@ -5,7 +5,8 @@ class Reportschool < ApplicationRecord
   belongs_to :exam
   belongs_to :recommended
   belongs_to :user
-  has_many :rslogs
+  belongs_to :saw, optional: true
+  has_many :rslogs, :dependent => :destroy
 
   validate :error_check
 
@@ -30,7 +31,7 @@ class Reportschool < ApplicationRecord
 
     if exam_id == 1
       unless japanese.blank? and math.blank? and social.blank? and science.blank? and english.blank?
-        if "japanese<0" or "math<0" or "social<0" or "science<0" or "english<0"
+        if japanese < 0 or math < 0 or social < 0 or science < 0 or english < 0
           errors[:base]<<"正確な試験時間を入力してください"
         end
       end

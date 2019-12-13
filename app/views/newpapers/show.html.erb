@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @newpaper.user_id %>
+</p>
+
+<p>
+  <strong>Reportschool:</strong>
+  <%= @newpaper.reportschool_id %>
+</p>
+
+<p>
+  <strong>確認：</strong>
+  <%= @newpaper.check %>
+</p>
+
+<%= link_to 'Edit', edit_newpaper_path(@newpaper) %> |
+<%= link_to 'Back', newpapers_path %>

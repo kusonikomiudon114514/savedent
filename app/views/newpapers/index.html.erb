@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newpapers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Reportschool</th>
+      <th>確認</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newpapers.each do |newpaper| %>
+      <tr>
+        <td><%= newpaper.user_id %></td>
+        <td><%= newpaper.reportschool_id %></td>
+        <td><%= newpaper.check_id %></td>
+        <td><%= link_to 'Show', newpaper %></td>
+        <td><%= link_to 'Edit', edit_newpaper_path(newpaper) %></td>
+        <td><%= link_to 'Destroy', newpaper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newpaper', new_newpaper_path %>

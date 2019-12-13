@@ -9,7 +9,7 @@ class MemosController < ApplicationController
   end
 
   def importantmemo
-    @memos = Memo.find()
+    @memos = Memo.where(important: true)
   end
 
   # GET /memos/1
@@ -33,7 +33,7 @@ class MemosController < ApplicationController
     @memo.user_id=current_user.id
     respond_to do |format|
       if @memo.save
-        format.html { redirect_to @memo, notice: 'Memo was successfully created.' }
+        format.html { redirect_to @memo, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @memo }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class MemosController < ApplicationController
     respond_to do |format|
  
       if @memo.update(memo_params)
-        format.html { redirect_to @memo, notice: 'Memo was successfully updated.' }
+        format.html { redirect_to @memo, notice: '更新しました。' }
         format.json { render :show, status: :ok, location: @memo }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class MemosController < ApplicationController
   def destroy
     @memo.destroy
     respond_to do |format|
-      format.html { redirect_to memos_url, notice: 'Memo was successfully destroyed.' }
+      format.html { redirect_to memos_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end
