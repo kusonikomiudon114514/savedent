@@ -139,11 +139,11 @@
 <tr>
 <th>資格取得日</th>
 <td style="width:250px">
-  <%= @rirekisyo.user.students[0].syutokubi %>
+  <%= simple_format(@rirekisyo.user.students[0].syutokubi) %>
 </td>
 <th>資格名称</th>
 <td style="width:250px">
-  <%= @rirekisyo.user.students[0].shikaku %>
+  <%= simple_format(@rirekisyo.user.students[0].shikaku) %>
 </td>
 </tr>
 </table>
@@ -152,11 +152,11 @@
 <tr>
 <th>趣味特技</th>
 <td style="width:250px">
-  <%= @rirekisyo.syumi %>
+  <%= simple_format(@rirekisyo.syumi) %>
 </td>
   <th>校内外の諸活動</th>
   <td style="width:250px">
-  <%= @rirekisyo.katsudo %>
+  <%= simple_format(@rirekisyo.katsudo) %>
 </td>
 </tr>
 </table>
@@ -165,7 +165,7 @@
 <tr>
 <th>志望理由</th>
 <td style="width:490px">
-  <%= @rirekisyo.reason %>
+  <%= simple_format(@rirekisyo.reason) %>
 </td>
 </tr>
 </table>
@@ -175,6 +175,7 @@
 <th>備考</th>
 <td style="width:490px">
   <%= @rirekisyo.biko %>
+  <%= simple_format(@rirekisyo.biko) %>
 </td>
 </tr>
 </table>
