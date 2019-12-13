@@ -1,12 +1,13 @@
 class ReportschoolsController < ApplicationController
   before_action :set_reportschool, only: [:show, :edit, :update, :destroy]
+  before_action :select_schoollog, only: [:localname1_search, :localname2_search, :place_search, :type_search, :field_search, :search, :saw_search, :index]
 
+  
   # GET /reportschools
   # GET /reportschools.json
   def index
 #   @reportschools = Reportschool.all
     @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
-    @schoollogs = Rslog.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /reportschools/1
@@ -159,7 +160,34 @@ class ReportschoolsController < ApplicationController
      render :index																										
   end					
 
+  def saw_search																																																				
+    if params[:search][:saw].present?
+      if params[:search][:saw].to_i == 1
+        @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+ #      @reportschools = @reportschools.where(saw_id: params[:search][:saw])
+        session[:search_saw] = params[:search][:saw]
+      else
+        if params[:search][:saw].to_i == 2
+          #@reportschools = Reportschool.all.order(created_at: :desc)
+          @reportschools = Reportschool.where.not(user_id: current_user.id).order(created_at: :desc)
+          session[:search_saw] = params[:search][:saw]
+        else
+          @reportschools = Reportschool.all.order(created_at: :desc)
+          session[:search_saw] = params[:search][:saw]
+        end	
+      end													
+    else																										
+      @reportschools = Reportschool.all
+      session[:search_saw] = params[:search][:saw]
+    end														
+    render :index																										
+  end					
+
+
   private
+    def select_schoollog
+      @schoollogs = Rslog.where(user_id: current_user.id).order(created_at: :desc).first(10)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_reportschool
       @reportschool = Reportschool.find(params[:id])

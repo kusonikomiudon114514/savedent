@@ -11,6 +11,12 @@ Interview.create(name: "一人")
 Interview.create(name: "複数")
 Interview.create(name: "集団討論")
 
+Saw.delete_all
+Saw.connection.execute("delete from sqlite_sequence where name= 'saws' ")
+Saw.create(name: "自分だけ")
+Saw.create(name: "自分以外")
+Saw.create(name: "すべて")
+
 Mediation.delete_all
 Mediation.connection.execute("delete from sqlite_sequence where name= 'mediations' ")
 Mediation.create(name: "学校斡旋")
