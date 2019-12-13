@@ -1,6 +1,6 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
-
+  before_action :permissionadmin
   # GET /exams
   # GET /exams.json
   def index

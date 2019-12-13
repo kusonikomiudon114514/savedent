@@ -27,6 +27,39 @@ class ApplicationController < ActionController::Base
        end
  
      end 
- 
-      
+
+    def permissionsensei_yes
+      if checksensei == true
+       #redirect_to ('http://localhost:3000/home/top')  
+       redirect_to root_path, notice: '権限がないためアクセスできません'
+      else
+  
+     end 
+    end
+
+    def permissionsensei_no
+      if checksensei == true
+       else
+        #redirect_to ('http://localhost:3000/home/top')  
+        redirect_to root_path,notice: '権限がないためアクセスできません'
+
+      end
+    end 
+
+    def permissionadmin
+       if checkadmin == true
+       else
+        redirect_to root_path,notice: '権限がないためアクセスできません'
+
+       end
+    end
+
+
+
+
+    
 end
+
+
+
+      
