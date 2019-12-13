@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :subjects
   get 'mensetu/top'
 
+  get 'memos/importantmemo'
+
   get 'reportmenu/menu'
 
   get 'manage/school'

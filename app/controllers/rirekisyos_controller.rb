@@ -10,6 +10,7 @@ class RirekisyosController < ApplicationController
   # GET /rirekisyos/1
   # GET /rirekisyos/1.json
   def show
+    
   end
 
   # GET /rirekisyos/new
@@ -31,6 +32,7 @@ class RirekisyosController < ApplicationController
     @rirekisyo.user_id = current_user.id
     respond_to do |format|
       if @rirekisyo.save
+       
         format.html { redirect_to @rirekisyo, notice: 'Rirekisyo was successfully created.' }
         format.json { render :show, status: :created, location: @rirekisyo }
       else
@@ -70,8 +72,8 @@ class RirekisyosController < ApplicationController
 
   def tensosave
     @resumetrancerec = Resumetrancerec.new
-    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_teacher]
-    @resumetrancerec.user_id     = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.user_id     = params[:tenso][:select_teacher]
 
      if @resumetrancerec.save
       redirect_to rirekisyos_path
