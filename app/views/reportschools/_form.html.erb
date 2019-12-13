@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :状況 %>
-    <%= form.number_field :status, id: :reportschool_status %>
+    <% form.label :状況 %>
+    <%= form.number_field :status, id: :reportschool_status, :value =>1 %>
   </div>
 
   <div class="field">
@@ -124,6 +124,8 @@
     <%= form.label :試験の内容 %>
     <%= form.text_area :shikenn, id: :reportschool_shikenn %>
   </div>
+
+  <h2>全員記入箇所</h2>
 
   <div class="field">
     <%= form.label :感想 %>

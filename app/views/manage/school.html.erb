@@ -3,6 +3,39 @@
 <p>Find me in app/views/manage/school.html.erb</p>
 -->
 <h2>入学試験報告書　編集</h2>
+<h5>最終ログイン時から後に作成された報告書</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>学校種</th>
+      <th>分野</th>
+      <th>学校名</th>
+      <th>学部</th>
+      <th>学科</th>
+      <th>コース</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reportschools.each do |reportschool| %>
+      <% if reportschool.status == 1 %>
+      <tr>
+        <td><%= reportschool.type.name %></td>
+        <td><%= reportschool.field.name %></td>
+        <td><%= reportschool.gakkou %></td>
+        <td><%= reportschool.gakubu %></td>
+        <td><%= reportschool.gakka %></td>
+        <td><%= reportschool.course %></td>
+        <td><%= link_to '詳細', reportschool %></td>
+        <td><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
+        <td><%= link_to '削除', reportschool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
 <h2>入学試験報告書　削除</h2>
 
 <%= form_tag('/manage_school_search_year') do %>
@@ -14,7 +47,10 @@
     </p>
   <% end %> 
 
-  <%= submit_tag "一括削除" %>
+  <%= form_tag('/manage_school_manydestory') do %>
+    <input type="submit" name="nendo" value="一括削除">
+    <%= hidden_field_tag 'search[year]' , session[:search_year] %>
+    <% end %> 
 
 <table>
   <thead>
@@ -29,7 +65,7 @@
     </tr>
   </thead>
   <tbody>
-    <% if %>
+    <% if @reportschools.present? %>
       <% @reportschools.each do |reportschool| %>
         <tr>
           <td><%= reportschool.status %></td>

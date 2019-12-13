@@ -1,0 +1,2 @@
+module NewpapersHelper
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Saws</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saws.each do |saw| %>
+      <tr>
+        <td><%= saw.name %></td>
+        <td><%= link_to 'Show', saw %></td>
+        <td><%= link_to 'Edit', edit_saw_path(saw) %></td>
+        <td><%= link_to 'Destroy', saw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Saw', new_saw_path %>

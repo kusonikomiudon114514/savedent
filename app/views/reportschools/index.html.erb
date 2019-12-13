@@ -57,6 +57,15 @@
   </p>
 <% end %> 
 
+<%= form_tag('/reportschools_saw_search') do %>
+  <p>
+  検索絞り込み
+  <br>
+  <%= select_tag 'search[saw]' , options_for_select(Saw.all.map {|r| [r.name,r.id] } , {:selected => session[:search_saw]}) , include_blank:true%>
+  <%= submit_tag '検索' %>
+  </p>
+<% end %> 
+
 <h1>入学試験報告書作成履歴</h1>
 
 <table>
@@ -131,3 +140,8 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<br>
+<br>
+<br>

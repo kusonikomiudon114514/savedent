@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :newpapers
+  resources :saws
   resources :mensetus
   get 'manage/school'
 
@@ -38,11 +40,17 @@ Rails.application.routes.draw do
   post '/reportschools_search',to:'reportschools#search'							
   get '/reportschools_search',to:'reportschools#index'																										
 
+  post '/manage_school_manydestory',to:'manage#manydestory'							
+  get '/manage_school_manydestory',to:'manage#school'		
+
   post '/manage_school_search_year',to:'manage#search_year'							
   get '/manage_school_search_year',to:'manage#school'																										
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
+ 
+  post '/reportschools_saw_search',to:'reportschools#saw_search'
+  get '/reportschools_saw_search',to:'reportschools#index'
  
   post '/reportjobs_zigyousyo_search',to:'reportjobs#zigyousyo_search'
   get '/reportjobs_zigyousyo_search',to:'reportjobs#index'
