@@ -16,7 +16,7 @@
     <header>
       <nav>
         <% if user_signed_in? %>
-          <% unless current_user.students.nil? %>
+          <% if current_user.students.nil? %>
              <%= image_tag "initprofile.png",:size => "100x100" %>
           <% else %>
              <% if current_user.students[0].filename.present? %>

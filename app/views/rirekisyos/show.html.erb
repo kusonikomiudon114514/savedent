@@ -7,7 +7,7 @@
   <%= @rirekisyo.user.students[0].name %>
 </p>
 
-<table border="1" width="500">
+<table border="1" width="500" >
 <tr align="right">
 <td colspan=3 style="width:400px">
   <%= @rirekisyo.hizuke %>
@@ -18,60 +18,61 @@
 </tr>
 
 <tr>
-<th>ふりがな</th>
-<td style="width:250px">
-<%= @rirekisyo.user.students[0].namehurigana %>
+<th><center>ふりがな</center></th>
+<td style="width:257px">
+<center><%= @rirekisyo.user.students[0].namehurigana %></center>
 </td>
-<th>性別</th>
+<th><center>性別</center></th>
 </tr>
 
 <tr>
-<th>氏名</th>
+<th><center>氏名</center></th>
 <td>
-<%= @rirekisyo.user.students[0].name %>
+<center><%= @rirekisyo.user.students[0].name %></center>
 </td>
-<td style="width:30px">
-<%= @rirekisyo.user.students[0].seibetsu %>
+<td style="width:50px">
+<center><%= @rirekisyo.user.students[0].seibetsu %></center>
+</td>
+</tr>
+</table>
+
+<table border="1"  width="500">
+<tr>
+<th><center>生年月日</center></th>
+<td style="width:408px">
+<center><%= @rirekisyo.user.students[0].seinen %></center>
 </td>
 </tr>
 </table>
 
 <table border="1" width="500">
 <tr>
-<th>生年月日</th>
+<th><center>ふりがな</center></th>
 <td style="width:408px">
-  <%= @rirekisyo.user.students[0].seinen %>
-</td>
-</tr>
-
-<table border="1" width="500">
-<tr>
-<th>ふりがな</th>
-<td style="width:408px">
-  <%= @rirekisyo.user.students[0].zyushohurigana %>
+<center><%= @rirekisyo.user.students[0].zyushohurigana %></center>
 </td>
 </tr>
 
 <tr>
-<th>現住所</th>
+<th><center>現住所</center></th>
 <td style="width:350px">
-  <%= @rirekisyo.user.students[0].zyusho %>
+<center><%= @rirekisyo.user.students[0].zyusho %></center>
 </td>
 </tr>
 </table>
 
 <table border="1" width="500">
 <tr>
-<th>ふりがな</th>
+<th><center>ふりがな</center></th>
 <td style="width:408px">
-  <%= @rirekisyo.renhuri %>
+<center><%= @rirekisyo.renhuri %></center>
 </td>
 </tr>
 
 <tr>
-<th>連絡先</th>
+<th><center>連絡先</center></th>
 <td style="width:350px">
-  <%= @rirekisyo.renraku %>
+<center><%= @rirekisyo.renraku %></center>
 </td>
 </tr>
 </table>
@@ -161,7 +162,7 @@
 </tr>
 </table>
 
-<table border="1" width="500" height="400">
+<table border="1" width="500" height="300">
 <tr>
 <th>志望理由</th>
 <td style="width:490px">
