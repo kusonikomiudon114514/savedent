@@ -31,7 +31,7 @@ class ReportjobsController < ApplicationController
 
     respond_to do |format|
       if @reportjob.save
-        format.html { redirect_to @reportjob, notice: 'Reportjob was successfully created.' }
+        format.html { redirect_to @reportjob, notice: '作成しました' }
         format.json { render :show, status: :created, location: @reportjob }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ReportjobsController < ApplicationController
   def update
     respond_to do |format|
       if @reportjob.update(reportjob_params)
-        format.html { redirect_to @reportjob, notice: 'Reportjob was successfully updated.' }
+        format.html { redirect_to @reportjob, notice: '更新しました' }
         format.json { render :show, status: :ok, location: @reportjob }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ReportjobsController < ApplicationController
   def destroy
     @reportjob.destroy
     respond_to do |format|
-      format.html { redirect_to reportjobs_url, notice: 'Reportjob was successfully destroyed.' }
+      format.html { redirect_to reportjobs_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end

@@ -198,6 +198,4 @@ class ReportschoolsController < ApplicationController
     def reportschool_params
       params.require(:reportschool).permit(:status, :user_id, :type_id, :field_id, :gakkou, :gakubu, :gakka, :course, :syozaichi, :shikennzyou, :gokaku, :shikennbi, :exam_id, :detail, :japanese, :math, :social, :science, :english, :recommended_id, :mennsetsu, :syoronnbunn, :shikenn, :kanso, :check)
     end
-
-
-  end 
+end
