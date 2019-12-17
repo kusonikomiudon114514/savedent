@@ -14,39 +14,47 @@ th.example2 { text-align: right; }
     border-collapse: collapse;
     table-layout: fixed;
 }
-
 </style>
 </head>
 <h1>入学試験受験報告書</h1>
 
 <table>
+<tr>
+<td>
+<%= form_tag('/reportschools_localname1_search') do %>
+  <p>地方
+  <br>
+    <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
+    <%= submit_tag '検索' %>
+  </p>
+<% end %> 
+</td>
+</tr>
+</table>
+
+<table>
   <tr>
+    <th class="example2" style="width:50px">地方 </th>
+    <td>
     <%= form_tag('/reportschools_localname1_search') do %>
-      <th class="example2" style="width:70px">地方 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:50px">地域 </th>
+    <td>
     <%= form_tag('/reportschools_localname2_search') do %>
-      <th class="example2" style="width:50px">地域 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:80px">都道府県 </th>
+    <td>
     <%= form_tag('/reportschools_place_search') do %>
-      <th class="example2" style="width:80px">都道府県 </th>
-      <br>
-      <td>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
   </tr>
 </table>
 
