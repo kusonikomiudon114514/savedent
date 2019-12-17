@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :rjlogs
-=======
   resources :newpapers
   resources :saws
->>>>>>> 6ceb84799439ba8ade84f58d42ce1cdd254c78a7
   resources :mensetus
   get 'manage/school'
 

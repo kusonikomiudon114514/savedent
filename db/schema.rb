@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191217020847) do
-=======
-ActiveRecord::Schema.define(version: 20191216012928) do
->>>>>>> 6ceb84799439ba8ade84f58d42ce1cdd254c78a7
 
   create_table "exams", force: :cascade do |t|
     t.string "name"

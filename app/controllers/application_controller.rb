@@ -24,17 +24,8 @@ class ApplicationController < ActionController::Base
         else
           false
         end
-<<<<<<< HEAD
       end
     end 
-   
-
-  end
-
-=======
-       end
- 
-     end 
 
     def permissionsensei_yes
       if checksensei == true
@@ -71,4 +62,3 @@ end
 
 
       
->>>>>>> 6ceb84799439ba8ade84f58d42ce1cdd254c78a7
