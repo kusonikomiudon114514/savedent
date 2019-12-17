@@ -1,5 +1,6 @@
 class ReportjobsController < ApplicationController
   before_action :set_reportjob, only: [:show, :edit, :update, :destroy]
+  before_action :select_joblog, only: [:field_search, :zigyousyo_search, :index]
 
   # GET /reportjobs
   # GET /reportjobs.json
@@ -12,6 +13,10 @@ class ReportjobsController < ApplicationController
   # GET /reportjobs/1
   # GET /reportjobs/1.json
   def show
+    rjlog = Rjlog.new
+    rjlog.user_id = current_user.id
+    rjlog.reportjob_id = params[:id]
+    rjlog.save
   end
 
   # GET /reportjobs/new
@@ -27,15 +32,15 @@ class ReportjobsController < ApplicationController
   # POST /reportjobs.json
   def create
     @reportjob = Reportjob.new(reportjob_params)
-    @reportjob.user_id=current_user.id
-
+    @reportjob.user_id = current_user.id
+    @reportjob.check = false
     respond_to do |format|
       if @reportjob.save
         format.html { redirect_to @reportjob, notice: '作成しました' }
         format.json { render :show, status: :created, location: @reportjob }
       else
         format.html { render :new }
-        format.json { render json: @reportjob.errors, status: :unprocessable_entity }
+        format.json { render json: @reportjob.errorj, status: :unprocessable_entity }
       end
     end
   end
@@ -49,7 +54,7 @@ class ReportjobsController < ApplicationController
         format.json { render :show, status: :ok, location: @reportjob }
       else
         format.html { render :edit }
-        format.json { render json: @reportjob.errors, status: :unprocessable_entity }
+        format.json { render json: @reportjob.errorj, status: :unprocessable_entity }
       end
     end
   end
@@ -91,12 +96,15 @@ class ReportjobsController < ApplicationController
   end
 
   private
+  def select_joblog
+    @joblogs = Rjlog.where(user_id: current_user.id).order(created_at: :desc).first(10)
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_reportjob
       @reportjob = Reportjob.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameterj from the scary internet, only allow the white list through.
     def reportjob_params
       params.require(:reportjob).permit(:status, :user_id, :field_id, :day, :syokusyu, :zigyousyo, :mediation_id, :syozaiti, :shikennzyou, :zyukennsyasuu, :ithizi_hikki, :ithizi_tekisei, :ithizi_mensetsu, :zikan_ithihi, :zikan_ithime, :zikan_ithisa, :nizi_hikki, :nizi_tekisei, :nizi_mennsetsu, :zikan_nihi, :zikan_nite, :zikan_nime, :zikan_nisa, :subject_id, :zikan_japanese, :zikan_math, :zikan_social, :zikan_english, :zikan_ippann, :zikan_tekisei, :interview_id, :iin, :zikan_mensetsu, :shitsumon, :mensetsusonota, :sakubun, :bunnsyouryou, :other)
     end

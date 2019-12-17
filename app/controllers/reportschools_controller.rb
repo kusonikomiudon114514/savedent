@@ -81,7 +81,7 @@ class ReportschoolsController < ApplicationController
         condition = condition + "syozaichi = '" + p.todohuken + "'"
       end
       @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
-#      @reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%' ")
+     #@reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%' ")
       @reportschools = @reportschools.where(condition)
 
       session[:search_localname1] = params[:search][:localname1]

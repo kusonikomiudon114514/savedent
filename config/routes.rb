@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rjlogs
   resources :newpapers
   resources :saws
   resources :mensetus

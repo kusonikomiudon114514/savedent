@@ -25,7 +25,7 @@
 
         <%if @sensei == true %>
          <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
       </tr>
@@ -55,7 +55,7 @@
 
         <%if @sensei == true %>
          <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
       </tr>
@@ -85,7 +85,7 @@
 
         <%if @sensei == true %>
          <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
         </tr>

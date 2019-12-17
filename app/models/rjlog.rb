@@ -1,0 +1,2 @@
+class Rjlog < ApplicationRecord
+end

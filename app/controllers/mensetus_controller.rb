@@ -33,7 +33,7 @@ class MensetusController < ApplicationController
 
     respond_to do |format|
       if @mensetu.save
-        format.html { redirect_to @mensetu, notice: '作成しました.' }
+        format.html { redirect_to @mensetu, notice: '作成しました' }
         format.json { render :show, status: :created, location: @mensetu }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class MensetusController < ApplicationController
   def update
     respond_to do |format|
       if @mensetu.update(mensetu_params)
-        format.html { redirect_to @mensetu, notice: '更新しました.' }
+        format.html { redirect_to @mensetu, notice: '更新しました' }
         format.json { render :show, status: :ok, location: @mensetu }
       else
         format.html { render :edit }
