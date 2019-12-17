@@ -45,7 +45,15 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
+     
+
       if @student.update(student_params)
+        if params[:student][:filename].present?
+          @student.filename = params[:student][:filename].original_filename
+    
+          File.open("app/assets/images/#{@student.filename}", 'w+b') {|f|f.write(params[:student][:filename].read)}
+        end
+        @student.save
         format.html { redirect_to @student, notice: '更新しました。' }
         format.json { render :show, status: :ok, location: @student }
       else
