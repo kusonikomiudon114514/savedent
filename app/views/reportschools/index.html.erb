@@ -22,7 +22,7 @@ th.example2 { text-align: right; }
 <table>
   <tr>
     <%= form_tag('/reportschools_localname1_search') do %>
-      <th class="example2" style="width:90px">地方 </th>
+      <th class="example2" style="width:70px">地方 </th>
       <br>
       <td>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
@@ -31,7 +31,7 @@ th.example2 { text-align: right; }
     <% end %> 
 
     <%= form_tag('/reportschools_localname2_search') do %>
-      <th class="example2" style="width:90px">地域 </th>
+      <th class="example2" style="width:50px">地域 </th>
       <br>
       <td>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
@@ -40,7 +40,7 @@ th.example2 { text-align: right; }
     <% end %> 
 
     <%= form_tag('/reportschools_place_search') do %>
-      <th class="example2" style="width:90px">都道府県 </th>
+      <th class="example2" style="width:80px">都道府県 </th>
       <br>
       <td>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
@@ -53,7 +53,7 @@ th.example2 { text-align: right; }
 <table>
   <tr>
     <%= form_tag('/reportschools_type_search') do %>
-      <th class="example2" style="width:90px">学校種</th>
+      <th class="example2" style="width:70px">学校種</th>
       <br>
       <td>
         <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
@@ -62,7 +62,7 @@ th.example2 { text-align: right; }
     <% end %> 
 
     <%= form_tag('/reportschools_field_search') do %>
-      <th class="example2" style="width:90px">分野別</th>
+      <th class="example2" style="width:110px">分野別</th>
       <br>
       <td>
         <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , {:selected => session[:search_field]}) , include_blank:true%>
@@ -118,13 +118,12 @@ th.example2 { text-align: right; }
         <td><%= reportschool.course %></td>
         <td style="width:30px"><%= link_to '詳細', reportschool %></td>
         <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
-        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
 <h4><%= link_to '新規作成', new_reportschool_path %></h>
 
@@ -161,7 +160,7 @@ th.example2 { text-align: right; }
         <td style="width:30px"><%= link_to '詳細', schoollog %></td>
        <!--
         <td><%= link_to '編集', edit_reportschool_path(schoollog) %></td>
-        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '削除しますか？' } %></td> 
+        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
         -->
       </tr>
     <% end %>

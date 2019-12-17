@@ -45,7 +45,7 @@
 
         <td><%= link_to '　詳細', reportjob %></td>
         <td><%= link_to '　編集', edit_reportjob_path(reportjob) %></td>
-        <td><%= link_to '　削除', reportjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '　削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
