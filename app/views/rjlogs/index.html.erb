@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rjlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Reportjob</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rjlogs.each do |rjlog| %>
+      <tr>
+        <td><%= rjlog.user_id %></td>
+        <td><%= rjlog.reportjob_id %></td>
+        <td><%= link_to 'Show', rjlog %></td>
+        <td><%= link_to 'Edit', edit_rjlog_path(rjlog) %></td>
+        <td><%= link_to 'Destroy', rjlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rjlog', new_rjlog_path %>

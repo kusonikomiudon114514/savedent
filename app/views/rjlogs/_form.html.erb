@@ -1,0 +1,27 @@
+<%= form_with(model: rjlog, local: true) do |form| %>
+  <% if rjlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rjlog.errors.count, "error") %> prohibited this rjlog from being saved:</h2>
+
+      <ul>
+      <% rjlog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :rjlog_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reportjob_id %>
+    <%= form.number_field :reportjob_id, id: :rjlog_reportjob_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

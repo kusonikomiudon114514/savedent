@@ -22,6 +22,12 @@ class Reportschool < ApplicationRecord
       errors[:base]<<"試験場を入力してください" 
     end
 
+    if exam_id == 0
+      if exam.blank?
+        errors[:base]<<"入試形態を入力してください"
+      end
+    end
+
     if exam_id == 1
       if japanese.blank? or math.blank? or social.blank? or science.blank? or english.blank?
         errors[:base]<<"科目の試験時間を入力してください(ない場合は０を入力してください)"

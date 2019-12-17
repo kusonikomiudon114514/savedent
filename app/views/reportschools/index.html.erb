@@ -82,7 +82,7 @@
         <td><%= reportschool.course %></td>
         <td><%= link_to '　詳細', reportschool %></td>
         <td><%= link_to '　編集', edit_reportschool_path(reportschool) %></td>
-        <td><%= link_to '　削除', reportschool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '　削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -125,7 +125,7 @@
         <td><%= link_to '詳細', schoollog %></td>
       <!--
         <td><%= link_to '編集', edit_reportschool_path(schoollog) %></td>
-        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '削除しますか？' } %></td> 
+        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
         -->
       </tr>
     <% end %>

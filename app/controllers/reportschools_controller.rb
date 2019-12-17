@@ -79,7 +79,7 @@ class ReportschoolsController < ApplicationController
         condition = condition + "syozaichi = '" + p.todohuken + "'"
       end
       @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
-#      @reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%' ")
+     #@reportschools = @reportschools.where("syozaichi like '%" + params[:search][:place] + "%' ")
       @reportschools = @reportschools.where(condition)
 
       session[:search_localname1] = params[:search][:localname1]
@@ -169,4 +169,6 @@ class ReportschoolsController < ApplicationController
     def reportschool_params
       params.require(:reportschool).permit(:status, :user_id, :type_id, :field_id, :gakkou, :gakubu, :gakka, :course, :syozaichi, :shikennzyou, :gokaku, :shikennbi, :exam_id, :detail, :japanese, :math, :social, :science, :english, :recommended_id, :mennsetsu, :syoronnbunn, :shikenn, :kanso)
     end
-  end
+
+
+  end 

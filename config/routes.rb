@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rjlogs
   resources :mensetus
   get 'manage/school'
 

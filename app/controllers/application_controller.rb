@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
     def checkadmin
       teacher = Teacher.where(user_id: current_user.id)
-       if teacher.blank?
+      if teacher.blank?
         false
        else
         if teacher[0].admin
@@ -24,9 +24,9 @@ class ApplicationController < ActionController::Base
         else
           false
         end
-       end
- 
-     end 
- 
-      
-end
+      end
+    end 
+   
+
+  end
+
