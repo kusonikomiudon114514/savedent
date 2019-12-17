@@ -1,5 +1,22 @@
+<html>
 <p id="notice"><%= notice %></p>
 
+<head>
+<style>
+th.example { text-align: center; }
+.sampleTable {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th.example2 { text-align: right; }
+.sampleTable {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+</style>
+</head>
 <h1>就職試験受験報告書</h1>
 
 <%= form_tag('/reportjobs_field_search') do %>
@@ -18,16 +35,16 @@
   </p>
 <% end %> 
 
-<table border="1">
+<table class="table table-bordered">
   <thead>
   <tr>
-      <th>　受験日　</th>
-      <th>　職種　</th>
-      <th>　事業所名　</th>
-      <th>　斡旋方法</th>
-      <th>　所在地　</th>
-      <th>　試験会場　</th>
-      <th>　面接方法　</th>
+      <th class="example" style="width:150px">　受験日　</th>
+      <th class="example" style="width:150px">　職種　</th>
+      <th class="example" style="width:150px">　事業所名　</th>
+      <th class="example" style="width:150px">　斡旋方法</th>
+      <th class="example" style="width:150px">　所在地　</th>
+      <th class="example" style="width:150px">　試験会場　</th>
+      <th class="example" style="width:150px">　面接方法　</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -43,9 +60,9 @@
         <td><%= reportjob.shikennzyou %></td>
         <td><%= reportjob.interview.name %></td>
 
-        <td><%= link_to '　詳細', reportjob %></td>
-        <td><%= link_to '　編集', edit_reportjob_path(reportjob) %></td>
-        <td><%= link_to '　削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <td style="width:30px"><%= link_to '　詳細', reportjob %></td>
+        <td style="width:30px"><%= link_to '　編集', edit_reportjob_path(reportjob) %></td>
+        <td style="width:30px"><%= link_to '　削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -54,3 +71,42 @@
 <br>
 
 <%= link_to '新規作成', new_reportjob_path %>
+
+<h2>閲覧履歴</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="example" style="width:90px">　閲覧日　</th>
+      <th class="example" style="width:150px">　受験日　</th>
+      <th class="example" style="width:150px">　職種　</th>
+      <th class="example" style="width:150px">　事業所名　</th>
+      <th class="example" style="width:150px">　斡旋方法</th>
+      <th class="example" style="width:150px">　所在地　</th>
+      <th class="example" style="width:150px">　試験会場　</th>
+      <th class="example" style="width:150px">　面接方法　</th>
+      <th> <colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>    
+    <% @joblogs.first(10).each do |joblog| %>
+      <tr align="center">
+        <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
+
+        <td><%= joblog.reportjob.field.name %></td>
+
+        <td style="width:30px"><%= link_to '詳細', joblog %></td>
+       <!--
+        <td><%= link_to '編集', edit_reportjob_path(joblog) %></td>
+        <td><%= link_to '削除', joblog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+</html>
