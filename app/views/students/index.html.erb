@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>氏名</th>
-      <th>ふりがな（名前）</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
-        <td><%= student.namehurigana %></td>
         <td><%= link_to '閲覧', student %></td>
         <td><%= link_to '編集', edit_student_path(student) %></td>
         <td><%= link_to '削除', student, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>

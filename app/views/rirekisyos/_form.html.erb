@@ -20,6 +20,11 @@
     <%= form.label :指定日%>
     <%= form.date_select :hizuke, id: :rirekisyo_hizuke %>
   </div>
+
+  <div class="field">
+    <%= form.label :証明写真 %>
+    <%= form.file_field :filename %>
+  </div>
   
   <div class="field">
     <%= form.label :志望理由%>

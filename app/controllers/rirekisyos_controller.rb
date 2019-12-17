@@ -30,6 +30,11 @@ class RirekisyosController < ApplicationController
   def create
     @rirekisyo = Rirekisyo.new(rirekisyo_params)
     @rirekisyo.user_id = current_user.id
+    if params[:rirekisyo][:filename].present?
+      @rirekisyo.filename = params[:rirekisyo][:filename].original_filename
+
+      File.open("app/assets/images/#{@rirekisyo.filename}", 'w+b') {|f|f.write(params[:rirekisyo][:filename].read)}
+    end
     respond_to do |format|
       if @rirekisyo.save
        
@@ -47,6 +52,12 @@ class RirekisyosController < ApplicationController
   def update
     respond_to do |format|
       if @rirekisyo.update(rirekisyo_params)
+        if params[:rirekisyo][:filename].present?
+          @rirekisyo.filename = params[:rirekisyo][:filename].original_filename
+    
+          File.open("app/assets/images/#{@rirekisyo.filename}", 'w+b') {|f|f.write(params[:rirekisyo][:filename].read)}
+        end
+        @rirekisyo.save
         format.html { redirect_to @rirekisyo, notice: 'Rirekisyo was successfully updated.' }
         format.json { render :show, status: :ok, location: @rirekisyo }
       else
