@@ -15,35 +15,105 @@
  @import "bootstrap";
   
  .box13 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
     color: #FFF;
     background: #6eb7ff;
     border-bottom: solid 6px #3f87ce;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
 }
 .box13 p {
     margin: 0; 
-    padding: 0;
+    padding: 20;
 }
 .box22{
-    padding: 0.0em 0em;
-    margin: 1em 0;
     background: #f4f4f4;
-    border-left: solid 2px #5bb7ae;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
-    width: 125px;
+    width: 140px;
+    height: 500px;
+    position: relative;
+    top :10px;    
+    right:20px ;
+
 }
 .box22 p {
     margin: 10; 
-    padding: 10;
+    padding: 20;
 }
 
-table, td, th { vertical-align: middle; border: none; }
-
-.haikei1 { 
-    height: 250px;                  /* 高さ指定 */
+.haikei1 {     position: relative;
+  top :-10px;    
+  right:30px ;
+    width: 1300px;
+    height: 220px;                  /* 高さ指定 */
     padding:  20px;                 /* 余白指定 */
     background-color: powderblue;   /* 背景色指定 */
+}
+
+body {
+    background-color: #fffff0;
+    color: #333;
+    margin: 33px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 25px;
+  }
+  
+  p, ol,td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 36px;
+  }
+  
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+  }
+  
+  a {
+     color: #000;
+   
+     &:visited {
+       color: #666;
+     }
+     &:hover {
+       color: #fff;
+       background-color: #000;
+     }
+   }
+  
+//
+//  th {
+//    padding-bottom: 5px;
+//  }
+  
+//  td {
+//    padding: 0 5px 7px;
+//  }
+
+  div {
+    &.field, &.actions {
+      margin-bottom: 10px;
+    }
+  }
+  
+  #notice {
+    color: green;
+  }
+  
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+  }
+  
+  #error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;}
+
+ ul {font-size: 20px;
+  line-height: 30px;
+  
 }

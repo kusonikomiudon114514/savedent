@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
   # GET /students
   # GET /students.json
   def index
@@ -33,7 +32,7 @@ class StudentsController < ApplicationController
     end
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
@@ -46,8 +45,16 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
+     
+
       if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        if params[:student][:filename].present?
+          @student.filename = params[:student][:filename].original_filename
+    
+          File.open("app/assets/images/#{@student.filename}", 'w+b') {|f|f.write(params[:student][:filename].read)}
+        end
+        @student.save
+        format.html { redirect_to @student, notice: '更新しました。' }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
@@ -61,7 +68,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+      format.html { redirect_to students_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end

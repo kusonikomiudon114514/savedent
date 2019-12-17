@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :証明写真 %>
+    <%= form.file_field :filename %>
+  </div>
+  
+  <div class="field">
     <%= form.label :志望理由%>
     <%= form.text_area :reason,  id: :rirekisyo_reason,:cols=> 60,:rows=>15 %>
   </div>

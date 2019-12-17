@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>メモ</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>更新日</th>
+      <th>大事なメモ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memos.each do |memo| %>
+      <tr>
+        <td><%= memo.title %></td>
+        <td><%= memo.updated_at %></td>
+        <td><%= check_box_tag :important, memo.important,memo.important %></td>
+        <td><%= link_to '詳細', memo %></td>
+        <td><%= link_to '編集', edit_memo_path(memo) %></td>
+        <td><%= link_to '削除', memo, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '全て', memos_path %>

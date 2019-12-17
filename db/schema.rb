@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20191217020847) do
+=======
+ActiveRecord::Schema.define(version: 20191216012928) do
+>>>>>>> 6ceb84799439ba8ade84f58d42ce1cdd254c78a7
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
@@ -52,6 +56,14 @@ ActiveRecord::Schema.define(version: 20191217020847) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "newpapers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "reportschool_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "check"
   end
 
   create_table "places", force: :cascade do |t|
@@ -140,6 +152,7 @@ ActiveRecord::Schema.define(version: 20191217020847) do
     t.text "kanso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "check"
   end
 
   create_table "resumetrancerecs", force: :cascade do |t|
@@ -161,6 +174,7 @@ ActiveRecord::Schema.define(version: 20191217020847) do
     t.string "renraku"
     t.string "renhuri"
     t.integer "user_id"
+    t.string "filename"
   end
 
   create_table "rjlogs", force: :cascade do |t|
@@ -173,6 +187,12 @@ ActiveRecord::Schema.define(version: 20191217020847) do
   create_table "rslogs", force: :cascade do |t|
     t.integer "user_id"
     t.integer "reportschool_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "saws", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

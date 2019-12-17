@@ -1,6 +1,6 @@
 class MediationsController < ApplicationController
   before_action :set_mediation, only: [:show, :edit, :update, :destroy]
-
+  before_action :permissionadmin
   # GET /mediations
   # GET /mediations.json
   def index

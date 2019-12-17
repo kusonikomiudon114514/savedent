@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :rjlogs
+=======
+  resources :newpapers
+  resources :saws
+>>>>>>> 6ceb84799439ba8ade84f58d42ce1cdd254c78a7
   resources :mensetus
   get 'manage/school'
 
   resources :rslogs
   resources :subjects
   get 'mensetu/top'
+
+  get 'memos/importantmemo'
 
   get 'reportmenu/menu'
 
@@ -37,11 +44,17 @@ Rails.application.routes.draw do
   post '/reportschools_search',to:'reportschools#search'							
   get '/reportschools_search',to:'reportschools#index'																										
 
+  post '/manage_school_manydestory',to:'manage#manydestory'							
+  get '/manage_school_manydestory',to:'manage#school'		
+
   post '/manage_school_search_year',to:'manage#search_year'							
   get '/manage_school_search_year',to:'manage#school'																										
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
+ 
+  post '/reportschools_saw_search',to:'reportschools#saw_search'
+  get '/reportschools_saw_search',to:'reportschools#index'
  
   post '/reportjobs_zigyousyo_search',to:'reportjobs#zigyousyo_search'
   get '/reportjobs_zigyousyo_search',to:'reportjobs#index'

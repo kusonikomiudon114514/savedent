@@ -4,7 +4,7 @@
     <p>
        名前
     <br>
-    <%= select_tag('tenso[select_teacher]',options_for_select(Teacher.all.map { |teacher| [teacher.user.students[0].name,teacher.user_id]}))%> <%= submit_tag '送信' %> 
+    <%= select_tag('tenso[select_teacher]',options_for_select(Teacher.all.map { |teacher| [teacher.user.teachers[0].name,teacher.user_id]}))%> <%= submit_tag '送信' %> 
     <%= hidden_field_tag 'tenso[select_rirekisyo]',@okuru %>
     </p>
 <% end %>    

@@ -5,11 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+User.connection.execute("delete from sqlite_sequence where name= 'users' ")
+User.create(email: "admin@gmail.com", password: "abc123456", password_confirmation: "abc123456")
+
+Student.delete_all
+Student.connection.execute("delete from sqlite_sequence where name= 'students' ")
+Student.create(name: "システム管理者", user_id: 1)
+
+Teacher.delete_all
+Teacher.connection.execute("delete from sqlite_sequence where name= 'teachers' ")
+Teacher.create(name: "システム管理者", admin: true ,user_id: 1)
+
 Interview.delete_all
 Interview.connection.execute("delete from sqlite_sequence where name= 'interviews' ")
 Interview.create(name: "一人")
 Interview.create(name: "複数")
 Interview.create(name: "集団討論")
+
+Saw.delete_all
+Saw.connection.execute("delete from sqlite_sequence where name= 'saws' ")
+Saw.create(name: "自分だけ")
+Saw.create(name: "自分以外")
+Saw.create(name: "すべて")
 
 Mediation.delete_all
 Mediation.connection.execute("delete from sqlite_sequence where name= 'mediations' ")
@@ -32,7 +51,7 @@ Exam.create(name:"一般入試")
 Exam.create(name:"特別推薦入試")
 Exam.create(name:"指定校推薦入試")
 Exam.create(name:"ＡＯ入試")
-Exam.create(name:"一般入試")
+Exam.create(name:"一般推薦")
 Exam.create(name:"スポーツ推薦")
 Exam.create(name:"自己推薦")
 Exam.create(name:"その他")

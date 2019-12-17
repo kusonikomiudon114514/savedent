@@ -1,6 +1,6 @@
 class RirekisyosController < ApplicationController
   before_action :set_rirekisyo, only: [:show, :edit, :update, :destroy]
-
+  before_action :permissionsensei_yes,only: [:edit,:update,:destroy,:tenso]
   # GET /rirekisyos
   # GET /rirekisyos.json
   def index
@@ -10,6 +10,7 @@ class RirekisyosController < ApplicationController
   # GET /rirekisyos/1
   # GET /rirekisyos/1.json
   def show
+    
   end
 
   # GET /rirekisyos/new
@@ -29,8 +30,14 @@ class RirekisyosController < ApplicationController
   def create
     @rirekisyo = Rirekisyo.new(rirekisyo_params)
     @rirekisyo.user_id = current_user.id
+    if params[:rirekisyo][:filename].present?
+      @rirekisyo.filename = params[:rirekisyo][:filename].original_filename
+
+      File.open("app/assets/images/#{@rirekisyo.filename}", 'w+b') {|f|f.write(params[:rirekisyo][:filename].read)}
+    end
     respond_to do |format|
       if @rirekisyo.save
+       
         format.html { redirect_to @rirekisyo, notice: 'Rirekisyo was successfully created.' }
         format.json { render :show, status: :created, location: @rirekisyo }
       else
@@ -45,6 +52,12 @@ class RirekisyosController < ApplicationController
   def update
     respond_to do |format|
       if @rirekisyo.update(rirekisyo_params)
+        if params[:rirekisyo][:filename].present?
+          @rirekisyo.filename = params[:rirekisyo][:filename].original_filename
+    
+          File.open("app/assets/images/#{@rirekisyo.filename}", 'w+b') {|f|f.write(params[:rirekisyo][:filename].read)}
+        end
+        @rirekisyo.save
         format.html { redirect_to @rirekisyo, notice: 'Rirekisyo was successfully updated.' }
         format.json { render :show, status: :ok, location: @rirekisyo }
       else
@@ -70,11 +83,11 @@ class RirekisyosController < ApplicationController
 
   def tensosave
     @resumetrancerec = Resumetrancerec.new
-    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_teacher]
-    @resumetrancerec.user_id     = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.rirekisyo_id   = params[:tenso][:select_rirekisyo]
+    @resumetrancerec.user_id     = params[:tenso][:select_teacher]
 
      if @resumetrancerec.save
-      redirect_to rirekisyos_path
+      redirect_to rirekisyos_path, notice: '履歴書の転送に成功しました'
      else
       render :tenso
      end
