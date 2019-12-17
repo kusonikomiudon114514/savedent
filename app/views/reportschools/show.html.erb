@@ -1,128 +1,191 @@
-<p id="notice"><%= notice %></p>
+<html>
+  <head>
+    <style type="text/css">
+      div.blocka {
+                  float: left ;
+                  width: 53% ;
+                 }
+      th.example { text-align: center; }  
+      .sampleTable {
+                    border-collapse: collapse;
+                    table-layout: fixed; 
+                   }
+     </style>
+  </head>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>状況:</strong>
-  <%= @reportschool.status %>
-  </p>
+  <p>
+    <strong>状況:</strong>
+    <%if @reportschool.check == false %>
+      <%= "確認中" %>
+    <% else %>
+      <%= "確認済" %>
+    <% end %>
 
-<p>
-  <strong>生徒:</strong>
-  <%= @reportschool.user.students[0].name %>
-</p>
+    <strong>報告年月日</strong>
+   <%= @reportschool.created_at.strftime('%Y/%m/%d') %>
+  </p>  
 
-<p>
-  <strong>学校種:</strong>
-  <%= @reportschool.type.name %>
-</p>
+  <div class="blocka" >
+    <table class="sampleTable" border="1">
+      <tr>
+        <th class="example" style="width:64px;height:40px" >氏名</th>
+        <td colspan=3 style="width:450px">
+          <%= @reportschool.user.students[0].name %>
+        </td>
+      </tr>
 
-<p>
-  <strong>分野:</strong>
-  <%= @reportschool.field.name %>
-</p>
+      <tr>
+        <th class="example">学校種</th>
+        <td style="width:192px;height:40px">
+          <%= @reportschool.type.name %>
+        </td>
+        <th class="example" style="width:65px">分野</th>
+        <td style="width:193px">
+          <%= @reportschool.field.name %>
+        </td>
+      </tr>
 
-<p>
-  <strong>学校名:</strong>
-  <%= @reportschool.gakkou %>
-</p>
+      <tr>
+        <th class="example">学校名</th>
+        <td colspan=3 style="height:40px">
+          <%= @reportschool.gakkou %>
+        </td>
+      </tr>
 
-<p>
-  <strong>学部:</strong>
-  <%= @reportschool.gakubu %>
-</p>
+      <tr>
+        <th class="example">学部</th>
+        <td style="height:40px">
+          <%= @reportschool.gakubu %>
+        </td>
+        <th class="example">学科</th>
+        <td>
+          <%= @reportschool.gakka %>
+        </td>
+      </tr>
 
-<p>
-  <strong>学科:</strong>
-  <%= @reportschool.gakka %>
-</p>
+      <tr>
+        <th class="example" style="height:40px">コース</rh>
+        <td>
+          <%= @reportschool.course %>
+        </td>
+      </tr>
+    </table>
 
-<p>
-  <strong>コース:</strong>
-  <%= @reportschool.course %>
-</p>
+    <table border="1">
+      <tr>
+        <th class="example" style="width:65px;height:40px">所在地</th>
+        <td style="width:306px">
+          <%= @reportschool.syozaichi %>
+        </td>
+        <th class="example" style="width:65px">試験日</th>
+        <td>
+          <%= @reportschool.shikennbi %>
+        </td>
+       </tr>
 
-<p>
-  <strong>所在地:</strong>
-  <%= @reportschool.syozaichi %>
-</p>
+      <tr>
+        <th class="example" style="height:40px">試験場</th>
+        <td>
+          <%= @reportschool.shikennzyou %>
+        </td>
+        <th class="example">合格発表</th>
+        <td>
+          <%= @reportschool.gokaku %>
+        </td>
+      </tr>
+    </table>
 
-<p>
-  <strong>試験場:</strong>
-  <%= @reportschool.shikennzyou %>
-</p>
+    <table border="1">
+      <tr>
+        <th class="example" style="width:65px;height:40px">感想</th>
+        <td style="width:450px">
+          <%= @reportschool.kanso %>
+        </td>
+      </tr>
 
-<p>
-  <strong>合格発表:</strong>
-  <%= @reportschool.gokaku %>
-</p>
+      <tr>
+        <th class="example" style="height:40px">入試形態</th>
+        <td>
+          <%= @reportschool.exam.name %>
+        </td>
+      </tr>
+    </table>
 
-<p>
-  <strong>試験日:</strong>
-  <%= @reportschool.shikennbi %>
-</p>
+    <table border="1">
+      <h4>Ⅰ.一般入試</h4>
 
-<p>
-  <strong>入試形態:</strong>
-  <%= @reportschool.exam.name %>
-</p>
+        <tr>
+          <th class="example" style="width:72px;height:40px">国語（分）</th>
+          <td style="width:28px">
+            <%= @reportschool.japanese %>
+          </td>
 
-<h2>一般入試</h2>
+          <th class="example" style="width:72px;height:40px">数学（分）</th>
+          <td style="width:28px">
+            <%= @reportschool.math %>
+          </td>
 
-<p>
-  <strong>国語（分）:</strong>
-  <%= @reportschool.japanese %>
-</p>
+          <th class="example" style="width:72px;height:40px">社会（分）</th>
+          <td style="width:28px">
+            <%= @reportschool.social %>
+          </td>
 
-<p>
-  <strong>数学（分）:</strong>
-  <%= @reportschool.math %>
-</p>
+          <th class="example" style="width:72px;height:40px">理科（分）</th>
+          <td style="width:28px">
+            <%= @reportschool.science %>
+          </td>
 
-<p>
-  <strong>社会（分）:</strong>
-  <%= @reportschool.social %>
-</p>
+          <th class="example" style="width:72px;height:40px">英語（分）</th>
+          <td style="width:28px">
+            <%= @reportschool.english %>
+          </td>
+        </tr>
 
-<p>
-  <strong>理科（分）:</strong>
-  <%= @reportschool.science %>
-</p>
+        <tr>
+          <th class="example">問題の内容</th>
+          <td colspan=9 style="width:443px;height:300px">
+            <%= simple_format(@reportschool.detail) %>
+          </td>
+        </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>英語（分）:</strong>
-  <%= @reportschool.english %>
-</p>
+  <div class="blockb">
 
-<p>
-  <strong>問題の内容:</strong>
-  <%= @reportschool.detail %>
-</p>
+    <table border="1">
+      <h4>Ⅱ.推薦入試</h4>
+        <tr>
+          <th class="example">形態</th>
+          <td style="height:40px">
+            <%= @reportschool.recommended.name %>
+          </td>
+        </tr>
 
-<h2>推薦入試</h2>
+        <tr>
+          <th class="example">面接 質問内容</th> 
+          <td style="width:370px;height:400px">
+            <%= simple_format(@reportschool.mennsetsu) %>
+          </td>
+        </tr>
 
-<p>
-  <strong>形態:</strong>
-  <%= @reportschool.recommended.name %>
-</p>
+        <tr>
+          <th class="example">小論文（作文）テーマ</th>
+          <td style="height:130px">
+            <%= simple_format(@reportschool.syoronnbunn) %>
+          </td>
+        </tr>
 
-<p>
-  <strong>面接 質問内容:</strong>
-  <%= @reportschool.mennsetsu %>
-</p>
+        <tr>
+          <th class="example">試験内容</th>
+          <td style="height:140px">
+            <%= simple_format(@reportschool.shikenn) %>
+          </td>
+        </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>小論文（作文）テーマ:</strong>
-  <%= @reportschool.syoronnbunn %>
-</p>
-
-<p>
-  <strong>試験内容:</strong>
-  <%= @reportschool.shikenn %>
-</p>
-
-<p>
-  <strong>感想:</strong>
-  <%= @reportschool.kanso %>
-</p>
-
-<%= link_to '編集', edit_reportschool_path(@reportschool) %> |
-<%= link_to '戻る', reportschools_path %>
+  <%= link_to '編集', edit_reportschool_path(@reportschool) %> |
+  <%= link_to '戻る', reportschools_path %> |
+  <%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+</html>

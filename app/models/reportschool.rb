@@ -31,7 +31,7 @@ class Reportschool < ApplicationRecord
 
     if exam_id == 1
       unless japanese.blank? and math.blank? and social.blank? and science.blank? and english.blank?
-        if japanese < 0 or math < 0 or social < 0 or science < 0 or english < 0
+        if japanese.to_i < 0 or math.to_i < 0 or social.to_i < 0 or science.to_i < 0 or english.to_i < 0 
           errors[:base]<<"正確な試験時間を入力してください"
         end
       end

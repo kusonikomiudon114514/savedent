@@ -33,6 +33,7 @@ class ReportschoolsController < ApplicationController
   def create
     @reportschool = Reportschool.new(reportschool_params)
     @reportschool.user_id = current_user.id
+    @reportschool.check = false
     respond_to do |format|
       if @reportschool.save
         format.html { redirect_to @reportschool, notice: '作成しました' }
@@ -195,6 +196,6 @@ class ReportschoolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reportschool_params
-      params.require(:reportschool).permit(:status, :user_id, :type_id, :field_id, :gakkou, :gakubu, :gakka, :course, :syozaichi, :shikennzyou, :gokaku, :shikennbi, :exam_id, :detail, :japanese, :math, :social, :science, :english, :recommended_id, :mennsetsu, :syoronnbunn, :shikenn, :kanso)
+      params.require(:reportschool).permit(:status, :user_id, :type_id, :field_id, :gakkou, :gakubu, :gakka, :course, :syozaichi, :shikennzyou, :gokaku, :shikennbi, :exam_id, :detail, :japanese, :math, :social, :science, :english, :recommended_id, :mennsetsu, :syoronnbunn, :shikenn, :kanso, :check)
     end
   end

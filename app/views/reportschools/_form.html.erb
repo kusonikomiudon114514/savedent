@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <% form.label :状況 %>
-    <%= form.number_field :status, id: :reportschool_status, :value =>1 %>
-  </div>
 
   <div class="field">
     <%= form.label :学校種 %>
@@ -64,6 +60,11 @@
   <div class="field">
     <%= form.label :試験日 %>
     <%= form.date_select :shikennbi, id: :reportschool_shikennbi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :感想 %>
+    <%= form.text_area :kanso, id: :reportschool_kanso %>
   </div>
 
   <div class="field">
@@ -125,11 +126,16 @@
     <%= form.text_area :shikenn, id: :reportschool_shikenn %>
   </div>
 
-  <h2>全員記入箇所</h2>
+  <!--
+  <div class="field">
+  <%= form.label :状況 %>
+  <%= form.number_field :status, id: :reportschool_status, :value =>1 %>
+  </div>
+  -->
 
   <div class="field">
-    <%= form.label :感想 %>
-    <%= form.text_area :kanso, id: :reportschool_kanso %>
+  <%= form.label :既読 %>
+  <%= form.check_box :check, id: :reportschool_check %>
   </div>
 
   <div class="actions">
