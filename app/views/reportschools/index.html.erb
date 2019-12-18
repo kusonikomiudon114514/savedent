@@ -14,83 +14,79 @@ th.example2 { text-align: right; }
     border-collapse: collapse;
     table-layout: fixed;
 }
-
 </style>
 </head>
 <h1>入学試験受験報告書</h1>
 
+
 <table>
   <tr>
+    <th class="example2" style="width:50px">地方 </th>
+    <td>
     <%= form_tag('/reportschools_localname1_search') do %>
-      <th class="example2" style="width:70px">地方 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:50px">地域 </th>
+    <td>
     <%= form_tag('/reportschools_localname2_search') do %>
-      <th class="example2" style="width:50px">地域 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:80px">都道府県 </th>
+    <td>
     <%= form_tag('/reportschools_place_search') do %>
-      <th class="example2" style="width:80px">都道府県 </th>
-      <br>
-      <td>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
   </tr>
 </table>
 
+<br>
+
 <table>
   <tr>
-    <%= form_tag('/reportschools_type_search') do %>
-      <th class="example2" style="width:70px">学校種</th>
-      <br>
-      <td>
-        <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
-        <%= submit_tag '検索' %>
-      </td> 
-    <% end %> 
-
-    <%= form_tag('/reportschools_field_search') do %>
-      <th class="example2" style="width:110px">分野別</th>
-      <br>
-      <td>
+    <th class="example2" style="width:50px">学校種</th>
+    <td>
+        <%= form_tag('/reportschools_type_search') do %>
+          <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
+          <%= submit_tag '検索' %>
+        <% end %> 
+    </td> 
+    
+    <th class="example2" style="width:100px">分野別</th>
+    <td>
+        <%= form_tag('/reportschools_field_search') do %>
         <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , {:selected => session[:search_field]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
-    <% end %> 
+        <% end %> 
+    </td>
   </tr>
 </table>
 
+<br>
+
 <table>
   <tr>
-    <%= form_tag('/reportschools_search') do %>
-      <th class="example2" style="width:90px">学校名</th>
-      <br>
+      <th class="example2" style="width:50px">学校名</th>
       <td>
+      <%= form_tag('/reportschools_search') do %>
         <%= text_field_tag 'search[gakkou]' , session[:search_gakkou] %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
 
-    <%= form_tag('/reportschools_saw_search') do %>
-      <th class="example2" style="width:135px">検索絞り込み</th>
-      <br>
+      <th class="example2" style="width:143px">検索絞り込み</th>
       <td>
+      <%= form_tag('/reportschools_saw_search') do %>
         <%= select_tag 'search[saw]' , options_for_select(Saw.all.map {|r| [r.name,r.id] } , {:selected => session[:search_saw]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
+
    </tr>
 </table>
 
