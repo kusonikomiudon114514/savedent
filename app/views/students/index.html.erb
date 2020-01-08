@@ -14,9 +14,9 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
-        <td><%= link_to '閲覧', student %></td>
-        <td><%= link_to '編集', edit_student_path(student) %></td>
-        <td><%= link_to '削除', student, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <td width = 100px><pre><%= link_to '閲覧', student %></td>
+        <td><pre><%= link_to '編集', edit_student_path(student) %></td>
+        <td><pre><%= link_to '削除', student, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.where(user_id: current_user.id)
   end
 
   # GET /students/1
