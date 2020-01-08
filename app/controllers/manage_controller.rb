@@ -13,7 +13,36 @@ class ManageController < ApplicationController
       session[:search_year] = nil		
     end																										
      render :school																										
-  end					
+  end	
+  
+  def survey_year																																																				
+    if params[:survey][:year].present?
+      @reportjobs = Reportjob.all.order(created_at: :desc)
+      @reportjobs = @reportjobs.where("created_at between '#{params[:survey][:year]}-04-01 00:00:00' and '#{params[:survey][:year].to_i + 1}-03-31 23:59:59'")
+      session[:survey_year] = params[:survey][:year]
+    else																										
+      @reportjobs = Reportjob.all								
+      session[:survey_year] = nil		
+    end																										
+     render :school																										
+  end	
+
+  def lotdestory																																																				
+    if params[:survey][:year].present?
+      if params[:nenndo]
+        @reportjobs = Reportjob.all.order(created_at: :desc)
+        @reportjobs = @reportjobs.where("created_at between '#{params[:survey][:year]}-04-01 00:00:00' and '#{params[:survey][:year].to_i + 1}-03-31 23:59:59'")
+        @reportjobs.each do |reportjob|
+          reportjob.destroy
+        end
+        session[:survey_year] = params[:survey][:year]
+      else																										
+        @reportjobs = Reportjob.all								
+        session[:survey_year] = nil		
+      end				
+    end																						
+     render :school																										
+  end					  
 
   def manydestory																																																				
     if params[:search][:year].present?
