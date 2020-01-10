@@ -92,13 +92,9 @@ th.example2 { text-align: right; }
     <% @joblogs.first(10).each do |joblog| %>
       <tr align="center">
         <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= joblog.reportjob.day %></td>
-        <td><%= joblog.reportjob.field.name %></td>
-        <td><%= joblog.reportjob.zigyousyo %></td>
-        <td><%= joblog.reportjob.mediation.name %></td>
-        <td><%= joblog.reportjob.syozaiti %></td>
-        <td><%= joblog.reportjob.shikennzyou %></td>
-        <td><%= joblog.reportjob.interview.name %></td>
+
+        <td><%# joblog.reportjob.field.name %></td>
+
         <td style="width:30px"><%= link_to '詳細', joblog %></td>
        <!--
         <td><%= link_to '編集', edit_reportjob_path(joblog) %></td>

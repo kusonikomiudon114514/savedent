@@ -48,6 +48,7 @@ ja:
         syorinnbunn: 小論文（作文）テーマ
         shikenn: 試験内容
         kanso: 感想
+        check: 既読
         user: 生徒
 
       user:
@@ -126,6 +127,7 @@ ja:
         sakubun: 作文
         bunnsyouryou: 作文　文章量
         other: 就職試験その他
+        check: 既読
         user: ユーザー
 
       rirekisyo:

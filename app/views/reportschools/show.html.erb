@@ -186,6 +186,8 @@
   </div>
 
   <%= link_to '編集', edit_reportschool_path(@reportschool) %> |
-  <%= link_to '戻る', reportschools_path %> |
-  <%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+  <%= link_to '戻る', reportschools_path %>
+  <%if @sensei == true %>
+    |<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+  <% end %>
 </html>

@@ -1,10 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<!--
 <p>
   <strong>Status:</strong>
   <%= @reportjob.status %>
 </p>
+-->
 
+<p>
+<strong>状況:</strong>
+<%if @reportjob.check == false %>
+  <%= "確認中" %>
+<% else %>
+  <%= "確認済" %>
+<% end %>
+
+</p>
 <p>
   <strong>ユーザー:</strong>
   <%= @reportjob.user.students[0].name %>
@@ -77,3 +88,6 @@
 
 <%= link_to '編集', edit_reportjob_path(@reportjob) %> |
 <%= link_to '戻る', reportjobs_path %>
+<%if @sensei == true %>
+|<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+<% end %>

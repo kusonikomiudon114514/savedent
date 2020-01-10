@@ -43,6 +43,9 @@ Rails.application.routes.draw do
 
   post '/manage_school_manydestory',to:'manage#manydestory'							
   get '/manage_school_manydestory',to:'manage#school'		
+  
+  post '/manage_school_lotdestory',to:'manage#lotdestory'							
+  get '/manage_school_lotdestory',to:'manage#school'		
 
   post '/manage_school_search_year',to:'manage#search_year'							
   get '/manage_school_search_year',to:'manage#school'					

@@ -13,17 +13,44 @@ th.example { text-align: center; }
 <!--
 <p>Find me in app/views/manage/school.html.erb</p>
 -->
+<details>
 
-<h3>就職試験受験報告書　編集</h3>
-<h5>未読の報告書</h5>
+<summary>就職試験受験報告書　未読の報告書</summary>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+  <th class="example" style="width:250px">　生徒　</th>
+  <th class="example" style="width:250px">　受験日　</th>
+  <th class="example" style="width:250px">　事業所名　</th>
+  <th class="example" style="width:250px">　所在地　</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
+  <tbody>
+  <% if @reportjobs.present?%>
+    <% @reportjobs.each do |reportjob| %>
+    <% if reportjob.check == false %>
+      <tr align="center">
+        <td><%= reportjob.user.students[0].name %></td>
+        <td><%= reportjob.day %></td>
+        <td><%= reportjob.zigyousyo %></td>
+        <td><%= reportjob.syozaiti %></td>
 
+        <td style="width:30px"><%= link_to '詳細', reportjob %></td>
+        <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
+        <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  <% end %>  
+  </tbody>
+</table>
+</details>
 
+<details>
 
-
-
-
-<h3>就職試験受験報告書　削除</h3>
+<summary>就職試験受験報告書　削除</summary>
 <%= form_tag('/manage_school_survey_year') do %>
   <p>
   年度検索
@@ -33,18 +60,49 @@ th.example { text-align: center; }
   </p>
 <% end %> 
 
-<%= form_tag('/manage_school_manydestory') do %>
-  <input type="submit" name="nendo" value="一括削除">
-  <%= hidden_field_tag 'search[year]' , session[:search_year] %>
+<%= form_tag('/manage_school_lotdestory') do %>
+  <input type="submit" name="nenndo" value="一括削除" onclick="var checked = confirm('本当に削除しますか？'); if (checked == true) {return true;} else {return false;}">
+  <%= hidden_field_tag 'survey[year]' , session[:survey_year] %>
 <% end %> 
-
-
-<h3>入学試験受験報告書　編集</h3>
-<h5>未読の報告書</h5>
 
 <table class="table table-bordered">
   <thead>
+  <tr>
+  <th class="example" style="width:250px">　生徒　</th>
+  <th class="example" style="width:250px">　受験日　</th>
+  <th class="example" style="width:250px">　事業所名　</th>
+  <th class="example" style="width:250px">　所在地　</th>
+  <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @reportjobs.present?%>
+    <% @reportjobs.each do |reportjob| %>
+      <tr align="center">
+      <td><%= reportjob.user.students[0].name %></td>
+      <td><%= reportjob.day %></td>
+      <td><%= reportjob.zigyousyo %></td>
+      <td><%= reportjob.syozaiti %></td>
+
+      <td style="width:30px"><%= link_to '詳細', reportjob %></td>
+        <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
+        <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+    <% end %>  
+
+  </tbody>
+</table>
+</details>
+
+<details>
+
+<summary>入学試験受験報告書　未読の報告書</summary>
+<table class="table table-bordered">
+  <thead>
     <tr>
+    <th class="example" style="width:90px">生徒</th>
     <th class="example" style="width:90px">　学校種　</th>
     <th class="example" style="width:150px">　　分野　　</th>
     <th class="example" style="width:150px">　学校名　</th>
@@ -55,9 +113,11 @@ th.example { text-align: center; }
   </tr>
   </thead>
   <tbody>
+  <% if @reportschools.present? %>
     <% @reportschools.each do |reportschool| %>
       <% if reportschool.check == false %>
       <tr>
+      <td><%= reportschool.user.students[0].name %></td>
         <td><%= reportschool.type.name %></td>
         <td><%= reportschool.field.name %></td>
         <td><%= reportschool.gakkou %></td>
@@ -70,10 +130,13 @@ th.example { text-align: center; }
       </tr>
       <% end %>
     <% end %>
+    <% end %>
   </tbody>
 </table>
+</details>
 
-<h3>入学試験受験報告書　削除</h3>
+<details>
+<summary>入学試験受験報告書　削除</summary>
 
   <%= form_tag('/manage_school_search_year') do %>
     <p>
@@ -85,7 +148,7 @@ th.example { text-align: center; }
   <% end %> 
 
   <%= form_tag('/manage_school_manydestory') do %>
-    <input type="submit" name="nendo" value="一括削除">
+    <input type="submit" name="nendo" value="一括削除" onclick="var checked = confirm('本当に削除しますか？'); if (checked == true) {return true;} else {return false;}">
     <%= hidden_field_tag 'search[year]' , session[:search_year] %>
   <% end %> 
 
@@ -117,7 +180,7 @@ th.example { text-align: center; }
     <% end %>
   </tbody>
 </table>
-
+</details>
 <br>
 <br>
 <br>

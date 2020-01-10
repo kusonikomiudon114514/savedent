@@ -147,7 +147,7 @@ th.example2 { text-align: right; }
   <tbody>    
     <% @schoollogs.first(10).each do |schoollog| %>
       <tr align="center">
-        <td><%= schoollog.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= schoollog.created_at.strftime("%Y/%-m/%-d %-H時%-M分") %></td>
         <td><%= schoollog.reportschool.type.name %></td>
         <td><%= schoollog.reportschool.field.name %></td>
         <td><%= schoollog.reportschool.gakkou %></td>
