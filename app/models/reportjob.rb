@@ -1,7 +1,8 @@
 class Reportjob < ApplicationRecord
 
-  belongs_to :mediation
-  belongs_to :field
-  belongs_to :interview
   belongs_to :user, optional: true
+  has_many :rjlogs, :dependent => :destroy
+
+  validate :error_check
+
 end
