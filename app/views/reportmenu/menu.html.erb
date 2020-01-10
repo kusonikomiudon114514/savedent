@@ -9,5 +9,7 @@
 <%= link_to '見る', reportschools_path %>
 <%= link_to '作成', new_reportschool_path %>
 
+<%if @sensei == true %>
 <br>
 <%= link_to 'マスター管理', manage_school_path %>
+<% end %>

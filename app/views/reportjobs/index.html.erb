@@ -60,9 +60,9 @@ th.example2 { text-align: right; }
         <td><%= reportjob.shikennzyou %></td>
         <td><%= reportjob.interview.name %></td>
 
-        <td style="width:30px"><%= link_to '　詳細', reportjob %></td>
-        <td style="width:30px"><%= link_to '　編集', edit_reportjob_path(reportjob) %></td>
-        <td style="width:30px"><%= link_to '　削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <td style="width:30px"><%= link_to '詳細', reportjob %></td>
+        <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
+        <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -94,7 +94,7 @@ th.example2 { text-align: right; }
       <tr align="center">
         <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
 
-        <td><%= joblog.reportjob.field.name %></td>
+        <td><%# joblog.reportjob.field.name %></td>
 
         <td style="width:30px"><%= link_to '詳細', joblog %></td>
        <!--

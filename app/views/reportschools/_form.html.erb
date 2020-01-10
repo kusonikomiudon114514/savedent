@@ -135,10 +135,12 @@
   </div>
   -->
 
+  <%if @sensei == true %>
   <div class="field">
   <%= form.label :既読 %>
   <%= form.check_box :check, id: :reportschool_check %>
   </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
