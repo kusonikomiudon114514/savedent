@@ -4,11 +4,10 @@
 
 <br>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>推薦形態</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -16,9 +15,9 @@
     <% @recommendeds.each do |recommended| %>
       <tr>
         <td><%= recommended.name %></td>
-        <td><%= link_to '詳細', recommended %></td>
-        <td><%= link_to '編集', edit_recommended_path(recommended) %></td>
-        <td><%= link_to '削除', recommended, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><center><%= link_to '詳細', recommended %></center></td>
+        <td><center><%= link_to '編集', edit_recommended_path(recommended) %></center></td>
+        <td><center><%= link_to '削除', recommended, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
       </tr>
     <% end %>
   </tbody>
