@@ -11,9 +11,7 @@
 
   <body>
   <div class="container-fluid">
-  <div class="haikei1">
-  <font size="30">Savedent</font>
-    <header>
+   <h1>Savedent</h1>
       <nav align = "right">
         <% if user_signed_in? %>
           <% if current_user.students.nil? %>
@@ -33,17 +31,16 @@
         <%= link_to '　　アカウントの登録', new_user_registration_path %>
           <%= link_to '　　ログイン', new_user_session_path %>
         <% end %>
-      </nav>
-    </header>
+        </nav>
     <p class="notice"><%# notice %></p>
     <p class="alert"><%# alert %></p>
 
 <div class="row">
 <div class="col-md-2">
-<div class="box22">
-<div>
+<div class="box30">
+<div><h2>MENU</h2>
   <ul>
-        <li><%= link_to 'TOP',home_top_path %></li>
+        <li><%= link_to 'TOP',home_top_path %></li> 
         <li><%= link_to '履歴書作成',rirekisyos_path %></li>
         <li><%= link_to '履歴書転送',resumetrancerecs_path %></li>
         <li><%= link_to '受験報告書',reportmenu_menu_path %></li>
@@ -59,8 +56,8 @@
         <li><%= link_to '先生', teachers_path %></li>
         <li><%= link_to '利用者', students_path %></li>
   </ul>
-      </div>
-      </div>
+</div>
+</div>
       </div>
 
       <div class="col-md-10">
