@@ -13,7 +13,11 @@
   <%= @rirekisyo.hizuke %>
 </td>
 <td rowspan =3 style="width:100px">
-<%= image_tag "initprofile.png",:size => "100x100" %>
+<% if @rirekisyo.filename.present? %>
+<%= image_tag @rirekisyo.filename,:size => "100x110" %>
+<% else %>
+<%= image_tag "initprofile.png",:size => "100x110" %>
+<% end %> 
 </td>
 </tr>
 

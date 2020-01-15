@@ -2,34 +2,39 @@
 
 <h1>メモ</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>タイトル</th>
-      <th>更新日</th>
-      <th>大事なメモ</th>
-      <th colspan="3"></th>
+      <th width=150px><center>タイトル</center></th>
+      <th width=150px><center>更新日</center></th>
+      <th width=50px><center>大事なメモ</center></th>
     </tr>
   </thead>
 
   <tbody>
     <% @memos.each do |memo| %>
       <tr>
-        <td><%= memo.title %></td>
-        <td><%= memo.updated_at %></td>
-        <td><%= check_box_tag :important, memo.important,memo.important %></td>
-        <td><%= link_to '詳細', memo %></td>
-        <td><%= link_to '編集', edit_memo_path(memo) %></td>
-        <td><%= link_to '削除', memo, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <td><center><%= memo.title %></center></td>
+        <td><center><%= memo.updated_at %></center></td>
+        <td><center><%= check_box_tag :important, memo.important,memo.important %></center></td>
+        <td width=65px><center><%= link_to '詳細', memo %></center></td>
+        <td width=65px><center><%= link_to '編集', edit_memo_path(memo) %></center></td>
+        <td width=65px><center><%= link_to '削除', memo, method: :delete, data: { confirm: "本当に削除しますか？" } %></center></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to '新規作成', new_memo_path %>
-
 <br>
 <br>
-<%= link_to '大事なメモ', memos_importantmemo_path %>
+
+<table>
+<tbody>
+<tr>
+<td><pre style="font-size: 20px;"><%= link_to '新規作成', new_memo_path %></td>
+<td>　　　</td>
+<td><pre style="font-size: 20px;"><%= link_to '大事なメモ', memos_importantmemo_path %></td>
+</tr>
+</tbody>
+</table>

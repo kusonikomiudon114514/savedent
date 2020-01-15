@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rjlog.user_id %>
+</p>
+
+<p>
+  <strong>Reportjob:</strong>
+  <%= @rjlog.reportjob_id %>
+</p>
+
+<%= link_to 'Edit', edit_rjlog_path(@rjlog) %> |
+<%= link_to 'Back', rjlogs_path %>

@@ -3,5 +3,7 @@ class AddColumnReportjob < ActiveRecord::Migration[5.1]
 
    add_column :reportjobs, :field_id, :integer
 
+
+
   end
 end

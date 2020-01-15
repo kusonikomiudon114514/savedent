@@ -1,12 +1,13 @@
 class Reportschool < ApplicationRecord
+  
+  belongs_to :user
+  has_many :rslogs, :dependent => :destroy
 
   belongs_to :type
   belongs_to :field
   belongs_to :exam
   belongs_to :recommended
-  belongs_to :user
   belongs_to :saw, optional: true
-  has_many :rslogs, :dependent => :destroy
 
   validate :error_check
 
@@ -21,6 +22,12 @@ class Reportschool < ApplicationRecord
 
     if shikennzyou.blank?
       errors[:base]<<"試験場を入力してください" 
+    end
+
+    if exam_id == 0
+      if exam.blank?
+        errors[:base]<<"入試形態を入力してください"
+      end
     end
 
     if exam_id == 1

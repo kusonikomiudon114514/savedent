@@ -17,14 +17,14 @@
           <% if current_user.students.nil? %>
              <%= image_tag "initprofile.png",:size => "100x100" %>
           <% else %>
-             <% if current_user.students[0].filename.present? %>
+             <% if current_user.students[0].present? && current_user.students[0].filename.present? %>
                <%= image_tag current_user.students[0].filename,:size => "100x100" %>
              <% else %>
                <%= image_tag "initprofile.png",:size => "100x100" %>
              <% end %>
           <% end %> 
           <strong><%= current_user.email %></strong>
-          <%= link_to 'パスワード変更　アカウントの削除', edit_user_registration_path %>
+          <%= link_to 'パスワード変更＆アカウントの削除', edit_user_registration_path %>
           <%= link_to '　　ログアウト', destroy_user_session_path, method: :delete %>
         <% else %>
         <br></br>  

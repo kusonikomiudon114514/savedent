@@ -14,83 +14,79 @@ th.example2 { text-align: right; }
     border-collapse: collapse;
     table-layout: fixed;
 }
-
 </style>
 </head>
 <h1>入学試験受験報告書</h1>
 
+
 <table>
   <tr>
+    <th class="example2" style="width:50px">地方 </th>
+    <td>
     <%= form_tag('/reportschools_localname1_search') do %>
-      <th class="example2" style="width:90px">地方 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:50px">地域 </th>
+    <td>
     <%= form_tag('/reportschools_localname2_search') do %>
-      <th class="example2" style="width:90px">地域 </th>
-      <br>
-      <td>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
-
+    </td>
+    <th class="example2" style="width:80px">都道府県 </th>
+    <td>
     <%= form_tag('/reportschools_place_search') do %>
-      <th class="example2" style="width:90px">都道府県 </th>
-      <br>
-      <td>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
   </tr>
 </table>
 
+<br>
+
 <table>
   <tr>
-    <%= form_tag('/reportschools_type_search') do %>
-      <th class="example2" style="width:90px">学校種</th>
-      <br>
-      <td>
-        <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
-        <%= submit_tag '検索' %>
-      </td> 
-    <% end %> 
-
-    <%= form_tag('/reportschools_field_search') do %>
-      <th class="example2" style="width:90px">分野別</th>
-      <br>
-      <td>
+    <th class="example2" style="width:50px">学校種</th>
+    <td>
+        <%= form_tag('/reportschools_type_search') do %>
+          <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
+          <%= submit_tag '検索' %>
+        <% end %> 
+    </td> 
+    
+    <th class="example2" style="width:100px">分野別</th>
+    <td>
+        <%= form_tag('/reportschools_field_search') do %>
         <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , {:selected => session[:search_field]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
-    <% end %> 
+        <% end %> 
+    </td>
   </tr>
 </table>
 
+<br>
+
 <table>
   <tr>
-    <%= form_tag('/reportschools_search') do %>
-      <th class="example2" style="width:90px">学校名</th>
-      <br>
+      <th class="example2" style="width:50px">学校名</th>
       <td>
+      <%= form_tag('/reportschools_search') do %>
         <%= text_field_tag 'search[gakkou]' , session[:search_gakkou] %>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
 
-    <%= form_tag('/reportschools_saw_search') do %>
-      <th class="example2" style="width:135px">検索絞り込み</th>
-      <br>
+      <th class="example2" style="width:143px">検索絞り込み</th>
       <td>
+      <%= form_tag('/reportschools_saw_search') do %>
         <%= select_tag 'search[saw]' , options_for_select(Saw.all.map {|r| [r.name,r.id] } , {:selected => session[:search_saw]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-      </td>
     <% end %> 
+    </td>
+
    </tr>
 </table>
 
@@ -98,12 +94,12 @@ th.example2 { text-align: right; }
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th class="example" style="width:90px">　学校種　</th>
-      <th class="example" style="width:150px">　　分野　　</th>
-      <th class="example" style="width:150px">　学校名　</th>
-      <th class="example" style="width:150px">　学部　</th>
-      <th class="example" style="width:150px">　学科　</th>
-      <th class="example" style="width:150px">　コース　</th>
+      <th class="example" style="width:90px">学校種</th>
+      <th class="example" style="width:150px">分野</th>
+      <th class="example" style="width:150px">学校名</th>
+      <th class="example" style="width:150px">学部</th>
+      <th class="example" style="width:150px">学科</th>
+      <th class="example" style="width:150px">コース</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -118,7 +114,7 @@ th.example2 { text-align: right; }
         <td><%= reportschool.course %></td>
         <td style="width:30px"><%= link_to '詳細', reportschool %></td>
         <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
-        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -128,30 +124,25 @@ th.example2 { text-align: right; }
 
 <h4><%= link_to '新規作成', new_reportschool_path %></h>
 
-<br>
-<br>
-<br>
-
 <h2>閲覧履歴</h2>
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th class="example" style="width:90px">　閲覧日　</th>
-      <th class="example" style="width:90px">　学校種　</th>
-      <th class="example" style="width:150px">　分野　</th>
-      <th class="example" style="width:150px">　学校名　</th>
-      <th class="example" style="width:150px">　学部　</th>
-      <th class="example" style="width:150px">　学科　</th>
-      <th class="example" style="width:150px">　コース　</th>
+      <th class="example" style="width:90px">閲覧日</th>
+      <th class="example" style="width:90px">学校種</th>
+      <th class="example" style="width:150px">分野</th>
+      <th class="example" style="width:150px">学校名</th>
+      <th class="example" style="width:150px">学部</th>
+      <th class="example" style="width:150px">学科</th>
+      <th class="example" style="width:150px">コース</th>
       <th> <colspan="3"></th>
     </tr>
   </thead>
 
-
   <tbody>    
     <% @schoollogs.first(10).each do |schoollog| %>
       <tr align="center">
-        <td><%= schoollog.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= schoollog.created_at.strftime("%Y/%-m/%-d %-H時%-M分") %></td>
         <td><%= schoollog.reportschool.type.name %></td>
         <td><%= schoollog.reportschool.field.name %></td>
         <td><%= schoollog.reportschool.gakkou %></td>
@@ -161,7 +152,7 @@ th.example2 { text-align: right; }
         <td style="width:30px"><%= link_to '詳細', schoollog %></td>
        <!--
         <td><%= link_to '編集', edit_reportschool_path(schoollog) %></td>
-        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '削除しますか？' } %></td> 
+        <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
         -->
       </tr>
     <% end %>

@@ -69,61 +69,63 @@
 
   <div class="field">
     <%= form.label :入試形態 %>
-    <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] } %>
+    <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] }, {include_blank: true},{id: "examselect", onchange: "outputSelectedValueAndText(this);"} %>
   </div>
 
-  <h2>一般入試</h2>
+  <div id="area1" style="display:none;">
+    <h2>一般入試</h2>
+       <div class="field">
+       <%= form.label :国語（分） %>
+       <%= form.number_field :japanese, id: :reportschool_japanese %>
+      </div>
 
-  <div class="field">
-    <%= form.label :国語（分） %>
-    <%= form.number_field :japanese, id: :reportschool_japanese %>
+      <div class="field">
+       <%= form.label :数学（分） %>
+       <%= form.number_field :math, id: :reportschool_math %>
+      </div>
+
+      <div class="field">
+       <%= form.label :社会（分） %>
+       <%= form.number_field :social, id: :reportschool_social %>
+      </div>
+
+      <div class="field">
+       <%= form.label :理科（分） %>
+       <%= form.number_field :science, id: :reportschool_science %>
+      </div>
+
+      <div class="field">
+       <%= form.label :英語（分） %>
+       <%= form.number_field :english, id: :reportschool_english %>
+      </div>
+
+      <div class="field">
+       <%= form.label :問題の内容 %>
+       <%= form.text_area :detail, id: :reportschool_detail %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :数学（分） %>
-    <%= form.number_field :math, id: :reportschool_math %>
-  </div>
+  <div id="area2" style="display:none;">
+    <h2>推薦入試</h2>
+      <div class="field">
+       <%= form.label :形態 %>
+       <%= form.select :recommended_id, Recommended.all.map {|r| [r.name,r.id] } %>
+      </div>
 
-  <div class="field">
-    <%= form.label :社会（分） %>
-    <%= form.number_field :social, id: :reportschool_social %>
-  </div>
+      <div class="field">
+       <%= form.label :面接の質問内容 %>
+       <%= form.text_area :mennsetsu, id: :reportschool_mennsetsu %>
+      </div>
 
-  <div class="field">
-    <%= form.label :理科（分） %>
-    <%= form.number_field :science, id: :reportschool_science %>
-  </div>
+      <div class="field">
+       <%= form.label :小論文（作文）テーマ %>
+       <%= form.text_area :syoronnbunn, id: :reportschool_syoronnbunn %>
+      </div>
 
-  <div class="field">
-    <%= form.label :英語（分） %>
-    <%= form.number_field :english, id: :reportschool_english %>
-  </div>
-
-  <div class="field">
-    <%= form.label :問題の内容 %>
-    <%= form.text_area :detail, id: :reportschool_detail %>
-  </div>
-
-  <h2>推薦入試</h2>
-
-  <div class="field">
-    <%= form.label :形態 %>
-    <%= form.select :recommended_id, Recommended.all.map {|r| [r.name,r.id] } %>
-    </div>
-
-  <div class="field">
-    <%= form.label :面接の質問内容 %>
-    <%= form.text_area :mennsetsu, id: :reportschool_mennsetsu %>
-  </div>
-
-  <div class="field">
-    <%= form.label :小論文（作文）テーマ %>
-    <%= form.text_area :syoronnbunn, id: :reportschool_syoronnbunn %>
-  </div>
-
-  <div class="field">
-    <%= form.label :試験の内容 %>
-    <%= form.text_area :shikenn, id: :reportschool_shikenn %>
+      <div class="field">
+       <%= form.label :試験の内容 %>
+       <%= form.text_area :shikenn, id: :reportschool_shikenn %>
+      </div>
   </div>
 
   <!--
@@ -133,12 +135,49 @@
   </div>
   -->
 
+  <%if @sensei == true %>
   <div class="field">
   <%= form.label :既読 %>
   <%= form.check_box :check, id: :reportschool_check %>
   </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+window.onload = function() {
+  outputSelectedValueAndText(examselect)
+};
+function outputSelectedValueAndText(obj)
+{
+    /* 
+     * obj は select タグであり、selectedIndex プロパティには
+     * 変更後の選択項目のインデックスが格納されています
+     */
+    var idx = obj.selectedIndex;
+    var value = obj.options[idx].value; // 値
+    var text  = obj.options[idx].text;  // 表示テキスト
+ 
+    if (value==1) {
+      var p1 = document.getElementById('area1');
+      p1.style.display="inline";
+      var p2 = document.getElementById('area2');
+      p2.style.display="none";
+    }
+    else{
+      var p1 = document.getElementById('area1');
+      p1.style.display="none";
+      var p2 = document.getElementById('area2');
+      p2.style.display="inline";
+    }
+    if (value==0) {
+      var p1 = document.getElementById('area1');
+      p1.style.display="none";
+      var p2 = document.getElementById('area2');
+      p2.style.display="none";
+    }
+}
+</script>

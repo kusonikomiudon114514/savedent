@@ -11,11 +11,6 @@
     </div>
   <% end %>
 
-   <div class="field">
-    <%= form.label :状態 %>
-    <%= form.number_field :status, id: :reportjob_status %>
-  </div>
-
   <div class="field">
     <%= form.label :受験日 %>
     <%= form.date_select :day, id: :reportjob_day %>
@@ -59,7 +54,7 @@
   <div class="field">
   <%= form.label :適性・時間 %>
   <%= form.number_field :zikan_tekisei, id: :reportjob_zikan_tekisei %>
-</div>
+ </div>
 
   <div class="field">
     <%= form.label :教養・時間 %>
@@ -109,12 +104,19 @@
   <div class="field">
   <%= form.label :作文・時間 %>
   <%= form.number_field :zikan_ithisa, id: :reportjob_zikan_ithisa %>
-</div>
+ </div>
 
   <div class="field">
     <%= form.label :その他 %>
     <%= form.text_area :other, id: :reportjob_other %>
   </div>
+
+  <%if @sensei == true %>
+  <div class="field">
+  <%= form.label :既読 %>
+  <%= form.check_box :check, id: :reportjob_check %>
+  </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

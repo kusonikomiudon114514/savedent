@@ -75,11 +75,11 @@
     <table border="1">
       <tr>
         <th class="example" style="width:65px;height:40px">所在地</th>
-        <td style="width:306px">
+        <td style="width:286px">
           <%= @reportschool.syozaichi %>
         </td>
         <th class="example" style="width:65px">試験日</th>
-        <td>
+        <td style="width:99px">
           <%= @reportschool.shikennbi %>
         </td>
        </tr>
@@ -100,7 +100,7 @@
       <tr>
         <th class="example" style="width:65px;height:40px">感想</th>
         <td style="width:450px">
-          <%= @reportschool.kanso %>
+          <%= simple_format(@reportschool.kanso) %>
         </td>
       </tr>
 
@@ -186,6 +186,8 @@
   </div>
 
   <%= link_to '編集', edit_reportschool_path(@reportschool) %> |
-  <%= link_to '戻る', reportschools_path %> |
-  <%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+  <%= link_to '戻る', reportschools_path %>
+  <%if @sensei == true %>
+    |<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+  <% end %>
 </html>
