@@ -4,11 +4,10 @@
 
 <br>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>入試形態</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -16,9 +15,9 @@
     <% @exams.each do |exam| %>
       <tr>
         <td><%= exam.name %></td>
-        <td><%= link_to '詳細', exam %></td>
-        <td><%= link_to '編集', edit_exam_path(exam) %></td>
-        <td><%= link_to '削除', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><center><%= link_to '詳細', exam %></center></td>
+        <td><center><%= link_to '編集', edit_exam_path(exam) %></center></td>
+        <td><center><%= link_to '削除', exam, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
       </tr>
     <% end %>
   </tbody>

@@ -4,13 +4,12 @@
 
 <br>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>都道府県</th>
       <th>地方</th>
       <th>地域</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,9 +19,9 @@
         <td><%= place.todohuken %></td>
         <td><%= place.localname1 %></td>
         <td><%= place.localname2 %></td>
-        <td><%= link_to '詳細', place %></td>
-        <td><%= link_to '編集', edit_place_path(place) %></td>
-        <td><%= link_to '削除', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><center><%= link_to '詳細', place %></center></td>
+        <td><center><%= link_to '編集', edit_place_path(place) %></center></td>
+        <td><center><%= link_to '削除', place, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
       </tr>
     <% end %>
   </tbody>
