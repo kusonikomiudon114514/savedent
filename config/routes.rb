@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/top'
+
   resources :rjlogs
   resources :newpapers
   resources :saws
@@ -22,6 +24,27 @@ Rails.application.routes.draw do
   get 'home/top'
   post 'tenso_save',to: 'rirekisyos#tensosave'
   get 'home/sensei' 
+
+  post '/searchs_search',to:'search#search'							
+  get '/searchs_search',to:'search#top'				
+
+  post '/searchs_localname1_search',to:'search#localname1_search'							
+  get '/searchs_localname1_search',to:'search#top'		
+
+  post '/searchs_localname2_search',to:'search#localname2_search'							
+  get '/searchs_localname2_search',to:'search#top'			
+
+  post '/searchs_place_search',to:'search#place_search'							
+  get '/searchs_place_search',to:'search#top'					
+  																					
+  post '/searchs_type_search',to:'search#type_search'							
+  get '/searchs_type_search',to:'search#top'																										
+
+  post '/searchs_field_search',to:'search#field_search'							
+  get '/searchs_field_search',to:'search#top'				
+
+  post '/searchs_saw_search',to:'search#saw_search'
+  get '/searchs_saw_search',to:'search#tpo' 
 
   post '/reportschools_localname1_search',to:'reportschools#localname1_search'							
   get '/reportschools_localname1_search',to:'reportschools#index'																										

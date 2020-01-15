@@ -17,15 +17,18 @@ class ReportjobsController < ApplicationController
     rjlog.user_id = current_user.id
     rjlog.reportjob_id = params[:id]
     rjlog.save
+    @sensei = checksensei
   end
 
   # GET /reportjobs/new
   def new
     @reportjob = Reportjob.new
+    @sensei = checksensei
   end
 
   # GET /reportjobs/1/edit
   def edit
+    @sensei = checksensei
   end
 
   # POST /reportjobs

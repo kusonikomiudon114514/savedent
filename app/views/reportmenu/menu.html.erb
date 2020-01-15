@@ -1,15 +1,41 @@
 <h1>受験報告書</h1>
 <!-- <p>Find me in app/views/reportmenu/menu.html.erb</p> -->
 
+<head>
+<style>
+.btn-flat-vertical-border {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  background: #e1f3ff;
+  transition: .4s;
+}
+
+.btn-flat-vertical-border:hover {
+  background: #668ad8;
+  color: #FFF;
+}
+
+</style>
+</head>
+
 <p>就職試験受験報告書</p>
-<%= link_to '見る', reportjobs_path %>
-<%= link_to '作成', new_reportjob_path %>
+<a href="http://localhost:3000/reportjobs" class="btn-flat-vertical-border">　　見る　　</a>
+<a href="http://localhost:3000/reportjobs/new" class="btn-flat-vertical-border">　　作成　　</a>
 
 <p>進学試験受験報告書</p>
-<%= link_to '見る', reportschools_path %>
-<%= link_to '作成', new_reportschool_path %>
+<a href="http://localhost:3000/reportschools" class="btn-flat-vertical-border">　　見る　　</a>
+<a href="http://localhost:3000/reportschools/new" class="btn-flat-vertical-border">　　作成　　</a>
+
 
 <%if @sensei == true %>
 <br>
-<%= link_to 'マスター管理', manage_school_path %>
+<br>
+<a href="http://localhost:3000/manage/school" class="btn-flat-vertical-border">　マスター管理　</a>
+
 <% end %>
