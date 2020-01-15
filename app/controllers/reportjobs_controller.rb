@@ -5,9 +5,7 @@ class ReportjobsController < ApplicationController
   # GET /reportjobs
   # GET /reportjobs.json
   def index
- #  @reportjobs = Reportjob.all
     @reportjobs = Reportjob.all.order(created_at: :desc)
-
   end
 
   # GET /reportjobs/1

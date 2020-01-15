@@ -1,4 +1,4 @@
-<h1>面接練習サポートシステム</h1>
+<h1><面接練習サポートシステム></h1>
 
 <p id="notice"><%= notice %></p>
 <%if @sensei == true %>
@@ -8,10 +8,10 @@
 <p>面接OKの先生</p>
 <table>
   <thead>
-    <tr>
-    <th>　状況　</th>
-    <th>　　名前　　</th>
-    <th>　日時　</th>
+  <tr align="center">
+    <th>状況</th>
+    <th>名前</th>
+    <th>日時</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,11 +21,11 @@
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '　詳細', mensetu %></td>
+        <td><%= link_to '詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
       </tr>
@@ -38,10 +38,10 @@
 <p>確認中</p>
 <table>
   <thead>
-    <tr>
-      <th>　状況　</th>
-      <th>　　名前　　</th>
-      <th>　日時　</th>
+    <tr align="center">
+      <th>状況</th>
+      <th>名前</th>
+      <th>日時</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -51,11 +51,11 @@
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '　詳細', mensetu %></td>
+        <td><%= link_to '詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
       </tr>
@@ -68,10 +68,10 @@
 <p>予約状況</p>
 <table>
   <thead>
-    <tr>
-    <th>　状況　</th>
-    <th>　　名前　　</th>
-    <th>　日時　</th>
+  <tr align="center">
+    <th>状況</th>
+    <th>名前</th>
+    <th>日時</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -81,11 +81,11 @@
         <td><%= mensetu.status %></td>
         <td><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
-        <td><%= link_to '　詳細', mensetu %></td>
+        <td><%= link_to '詳細', mensetu %></td>
 
         <%if @sensei == true %>
-         <td><%= link_to '　編集', edit_mensetu_path(mensetu) %></td>
-         <td><%= link_to '　削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+         <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
+         <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
 
         </tr>

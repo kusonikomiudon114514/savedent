@@ -14,48 +14,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
   
- .box13 {
-    color: #FFF;
-    background: #6eb7ff;
-    border-bottom: solid 6px #3f87ce;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-}
-.box13 p {
-    margin: 0; 
-    padding: 20;
-}
-.box22{
-    background: #f4f4f4;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
-    width: 140px;
-    height: 500px;
-    position: relative;
-    top :10px;    
-    right:20px ;
-
-}
-.box22 p {
-    margin: 10; 
-    padding: 20;
-}
-
-.haikei1 {     position: relative;
-  top :-10px;    
-  right:30px ;
-    width: 1300px;
-    height: 220px;                  /* 高さ指定 */
-    padding:  20px;                 /* 余白指定 */
-    background-color: powderblue;   /* 背景色指定 */
-}
-
-body {
-    background-color: #fffff0;
-    color: #333;
+body { 
+    background-color:white; 
+    height: 700px;
+    background-size: cover;
+     color: #333;
     margin: 33px;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 25px;
   }
+  .box2{background-color: #FFF; }
   
   p, ol,td {
     font-family: verdana, arial, helvetica, sans-serif;
@@ -113,7 +82,78 @@ body {
     margin-bottom: 20px;
     background-color: #f0f0f0;}
 
- ul {font-size: 20px;
-  line-height: 30px;
+    .box30 {
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 130px;
+      right:-100px;
+
+  }
+   .box30 h2{
+      font-size: 1.2em;
+      background: #5fc2f5;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+  }
+  .box30 p {
+      padding: 15px 20px;
+      margin: 0;
+      line-height: 400%;
+
+  }
+  .box1 {
+   background-color:white; 
+  }
+
+  .btn-flat-bottom-border1 {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 7px 10px 10px 10px;
+    text-decoration: none;
+    color: #FFF;
+    background: #a180dc;
+    transition: .4s;
+  }
+  .btn-flat-bottom-border2 {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 7px 10px 10px 10px;
+    text-decoration: none;
+    color: #FFF;
+    background: #5fc2f5;
+    transition: .4s;
+  }
+  .btn-flat-bottom-border3 {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 7px 10px 10px 10px;
+    text-decoration: none;
+    color: #FFF;
+    background:green;
+    transition: .4s;
+  }
+  .btn-flat-bottom-border4 {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 7px 10px 10px 10px;
+    text-decoration: none;
+    color: #FFF;
+    background: darkorange;
+    transition: .4s;
+  }
+
+  .btn-flat-bottom-border > span {
+    border-bottom: solid 2px #FFF;
+  }
   
-}
+  .btn-flat-bottom-border:hover {
+    background: #91b5fb;
+  }

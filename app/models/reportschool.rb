@@ -1,12 +1,13 @@
 class Reportschool < ApplicationRecord
+  
+  belongs_to :user
+  has_many :rslogs, :dependent => :destroy
 
   belongs_to :type
   belongs_to :field
   belongs_to :exam
   belongs_to :recommended
-  belongs_to :user
   belongs_to :saw, optional: true
-  has_many :rslogs, :dependent => :destroy
 
   validate :error_check
 

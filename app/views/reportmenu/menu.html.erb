@@ -1,4 +1,4 @@
-<h1>受験報告書</h1>
+<h1><受験報告書></h1>
 <!-- <p>Find me in app/views/reportmenu/menu.html.erb</p> -->
 
 <head>
@@ -32,6 +32,31 @@
 <a href="http://localhost:3000/reportschools" class="btn-flat-vertical-border">　　見る　　</a>
 <a href="http://localhost:3000/reportschools/new" class="btn-flat-vertical-border">　　作成　　</a>
 
+<table>
+<h3>~就職試験受験報告書~</h3>
+<br>
+<tbody>
+<tr>
+<td>　</td>
+<td><pre style="font-size: 15px;"><%= link_to '　見る　', reportjobs_path %></td>
+<td>　　<td>
+<td><pre style="font-size: 15px;"><%= link_to '　作成　', new_reportjob_path %></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<h3>~進学試験受験報告書~</h3>
+<br>
+<tbody>
+<tr>
+<td>　</td>
+<td><pre style="font-size: 15px;"><%= link_to '　見る　', reportschools_path %></td>
+<td>　　</td>
+<td><pre style="font-size: 15px;"><%= link_to '　作成　', new_reportschool_path %></td>
+</tr>
+</tbody>
+</table>
 
 <%if @sensei == true %>
 <br>

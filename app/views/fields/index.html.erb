@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>分野</h1>
+<h1><分野></h1>
 
-<table>
+<br>
+
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>分野</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -14,9 +15,9 @@
     <% @fields.each do |field| %>
       <tr>
         <td><%= field.name %></td>
-        <td><%= link_to '詳細', field %></td>
-        <td><%= link_to '編集', edit_field_path(field) %></td>
-        <td><%= link_to '削除', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><center><%= link_to '詳細', field %></center></td>
+        <td><center><%= link_to '編集', edit_field_path(field) %></center></td>
+        <td><center><%= link_to '削除', field, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +25,6 @@
 
 <br>
 
-<%= link_to '新規作成', new_field_path %>
+<table>
+<td><pre style="font-size: 13px;"><%= link_to '新規作成', new_field_path %></td>
+</table>
