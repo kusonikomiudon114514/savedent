@@ -26,20 +26,22 @@
     <%= form.file_field :filename %>
   </div>
   
-  <div class="field">
+  <div class="field" style="width:490px">
     <%= form.label :志望理由%>
     <%= form.text_area :reason,  id: :rirekisyo_reason,:cols=> 60,:rows=>15 %>
   </div>
 
-  <div class="field">
+  <table width="500">
+  <div class="field" style="width:250px">
     <%= form.label :趣味・特技 %>
     <%= form.text_area :syumi, id: :rirekisyo_syumi,:cols=> 60,:rows=>5%>
   </div>
 
-  <div class="field">
+  <div class="field" style="width:250px">
     <%= form.label :校内外の諸活動 %>
     <%= form.text_area :katsudo, id: :rirekisyo_katsudo,:cols=> 60,:rows=>10 %>
   </div>
+  <table>
 
   <div class="field">
     <%= form.label :備考%>
