@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>利用者情報</h1>
+<h1><利用者情報></h1>
 
-<table border=1>
+<br>
+
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th width=250px><center>氏名</center></th>
@@ -13,13 +15,9 @@
     <% @students.each do |student| %>
       <tr>
         <td><center><%= student.name %></center></td>
-        <td>　　</td>
         <td width=65px><center><%= link_to '詳細', student %></center></td>
-        <td>　　</td>
         <td width=65px><center><%= link_to '編集', edit_student_path(student) %></center></td>
-        <td>　　</td>
-        <td width=65px><center><%= link_to '削除', student, method: :delete, data: { confirm: "本当に削除しますか？" } %></center></td>
-        <td>　　</td>
+        <td width=65px><center><%= link_to '削除', student, method: :delete, data: { confirm: "本当に削除しますか？" } %></center></td> 
       </tr>
     <% end %>
   </tbody>

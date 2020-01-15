@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>先生</h1>
+<h1><先生></h1>
 
-<table border=1>
+<br>
+
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th width=250px><center>email</center></th>
@@ -17,13 +19,9 @@
         <td><center><%= teacher.user.email %></center></td>   
         <td><center><%= teacher.name %></center></td>
         <td><center><%= teacher.admin %></center></td>
-        <td>　　</td>
         <td width=65px><center><%= link_to '詳細', teacher %></center></td>
-        <td>　　</td>
         <td width=65px><center><%= link_to '編集', edit_teacher_path(teacher) %></center></td>
-        <td>　　</td>
         <td width=65px><center><%= link_to '削除', teacher, method: :delete, data: { confirm: "本当に削除しますか？" } %></center></td>
-        <td>　　</td>
       </tr>
     <% end %>
   </tbody>
