@@ -111,6 +111,13 @@
     <%= form.text_area :other, id: :reportjob_other %>
   </div>
 
+  <%if @sensei == true %>
+  <div class="field">
+  <%= form.label :既読 %>
+  <%= form.check_box :check, id: :reportjob_check %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -4,3 +4,7 @@
 
 <%= link_to '詳細', @reportjob %> |
 <%= link_to '戻る', reportjobs_path %>
+<%if @sensei == true %>
+|<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+<% end %>
+</html>

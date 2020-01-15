@@ -14,140 +14,22 @@
   </head>
 <p id="notice"><%= notice %></p>
 
+<!--
+<p>
+  <strong>Status:</strong>
+  <%= @reportjob.status %>
+</p>
+-->
+
 <p>
 <strong>状況:</strong>
-<%if @reportschool.check == false %>
+<%if @reportjob.check == false %>
   <%= "確認中" %>
 <% else %>
   <%= "確認済" %>
 <% end %>
 
-<strong>報告年月日</strong>
-<%= @reportschool.created_at.strftime('%Y/%m/%d') %>
-</p> 
-#<p>
-#  <strong>Status:</strong>
-#  <%= @reportjob.status %>
-#</p>
-
-<div class="blocka" >
-<table class="sampleTable" border="1">
-  <tr>
-    <th class="example" style="width:64px;height:40px" >氏名</th>
-    <td colspan=3 style="width:450px">
-      <%= @reportjob.user.students[0].name %>
-    </td>
-  </tr>
-
- <tr>
-  <th class="example" style="width:65px">試験日</th>
-  <td style="width:99px">
-    <%= @reportjob.day %>
-  </td>
- </tr>
-
-  <tr>
-    <th class="example">職種</th>
-    <td style="width:192px;height:40px">
-      <%= @reportjob.field.name %>
-    </td>
-  </tr>
-
-  <tr>
-    <th class="example">事業所名</th>
-    <td colspan=3 style="height:40px">
-      <%= @reportjob.zigyousyo %>
-    </td>
-  </tr>
-
-  <tr>
-    <th class="example">斡旋方法</th>
-    <td style="height:40px">
-      <%= reportjob.mediation.name %>
-    </td>
-  </tr>
-  
-  <tr>
-    <th class="example">所在地</th>
-    <td>
-      <%= @reportjob.syozaiti %>
-    </td>
-  </tr>
-
-  <tr>
-    <th class="example" style="height:40px">コース</rh>
-    <td>
-      <%= @reportschool.course %>
-    </td>
-  </tr>
-</table>
-
-  <tr>
-    <th class="example" style="width:65px;height:40px">所在地</th>
-    <td style="width:286px">
-      <%= @reportschool.syozaichi %>
-    </td>
-   </tr>
-
-  <tr>
-    <th class="example" style="height:40px">試験場</th>
-    <td>
-      <%= @reportschool.shikennzyou %>
-    </td>
-  </tr>
-
-  <tr>
-    <th class="example" style="width:65px;height:40px">感想</th>
-    <td style="width:450px">
-      <%= simple_format(@reportschool.kanso) %>
-    </td>
-  </tr>
-
-  <tr>
-    <th class="example" style="height:40px">入試形態</th>
-    <td>
-      <%= @reportschool.exam.name %>
-    </td>
-  </tr>
-</table>
-
-  <h4>Ⅰ.一般入試</h4>
-
-    <tr>
-      <th class="example" style="width:72px;height:40px">国語（分）</th>
-      <td style="width:28px">
-        <%= @reportschool.japanese %>
-      </td>
-
-      <th class="example" style="width:72px;height:40px">数学（分）</th>
-      <td style="width:28px">
-        <%= @reportschool.math %>
-      </td>
-
-      <th class="example" style="width:72px;height:40px">社会（分）</th>
-      <td style="width:28px">
-        <%= @reportschool.social %>
-      </td>
-
-      <th class="example" style="width:72px;height:40px">理科（分）</th>
-      <td style="width:28px">
-        <%= @reportschool.science %>
-      </td>
-
-      <th class="example" style="width:72px;height:40px">英語（分）</th>
-      <td style="width:28px">
-        <%= @reportschool.english %>
-      </td>
-    </tr>
-
-    <tr>
-      <th class="example">問題の内容</th>
-      <td colspan=9 style="width:443px;height:300px">
-        <%= simple_format(@reportschool.detail) %>
-      </td>
-    </tr>
-</div>
-
+</p>
 <p>
   <strong>ユーザー:</strong>
   <%= @reportjob.user.students[0].name %>
@@ -220,3 +102,6 @@
 
 <%= link_to '編集', edit_reportjob_path(@reportjob) %> |
 <%= link_to '戻る', reportjobs_path %>
+<%if @sensei == true %>
+|<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
+<% end %>
