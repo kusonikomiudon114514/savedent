@@ -88,7 +88,7 @@ class SearchController < ApplicationController
 
   def search																																																				
     if params[:search][:gakkou].present?
-      @reportschools = Reportschool.where(user_id: current_user.id).order(created_at: :desc)
+      @reportschools = Reportschool.all
       @reportschools = @reportschools.where("gakkou like '%" + params[:search][:gakkou] + "%'")
       session[:search_gakkou] = params[:search][:gakkou]
     else																										
@@ -96,6 +96,7 @@ class SearchController < ApplicationController
       session[:search_gakkou] = nil		
     end																										
      render :top	
+
   end					
 
   def saw_search																																																				
