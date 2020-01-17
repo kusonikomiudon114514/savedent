@@ -24,17 +24,17 @@
 
   <div class="field">
     <%= form.label :学校名 %>
-    <%= form.text_field :gakkou, id: :reportschool_gakkou %>
+    <%= form.text_field :gakkou, id: :reportschool_gakkou, :placeholder => "正式名で記入してください"  %>
   </div>
 
   <div class="field">
     <%= form.label :学部 %>
-    <%= form.text_field :gakubu, id: :reportschool_gakubu %>
+    <%= form.text_field :gakubu, id: :reportschool_gakubu, :placeholder => "（例）法学部"  %>
   </div>
 
   <div class="field">
     <%= form.label :学科 %>
-    <%= form.text_field :gakka, id: :reportschool_gakka %>
+    <%= form.text_field :gakka, id: :reportschool_gakka, :placeholder => "（例）経済学科"  %>
   </div>
 
   <div class="field">
@@ -44,12 +44,12 @@
 
   <div class="field">
     <%= form.label :所在地 %>
-    <%= form.text_field :syozaichi, id: :reportschool_syozaichi %>
+    <%= form.text_field :syozaichi, id: :reportschool_syozaichi , :placeholder => "〇〇県△△市××町□□" %>
   </div>
 
   <div class="field">
     <%= form.label :試験場 %>
-    <%= form.text_field :shikennzyou, id: :reportschool_shikennzyou %>
+    <%= form.text_field :shikennzyou, id: :reportschool_shikennzyou, :placeholder => "〇〇県△△市××町□□" %>
   </div>
 
   <div class="field">
@@ -64,7 +64,7 @@
 
   <div class="field">
     <%= form.label :感想 %>
-    <%= form.text_area :kanso, id: :reportschool_kanso %>
+    <%= form.text_area :kanso, id: :reportschool_kanso,:cols=> 60,:rows=>3  %>
   </div>
 
   <div class="field">
@@ -101,7 +101,7 @@
 
       <div class="field">
        <%= form.label :問題の内容 %>
-       <%= form.text_area :detail, id: :reportschool_detail %>
+       <%= form.text_area :detail, id: :reportschool_detail,:cols=> 60,:rows=>10, :placeholder => "できるだけ詳しく書いてください"   %>
       </div>
   </div>
 
@@ -114,17 +114,17 @@
 
       <div class="field">
        <%= form.label :面接の質問内容 %>
-       <%= form.text_area :mennsetsu, id: :reportschool_mennsetsu %>
+       <%= form.text_area :mennsetsu, id: :reportschool_mennsetsu,:cols=> 60,:rows=>5, :placeholder => "面接の形態、時間も記入してください" %>
       </div>
 
       <div class="field">
        <%= form.label :小論文（作文）テーマ %>
-       <%= form.text_area :syoronnbunn, id: :reportschool_syoronnbunn %>
+       <%= form.text_area :syoronnbunn, id: :reportschool_syoronnbunn ,:cols=> 60,:rows=>3, :placeholder => "出題型、時間、文字数も記入してください" %>
       </div>
 
       <div class="field">
        <%= form.label :試験の内容 %>
-       <%= form.text_area :shikenn, id: :reportschool_shikenn %>
+       <%= form.text_area :shikenn, id: :reportschool_shikenn,:cols=> 60,:rows=>5, :placeholder => "できるだけ詳しく書いてください" %>
       </div>
   </div>
 
@@ -135,7 +135,8 @@
   </div>
   -->
 
-  <%if @sensei == true %>
+  <%if @sensei == false %>
+  <% else %>
   <div class="field">
   <%= form.label :既読 %>
   <%= form.check_box :check, id: :reportschool_check %>

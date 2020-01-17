@@ -2,7 +2,82 @@
 <p id="notice"><%= notice %></p>
 
 <head>
+<meta charset="UTF-8">
+<link rel="stylesheet" "href=reportschools.scss">
 <style>
+
+.btn-real-dent {
+    /*周りの凹み*/
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: rgba(3, 169, 244, 0.54);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    background: #f7f7f7;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.08);
+  }
+  .btn-real-dent i {
+    /*ボタン自体*/
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    left: 10px;
+    top: 9px;
+    border-radius: 50%;
+    font-size: 40px;
+    writing-mode: vertical-rl;
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #b5b5b5;
+  }
+    
+  .btn-real-dent .fa:active {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #d8d8d8;
+  }
+
+
+
+  .btn-social-circle {
+    display: inline-block;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 23px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+    transition: .3s;
+  }
+  .btn-social-circle i {
+    line-height: 50px;
+  }
+  .btn-social-circle:hover　{
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  .btn-social-circle--pocket {
+    color: #ff6d82;
+    background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
+  }
+
+
+
+
+
+
 th.example { text-align: center; }
 .sampleTable {
     border-collapse: collapse;
@@ -16,6 +91,7 @@ th.example2 { text-align: right; }
 }
 </style>
 </head>
+<body>
 <h1>入学試験受験報告書</h1>
 
 
@@ -23,21 +99,21 @@ th.example2 { text-align: right; }
   <tr>
     <th class="example2" style="width:50px">地方 </th>
     <td>
-    <%= form_tag('/reportschools_localname1_search') do %>
+    <%= form_tag('/searchs_localname1_search') do %>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
     <th class="example2" style="width:50px">地域 </th>
     <td>
-    <%= form_tag('/reportschools_localname2_search') do %>
+    <%= form_tag('/searchs_localname2_search') do %>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
     <th class="example2" style="width:80px">都道府県 </th>
     <td>
-    <%= form_tag('/reportschools_place_search') do %>
+    <%= form_tag('/searchs_place_search') do %>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
         <%= submit_tag '検索' %>
     <% end %> 
@@ -51,7 +127,7 @@ th.example2 { text-align: right; }
   <tr>
     <th class="example2" style="width:50px">学校種</th>
     <td>
-        <%= form_tag('/reportschools_type_search') do %>
+        <%= form_tag('/searchs_type_search') do %>
           <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
           <%= submit_tag '検索' %>
         <% end %> 
@@ -59,7 +135,7 @@ th.example2 { text-align: right; }
     
     <th class="example2" style="width:100px">分野別</th>
     <td>
-        <%= form_tag('/reportschools_field_search') do %>
+        <%= form_tag('/searchs_field_search') do %>
         <%= select_tag 'search[field]' , options_for_select(Field.all.map {|r| [r.name,r.id] } , {:selected => session[:search_field]}) , include_blank:true%>
         <%= submit_tag '検索' %>
         <% end %> 
@@ -73,20 +149,22 @@ th.example2 { text-align: right; }
   <tr>
       <th class="example2" style="width:50px">学校名</th>
       <td>
-      <%= form_tag('/reportschools_search') do %>
-        <%= text_field_tag 'search[gakkou]' , session[:search_gakkou] %>
+      <%= form_tag('/searchs_search') do %>
+        <%= text_field_tag 'search[gakkou]' , session[:search_gakkou], :placeholder => "（例）島根大学" %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
 
       <th class="example2" style="width:143px">検索絞り込み</th>
       <td>
-      <%= form_tag('/reportschools_saw_search') do %>
+      <%= form_tag('/searchs_saw_search') do %>
         <%= select_tag 'search[saw]' , options_for_select(Saw.all.map {|r| [r.name,r.id] } , {:selected => session[:search_saw]}) , include_blank:true%>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
-
+    <th class="example2" style="width:143px">
+    <%= submit_tag '検索' %>
+    </th>
    </tr>
 </table>
 
@@ -162,4 +240,14 @@ th.example2 { text-align: right; }
 <br>
 <br>
 <br>
+
+<a class="btn-social-circle btn-social-circle--pocket">
+  <i class="fa fa-get-pocket">詳細</i>
+</a>
+
+<a href="reportschools.sccs" class="btn-real-dent">
+  <i class="fa fa-home">🚮</i>
+</a>
+</body>
 </html>
+
