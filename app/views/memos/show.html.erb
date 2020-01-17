@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>タイトル:</strong>
-  <%= @memo.title %>
-</p>
+<table border="1" width="400">
+<br>
+<br>
+<th><center><%= @memo.title %></center></th>
+<tr>
+<td height="300"><%= simple_format(@memo.content) %></td>
+</tr>
+<tr>
+<td><center><strong>大事なメモ:</strong>
+<%= @memo.important %></center></td>
+</tr>
+</table>
 
-<p>
-  <strong>内容:</strong>
-  <%= @memo.content %>
-</p>
+<br>
+<br>
 
-<p>
-  <strong>大事なメモ:</strong>
-  <%= @memo.important %>
-</p>
-
-<%= link_to '編集', edit_memo_path(@memo) %> |
-<%= link_to '戻る', memos_path %>
+<table>
+<tbody>
+<tr>
+<td><pre style="font-size: 12px;"><%= link_to '編集', edit_memo_path(@memo) %></td>
+<td>　</td>
+<td><pre style="font-size: 12px;"><%= link_to '戻る', memos_path %></td>
+</tr>
+</tbody>
+</tatble>

@@ -15,7 +15,7 @@
     <% @memos.each do |memo| %>
       <tr>
         <td><center><%= memo.title %></center></td>
-        <td><center><%= memo.updated_at %></center></td>
+        <td><center><%= memo.updated_at.strftime("%Y-%m-%d %H:%M") %></center></td>
         <td><center><%= check_box_tag :important, memo.important,memo.important %></center></td>
         <td width=65px><center><%= link_to '詳細', memo %></center></td>
         <td width=65px><center><%= link_to '編集', edit_memo_path(memo) %></center></td>
