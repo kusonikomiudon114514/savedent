@@ -55,7 +55,7 @@ class ReportjobsController < ApplicationController
         format.json { render :show, status: :ok, location: @reportjob }
       else
         format.html { render :edit }
-        format.json { render json: @reportjob.errorj, status: :unprocessable_entity }
+        format.json { render json: @reportjob.error, status: :unprocessable_entity }
       end
     end
   end
@@ -63,11 +63,13 @@ class ReportjobsController < ApplicationController
   # DELETE /reportjobs/1
   # DELETE /reportjobs/1.json
   def destroy
-    @reportjob.destroy
-    respond_to do |format|
+    if @reportschool.user_id == current_user.id
+      @reportjob.destroy
+      respond_to do |format|
       format.html { redirect_to reportjobs_url, notice: '削除しました' }
       format.json { head :no_content }
     end
+  end
   end
 
   def field_search
