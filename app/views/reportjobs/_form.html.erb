@@ -45,26 +45,6 @@
     <%= form.label :受験者数 %>
     <%= form.number_field :zyukennsyasuu, id: :reportjob_zyukennsyasuu %>
   </div>
-  
-  <div class="field">
-    <%= form.label :筆記・時間 %>
-    <%= form.text_field :zikan_hikki, id: :reportjob_zikan_ithihi %>
-  </div>
-
-  <div class="field">
-  <%= form.label :適性・時間 %>
-  <%= form.number_field :zikan_tekisei, id: :reportjob_zikan_tekisei %>
- </div>
-
-  <div class="field">
-    <%= form.label :教養・時間 %>
-    <%= form.number_field :zikan_ippann, id: :reportjob_zikan_ippann %>
-  </div>
-
-  <div class="field">
-    <%= form.label :筆記試験内容 %>
-    <%= form.text_area :naiyou, id: :reportjob_naiyou %>
-  </div>
 
   <div class="field">
     <%= form.label :面接方法 %>
@@ -92,12 +72,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :作文 %>
-    <%= form.text_field :sakubun, id: :reportjob_sakubun %>
-  </div>
-
-  <div class="field">
-    <%= form.label :文章量 %>
+    <%= form.label :作文・文字数 %>
     <%= form.text_field :bunnsyouryou, id: :reportjob_bunnsyouryou %>
   </div>
 

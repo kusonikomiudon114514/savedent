@@ -63,12 +63,12 @@ class ReportjobsController < ApplicationController
   # DELETE /reportjobs/1
   # DELETE /reportjobs/1.json
   def destroy
-    if @reportschool.user_id == current_user.id
+   # if @reportschool.user_id == current_user.id
       @reportjob.destroy
       respond_to do |format|
       format.html { redirect_to reportjobs_url, notice: '削除しました' }
       format.json { head :no_content }
-    end
+    #end
   end
   end
 
@@ -109,6 +109,6 @@ class ReportjobsController < ApplicationController
 
     # Never trust parameterj from the scary internet, only allow the white list through.
     def reportjob_params
-      params.require(:reportjob).permit(:status, :user_id, :field_id, :day, :syokusyu, :zigyousyo, :mediation_id, :syozaiti, :shikennzyou, :zyukennsyasuu, :ithizi_hikki, :ithizi_tekisei, :ithizi_mensetsu, :zikan_ithihi, :zikan_ithime, :zikan_ithisa, :nizi_hikki, :nizi_tekisei, :nizi_mennsetsu, :zikan_nihi, :zikan_nite, :zikan_nime, :zikan_nisa, :subject_id, :zikan_japanese, :zikan_math, :zikan_social, :zikan_english, :zikan_ippann, :zikan_tekisei, :interview_id, :iin, :zikan_mensetsu, :shitsumon, :mensetsusonota, :sakubun, :bunnsyouryou, :other, :check)
+      params.require(:reportjob).permit(:status, :user_id, :field_id, :day, :syokusyu, :zigyousyo, :mediation_id, :syozaiti, :shikennzyou, :zyukennsyasuu, :ithizi_hikki,:ithizi_mensetsu,:zikan_ithime, :zikan_ithisa, :zikan_ippann,:interview_id, :iin, :zikan_mensetsu, :shitsumon, :mensetsusonota,:bunnsyouryou, :other, :check)
     end
 end
