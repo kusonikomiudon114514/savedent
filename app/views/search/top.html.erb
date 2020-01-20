@@ -18,36 +18,42 @@ th.example2 { text-align: right; }
     table-layout: fixed;
 }
 
-
-.btn-social-circle {
+.btn-flat-logo {
+  position: relative;
   display: inline-block;
-  text-decoration: none;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 15px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
   font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-  transition: .3s;
-}
-.btn-social-circle i {
-  line-height: 40px;
-}
-.btn-social-circle:hover　{
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
 }
 
-.btn-social-circle--pocket {
-  color: #ff6d82;
-  background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
+.btn-flat-logo:hover {
+  background: #1ec7bb;
 }
 
+h3 {
+  font-size: 280%;
+}
+
+th {
+  font-size: 150%;
+}
+
+  .box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
 
 
 
@@ -59,21 +65,21 @@ th.example2 { text-align: right; }
 
 <table>
   <tr>
-    <th class="example2" style="width:50px">地方 </th>
+    <th class="example2" style="width:62px">地方 </th>
     <td>
     <%= form_tag('/searchs_localname1_search') do %>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
-    <th class="example2" style="width:50px">地域 </th>
+    <th class="example2" style="width:62px">地域 </th>
     <td>
     <%= form_tag('/searchs_localname2_search') do %>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
-    <th class="example2" style="width:80px">都道府県 </th>
+    <th class="example2" style="width:104px">都道府県 </th>
     <td>
     <%= form_tag('/searchs_place_search') do %>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
@@ -87,7 +93,7 @@ th.example2 { text-align: right; }
 
 <table>
   <tr>
-    <th class="example2" style="width:50px">学校種</th>
+    <th class="example2" style="width:100px">学校種</th>
     <td>
         <%= form_tag('/searchs_type_search') do %>
           <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
@@ -109,7 +115,7 @@ th.example2 { text-align: right; }
 
 <table>
   <tr>
-      <th class="example2" style="width:50px">学校名</th>
+      <th class="example2" style="width:100px">学校名</th>
       <td>
       <%= form_tag('/searchs_search') do %>
         <%= text_field_tag 'search[gakkou]' , session[:search_gakkou], :placeholder => "（例）島根大学" %>
@@ -132,38 +138,41 @@ th.example2 { text-align: right; }
 
 
 <h2>検索結果</h2>
-<table class="table table-bordered">
+<table>
   <thead>
     <tr>
-      <th class="example" style="width:90px">　学校種　</th>
+      <th class="example" style="width:120px">　学校種　</th>
       <th class="example" style="width:150px">　　分野　　</th>
       <th class="example" style="width:150px">　学校名　</th>
       <th class="example" style="width:150px">　学部　</th>
       <th class="example" style="width:150px">　学科　</th>
       <th class="example" style="width:150px">　コース　</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
-  <tbody>
+  </table>
     <% @reportschools.each do |reportschool| %>
-      <tr align="ailscenter">
-        <td><%= reportschool.type.name %></td>
-        <td><%= reportschool.field.name %></td>
-        <td><%= reportschool.gakkou %></td>
-        <td><%= reportschool.gakubu %></td>
-        <td><%= reportschool.gakka %></td>
-        <td><%= reportschool.course %></td>
-    
-        <td class="btn-social-circle btn-social-circle--pocket">
-           <i class="fa fa-get-pocket"><%= link_to '+',reportschool%></i>
-        </td>
+      <div class="box2">
+      <table>
+      <tbody>
+      <tr>
+      <td colspan=8 align="right"><%= link_to '>', reportschool, {class: "btn-flat-logo"} %></td>
+      </tr>
+      <tr align="center">
+        <td style="width:120px"><%= reportschool.type.name %></td>
+        <td style="width:150px"><%= reportschool.field.name %></td>
+        <td style="width:150px"><%= reportschool.gakkou %></td>
+        <td style="width:150px"><%= reportschool.gakubu %></td>
+        <td style="width:150px"><%= reportschool.gakka %></td>
+        <td style="width:150px"><%= reportschool.course %></td>
+        </tr>
         <!--
         <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
         <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
          -->
-      </tr>
+         </tbody>
+         </table>
+        </div>         
     <% end %>
-  </tbody>
-</table>
 
 </html>

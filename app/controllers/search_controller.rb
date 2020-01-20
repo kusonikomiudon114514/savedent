@@ -2,7 +2,6 @@ class SearchController < ApplicationController
 
   def top
     @reportschools = Reportschool.all.order(created_at: :desc)
-    @reportjobs = Reportjob.all.order(created_at: :desc)
     @sensei = checksensei
   end
 

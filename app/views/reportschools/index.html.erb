@@ -20,6 +20,10 @@
   background: #1ec7bb;
 }
 
+h3 {
+  font-size: 280%;
+}
+
 th {
   font-size: 150%;
 }
@@ -57,26 +61,26 @@ th.example2 { text-align: right; }
 </style>
 </head>
 <body>
-<h1>入学試験受験報告書</h1>
+<h1>＜入学試験受験報告書＞</h1>
 
 
 <table>
   <tr>
-    <th class="example2" style="width:50px">地方 </th>
+    <th class="example2" style="width:62px">地方 </th>
     <td>
     <%= form_tag('/searchs_localname1_search') do %>
         <%= select_tag 'search[localname1]' , options_for_select(Place.select(:localname1).distinct.map{|r| [r.localname1,r.localname1]},0), include_blank:true  %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
-    <th class="example2" style="width:50px">地域 </th>
+    <th class="example2" style="width:62px">地域 </th>
     <td>
     <%= form_tag('/searchs_localname2_search') do %>
         <%= select_tag 'search[localname2]' , options_for_select(Place.select(:localname2).distinct.map{|r| [r.localname2,r.localname2]},0), include_blank:true %>
         <%= submit_tag '検索' %>
     <% end %> 
     </td>
-    <th class="example2" style="width:80px">都道府県 </th>
+    <th class="example2" style="width:104px">都道府県 </th>
     <td>
     <%= form_tag('/searchs_place_search') do %>
         <%= select_tag 'search[place]' ,options_for_select(Place.all.map {|r| [r.todohuken,r.todohuken] } , {:selected => session[:search_place]}) , include_blank:true%>
@@ -90,7 +94,7 @@ th.example2 { text-align: right; }
 
 <table>
   <tr>
-    <th class="example2" style="width:50px">学校種</th>
+    <th class="example2" style="width:100px">学校種</th>
     <td>
         <%= form_tag('/searchs_type_search') do %>
           <%= select_tag 'search[type]' , options_for_select(Type.all.map {|r| [r.name,r.id] } , {:selected => session[:search_type]}) , include_blank:true %>
@@ -112,7 +116,7 @@ th.example2 { text-align: right; }
 
 <table>
   <tr>
-      <th class="example2" style="width:50px">学校名</th>
+      <th class="example2" style="width:100px">学校名</th>
       <td>
       <%= form_tag('/searchs_search') do %>
         <%= text_field_tag 'search[gakkou]' , session[:search_gakkou], :placeholder => "（例）島根大学" %>
@@ -134,7 +138,7 @@ th.example2 { text-align: right; }
 </table>
 
 
-<h2>入学試験報告書<h5>（作成履歴）</h5></h2>
+<h3>入学試験報告書(作成履歴)</h3>
 <table>
   <thead>
     <tr>
@@ -181,7 +185,7 @@ th.example2 { text-align: right; }
 </tbody>
 </table>
 
-<h2>閲覧履歴</h2>
+<h3>閲覧履歴</h3>
 <table>
   <thead>
     <tr>

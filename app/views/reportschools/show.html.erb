@@ -26,6 +26,16 @@
    <%= @reportschool.created_at.strftime('%Y/%m/%d') %>
   </p>  
 
+  <table>
+  <tr>
+  <th colspan=2>
+  <td><%= link_to '編集', edit_reportschool_path(@reportschool) %></td>
+  <td><%= link_to '削除', @reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
+  </tr>
+</table>
+
+
+
   <div class="blocka" >
     <table class="sampleTable" border="1">
       <tr>
