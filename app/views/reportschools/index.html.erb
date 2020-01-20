@@ -5,7 +5,18 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" "href=reportschools.scss">
 <style>
+.btn-flat-logo {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
+}
 
+<<<<<<< HEAD
 .btn-real-dent {
     /*周りの凹み*/
     display: inline-block;
@@ -73,8 +84,29 @@
     background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
   }
 
+=======
+.btn-flat-logo:hover {
+  background: #1ec7bb;
+}
+>>>>>>> 9f70ee12121b619cf774fc83db89c07a6fe49809
 
+th {
+  font-size: 150%;
+}
 
+  .box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
 
 
 
@@ -82,12 +114,15 @@ th.example { text-align: center; }
 .sampleTable {
     border-collapse: collapse;
     table-layout: fixed;
+    margin: auto;
 }
 
 th.example2 { text-align: right; }
 .sampleTable {
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: fixed;    
+    margin: auto;
+
 }
 </style>
 </head>
@@ -168,8 +203,9 @@ th.example2 { text-align: right; }
    </tr>
 </table>
 
-<h2>入学試験報告書<h5>（作成履歴・検索結果）</h5></h2>
-<table class="table table-bordered">
+
+<h2>入学試験報告書<h5>（作成履歴）</h5></h2>
+<table>
   <thead>
     <tr>
       <th class="example" style="width:90px">学校種</th>
@@ -178,32 +214,45 @@ th.example2 { text-align: right; }
       <th class="example" style="width:150px">学部</th>
       <th class="example" style="width:150px">学科</th>
       <th class="example" style="width:150px">コース</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
-  <tbody>
-    <% @reportschools.each do |reportschool| %>
-      <tr align="center">
-        <td><%= reportschool.type.name %></td>
-        <td><%= reportschool.field.name %></td>
-        <td><%= reportschool.gakkou %></td>
-        <td><%= reportschool.gakubu %></td>
-        <td><%= reportschool.gakka %></td>
-        <td><%= reportschool.course %></td>
-        <td style="width:30px"><%= link_to '詳細', reportschool %></td>
-        <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
-        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
+
+    <% @reportschools.each do |reportschool| %>
+      <div class="box2">
+      <table>
+        <tbody>      
+        <tr>
+        <td colspan=8 align="right"><%= link_to '>', reportschool, {class: "btn-flat-logo"} %></td>
+        </tr>
+        <tr align="center">
+        <td style="width:90px"><%= reportschool.type.name %></td>
+        <td style="width:150px"><%= reportschool.field.name %></td>
+        <td style="width:150px"><%= reportschool.gakkou %></td>
+        <td style="width:150px"><%= reportschool.gakubu %></td>
+        <td style="width:150px"><%= reportschool.gakka %></td>
+        <td style="width:150px"><%= reportschool.course %></td>
+        <td><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
+        <td><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
+      </tr>
+        </tbody>
+      </table>
+      </div>      
+    <% end %>
 
 <br>
 
-<h4><%= link_to '新規作成', new_reportschool_path %></h>
+<table>
+<tbody>
+<tr>
+<td><pre style="font-size: 20px;"><%= link_to '新規作成', new_reportschool_path %></td>
+</tr>
+</tbody>
+</table>
 
 <h2>閲覧履歴</h2>
-<table class="table table-bordered">
+<table>
   <thead>
     <tr>
       <th class="example" style="width:90px">閲覧日</th>
@@ -216,38 +265,41 @@ th.example2 { text-align: right; }
       <th> <colspan="3"></th>
     </tr>
   </thead>
+  </table>
 
-  <tbody>    
     <% @schoollogs.first(10).each do |schoollog| %>
+      <div class="box2">
+      <table>
+      <tbody>    
+
+      <tr>
+      <td colspan=8 align="right"><%= link_to '>', schoollog, {class: "btn-flat-logo"} %></td>
+      </tr>
+
       <tr align="center">
-        <td><%= schoollog.created_at.strftime("%Y/%-m/%-d %-H時%-M分") %></td>
-        <td><%= schoollog.reportschool.type.name %></td>
-        <td><%= schoollog.reportschool.field.name %></td>
-        <td><%= schoollog.reportschool.gakkou %></td>
-        <td><%= schoollog.reportschool.gakubu %></td>
-        <td><%= schoollog.reportschool.gakka %></td>
-        <td><%= schoollog.reportschool.course %></td>
+        <td style="width:90px"><%= schoollog.created_at.strftime("%Y/%-m/%-d") %></td>
+        <td style="width:90px"><%= schoollog.reportschool.type.name %></td>
+        <td style="width:150px"><%= schoollog.reportschool.field.name %></td>
+        <td style="width:150px"><%= schoollog.reportschool.gakkou %></td>
+        <td style="width:150px"><%= schoollog.reportschool.gakubu %></td>
+        <td style="width:150px"><%= schoollog.reportschool.gakka %></td>
+        <td style="width:150px"><%= schoollog.reportschool.course %></td>
+        <!--
         <td style="width:30px"><%= link_to '詳細', schoollog %></td>
-       <!--
         <td><%= link_to '編集', edit_reportschool_path(schoollog) %></td>
         <td><%= link_to '削除', schoollog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
         -->
       </tr>
-    <% end %>
   </tbody>
 </table>
+</div>      
+<% end %>
+
 <br>
 <br>
 <br>
 <br>
 
-<a class="btn-social-circle btn-social-circle--pocket">
-  <i class="fa fa-get-pocket">詳細</i>
-</a>
-
-<a href="reportschools.sccs" class="btn-real-dent">
-  <i class="fa fa-home">🚮</i>
-</a>
 </body>
 </html>
 

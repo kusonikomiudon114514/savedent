@@ -17,6 +17,42 @@ th.example2 { text-align: right; }
     border-collapse: collapse;
     table-layout: fixed;
 }
+
+
+.btn-social-circle {
+  display: inline-block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  transition: .3s;
+}
+.btn-social-circle i {
+  line-height: 40px;
+}
+.btn-social-circle:hover　{
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.btn-social-circle--pocket {
+  color: #ff6d82;
+  background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
+}
+
+
+
+
+
+
 </style>
 </head>
 <h1>検索項目</h1>
@@ -86,13 +122,14 @@ th.example2 { text-align: right; }
       <%= form_tag('/searchs_saw_search') do %>
         <%= select_tag 'search[saw]' , options_for_select(Saw.all.map {|r| [r.name,r.id] } , {:selected => session[:search_saw]}) , include_blank:true%>
         <%= submit_tag '検索' %>
-    <% end %> 
+    <% end %>
     </td>
     <th  class="example2" style="width:143px">
     <%= submit_tag '検索' %>
     </th>
    </tr>
 </table>
+
 
 <h2>検索結果</h2>
 <table class="table table-bordered">
@@ -116,8 +153,10 @@ th.example2 { text-align: right; }
         <td><%= reportschool.gakubu %></td>
         <td><%= reportschool.gakka %></td>
         <td><%= reportschool.course %></td>
-
-        <td style="width:30px"><%= link_to '詳細', reportschool %></td>
+    
+        <td class="btn-social-circle btn-social-circle--pocket">
+           <i class="fa fa-get-pocket"><%= link_to '+',reportschool%></i>
+        </td>
         <!--
         <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
         <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
