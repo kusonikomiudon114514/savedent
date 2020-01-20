@@ -1,3 +1,20 @@
+<head>
+<style>
+.box7{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
+.box7 p {
+    margin: 0; 
+    padding: 0;
+}
+</style>
+</head>
+
 <h1><面接練習サポートシステム></h1>
 
 <p id="notice"><%= notice %></p>
@@ -6,20 +23,18 @@
 <% end %>
 
 <p>面接OKの先生</p>
-<table>
+<table border="2" bordercolor="green" width="500">
   <thead>
-  <tr align="center">
     <th>状況</th>
     <th>名前</th>
     <th>日時</th>
-      <th colspan="3"></th>
-    </tr>
+    <th colspan="3"></th>
   </thead>
   <tbody>
     <% @mensetus_ok_teacher.each do |mensetu| %>
       <tr align="center">
         <td><%= mensetu.status %></td>
-        <td><%= mensetu.name %></td>
+        <td bgcolor="cornsilk"><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
         <td><%= link_to '詳細', mensetu %></td>
 
@@ -27,7 +42,6 @@
          <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
          <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
-
       </tr>
     <% end %>
   </tbody>
@@ -36,20 +50,18 @@
 <br><br>
 
 <p>確認中</p>
-<table>
+<table border="2" bordercolor="green" width="500">
   <thead>
-    <tr align="center">
       <th>状況</th>
       <th>名前</th>
       <th>日時</th>
       <th colspan="3"></th>
-    </tr>
   </thead>
   <tbody>
     <% @mensetus_kakunin_teacher.each do |mensetu| %>
       <tr align="center">
         <td><%= mensetu.status %></td>
-        <td><%= mensetu.name %></td>
+        <td bgcolor="cornsilk"><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
         <td><%= link_to '詳細', mensetu %></td>
 
@@ -57,7 +69,6 @@
          <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
          <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
-
       </tr>
     <% end %>
   </tbody>
@@ -66,28 +77,25 @@
 <br><br>
 
 <p>予約状況</p>
-<table>
+<table border="2" bordercolor="green" width="500">
   <thead>
-  <tr align="center">
     <th>状況</th>
     <th>名前</th>
     <th>日時</th>
-      <th colspan="3"></th>
-    </tr>
+    <th colspan="3"></th>
   </thead>
   <tbody>
     <% @mensetus_yoyaku_teacher.each do |mensetu| %>
       <tr align="center">
         <td><%= mensetu.status %></td>
-        <td><%= mensetu.name %></td>
+        <td bgcolor="cornsilk"><%= mensetu.name %></td>
         <td><%= mensetu.start_time %></td>
         <td><%= link_to '詳細', mensetu %></td>
 
-        <%if @sensei == true %>
+        <%if @sensei == false %>
          <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
          <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
-
         </tr>
     <% end %>
   </tbody>
@@ -100,8 +108,10 @@
  </p>
 
  <p>あなたの面接予定</p>
- <%= month_calendar events: @mensetus do |date, mensetus| %>
-  <%= date %>
-<% end %>
+ <div class="box7">
+   <%= month_calendar events: @mensetus do |date, mensetus| %>
+   <%= date %>
+   <% end %>
+   </div>
 
 <br><br>
