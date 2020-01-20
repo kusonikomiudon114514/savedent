@@ -16,6 +16,44 @@ th.example2 { text-align: right; }
     border-collapse: collapse;
     table-layout: fixed;
 }
+
+.btn-flat-logo {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
+}
+
+.btn-flat-logo:hover {
+  background: #1ec7bb;
+}
+
+h3 {
+  font-size: 280%;
+}
+
+th {
+  font-size: 150%;
+}
+
+  .box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
+
 </style>
 </head>
 
@@ -26,14 +64,14 @@ th.example2 { text-align: right; }
   <tr>
    <th class="example2" style="width:50px">職種</th>
    <td>
-     <%= form_tag('/reportjobs_field_search') do %>
+     <%= form_tag('/serveys_field_search') do %>
      <%= select_tag 'search[field]', options_for_select(Field.all.map {|r| [r.name,r.id] },   {:selected => session[:search_field]}), {include_blank: true, style: "height:43px;"} %><%= submit_tag '検索' %>
      <% end %> 
   </td>
 
   <th class="example2" style="width:150px">事業所(完全一致)</th>
   <td>
-   <%= form_tag('/reportjobs_zigyousyo_search') do %>
+   <%= form_tag('/serveys_zigyousyo_search') do %>
    <%= text_field_tag 'search[zigyousyo]' , session[:search_zigyousyo] %><%= submit_tag '検索' %>
    <% end %> 
   </td>
@@ -54,9 +92,16 @@ th.example2 { text-align: right; }
      <th colspan="3"></th> 
     </tr>
   </thead>
-  <tbody>
+  </table>
+
     <% @reportjobs.each do |reportjob| %>
-      <tr align="center">
+       <div class="box2">
+       <table>
+       <tboby>
+       <tr>
+       <td colspan=10 align="right"><%= link_to '>', reportjob, {class: "btn-flat-logo"} %></td>
+       </tr>
+       <tr align="center">
         <td><%= reportjob.day %></td>
         <td><%= reportjob.field.name %></td>
         <td><%= reportjob.zigyousyo %></td>
@@ -64,13 +109,16 @@ th.example2 { text-align: right; }
         <td><%= reportjob.syozaiti %></td>
         <td><%= reportjob.shikennzyou %></td>
         <td><%= reportjob.interview.name %></td>
+        <!--
         <td style="width:30px"><%= link_to '詳細', reportjob %></td>
+        -->
         <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
         <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-      </tr>
+        </tr> 
+        </tbody>
+         </table>
+         </div>         
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
@@ -91,11 +139,18 @@ th.example2 { text-align: right; }
       <th> <colspan="3"></th>
     </tr>
   </thead>
+  </table>
 
-  <tbody>    
     <% @joblogs.first(10).each do |joblog| %>
+      <div class="box2">
+      <table>
+      <tbody>    
+      <tr>
+      <td colspan=10 align="right"><%= link_to '>', joblog, {class: "btn-flat-logo"} %></td>
+      </tr>
       <tr align="center">
-        <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
+
+      <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
         <td><%= joblog.reportjob.day %></td>
         <td><%= joblog.reportjob.field.name %></td>
         <td><%= joblog.reportjob.zigyousyo %></td>
@@ -110,9 +165,11 @@ th.example2 { text-align: right; }
         <td><%= link_to '削除', joblog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
         -->
       </tr>
-    <% end %>
   </tbody>
 </table>
+</div>
+<% end %>
+
 <br>
 <br>
 <br>

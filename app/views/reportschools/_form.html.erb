@@ -14,93 +14,128 @@
 
   <div class="field">
     <%= form.label :学校種 %>
+    <br>
     <%= form.select :type_id, Type.all.map {|r| [r.name,r.id] } %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :分野 %>
+    <br>
     <%= form.select :field_id, Field.all.map {|r| [r.name,r.id] } %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :学校名 %>
+    <br>
     <%= form.text_field :gakkou, id: :reportschool_gakkou, :placeholder => "正式名で記入してください"  %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :学部 %>
+      <br>
     <%= form.text_field :gakubu, id: :reportschool_gakubu, :placeholder => "（例）法学部"  %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :学科 %>
+    <br>
     <%= form.text_field :gakka, id: :reportschool_gakka, :placeholder => "（例）経済学科"  %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :コース %>
+    <br>
     <%= form.text_field :course, id: :reportschool_course %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :所在地 %>
+    <br>
     <%= form.text_field :syozaichi, id: :reportschool_syozaichi , :placeholder => "〇〇県△△市××町□□" %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :試験場 %>
+    <br>
     <%= form.text_field :shikennzyou, id: :reportschool_shikennzyou, :placeholder => "〇〇県△△市××町□□" %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :合格発表 %>
+    <br>
     <%= form.date_select :gokaku, id: :reportschool_gokaku %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :試験日 %>
+    <br>
     <%= form.date_select :shikennbi, id: :reportschool_shikennbi %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :感想 %>
+    <br>
     <%= form.text_area :kanso, id: :reportschool_kanso,:cols=> 60,:rows=>3  %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :入試形態 %>
+    <br>
     <%= form.select :exam_id, Exam.all.map {|r| [r.name,r.id] }, {include_blank: true},{id: "examselect", onchange: "outputSelectedValueAndText(this);"} %>
   </div>
+  <br>
 
   <div id="area1" style="display:none;">
     <h2>一般入試</h2>
        <div class="field">
        <%= form.label :国語（分） %>
+       <br>
        <%= form.number_field :japanese, id: :reportschool_japanese %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :数学（分） %>
+       <br>
        <%= form.number_field :math, id: :reportschool_math %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :社会（分） %>
+       <br>
        <%= form.number_field :social, id: :reportschool_social %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :理科（分） %>
+       <br>
        <%= form.number_field :science, id: :reportschool_science %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :英語（分） %>
+       <br>
        <%= form.number_field :english, id: :reportschool_english %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :問題の内容 %>
+       <br>
        <%= form.text_area :detail, id: :reportschool_detail,:cols=> 60,:rows=>10, :placeholder => "できるだけ詳しく書いてください"   %>
       </div>
   </div>
@@ -109,21 +144,28 @@
     <h2>推薦入試</h2>
       <div class="field">
        <%= form.label :形態 %>
+       <br>
        <%= form.select :recommended_id, Recommended.all.map {|r| [r.name,r.id] } %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :面接の質問内容 %>
+       <br>
        <%= form.text_area :mennsetsu, id: :reportschool_mennsetsu,:cols=> 60,:rows=>5, :placeholder => "面接の形態、時間も記入してください" %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :小論文（作文）テーマ %>
+       <br>
        <%= form.text_area :syoronnbunn, id: :reportschool_syoronnbunn ,:cols=> 60,:rows=>3, :placeholder => "出題型、時間、文字数も記入してください" %>
       </div>
+      <br>
 
       <div class="field">
        <%= form.label :試験の内容 %>
+       <br>
        <%= form.text_area :shikenn, id: :reportschool_shikenn,:cols=> 60,:rows=>5, :placeholder => "できるだけ詳しく書いてください" %>
       </div>
   </div>
