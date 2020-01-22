@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>       履歴書サポート        </h1>
-<table class="table">
+<h1><履歴書サポート></h1>
+
+<br>
+
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>タイトル</th>
-      <th>日付</th>
+      <th><center>タイトル</center></th>
+      <th><center>日付</center></th>
     </tr>
   </thead>
 
   <tbody>
     <% @rirekisyos.each do |rirekisyo| %>
       <tr>
-        <td><%= rirekisyo.title %></td>
-        <td><%= rirekisyo.hizuke %></td>
-        <td><%= link_to '閲覧', rirekisyo %></td>
-        <td><%= link_to '編集', edit_rirekisyo_path(rirekisyo) %></td>
-        <td><%= link_to '削除', rirekisyo, method: :delete, data: { confirm: '履歴書を削除しますか？' } %></td>
-        <td><%= link_to '転送', rirekisyo_tenso_path(id: rirekisyo) %></td>
+        <td><center><%= rirekisyo.title %></center></td>
+        <td><center><%= rirekisyo.hizuke %></center></td>
+        <td><center><%= link_to '閲覧', rirekisyo %></center></td>
+        <td><center><%= link_to '編集', edit_rirekisyo_path(rirekisyo) %></center></td>
+        <td><center><%= link_to '削除', rirekisyo, method: :delete, data: { confirm: '履歴書を削除しますか？' } %></center></td>
+        <td><center><%= link_to '転送', rirekisyo_tenso_path(id: rirekisyo) %></center></td>
 
       </tr>
     <% end %>

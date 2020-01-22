@@ -1,6 +1,28 @@
 <h1><受験報告書></h1>
 <!-- <p>Find me in app/views/reportmenu/menu.html.erb</p> -->
 
+<head>
+<style>
+.btn-flat-vertical-border {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #668ad8;
+  border-right: solid 4px #668ad8;
+  color: #668ad8;
+  background: #e1f3ff;
+  transition: .4s;
+}
+
+.btn-flat-vertical-border:hover {
+  background: #668ad8;
+  color: #FFF;
+}
+
+</style>
+</head>
 <table>
 <h3>~就職試験受験報告書~</h3>
 <br>
@@ -29,5 +51,10 @@
 
 <%if @sensei == true %>
 <br>
-<%= link_to 'マスター管理', manage_school_path %>
+<br>
+<table>
+<tr>
+<td><pre style="font-size: 15px;"><%= link_to '　マスター管理　', manage_school_path %></td>
+</tr>
+</table>
 <% end %>

@@ -2,7 +2,9 @@ class ManageController < ApplicationController
   def school
     @reportschools = Reportschool.all.order(created_at: :desc)
     @reportjobs = Reportjob.all.order(created_at: :desc)
+    @sensei = checksensei
   end
+
 
   def search_year																																																				
     if params[:search][:year].present?

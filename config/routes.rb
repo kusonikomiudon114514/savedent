@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'servey/top'
+
+  get 'search/top'
+
   resources :rjlogs
   resources :newpapers
   resources :saws
@@ -23,6 +27,27 @@ Rails.application.routes.draw do
   post 'tenso_save',to: 'rirekisyos#tensosave'
   get 'home/sensei' 
 
+  post '/searchs_search',to:'search#search'							
+  get '/searchs_search',to:'search#top'				
+
+  post '/searchs_localname1_search',to:'search#localname1_search'							
+  get '/searchs_localname1_search',to:'search#top'		
+
+  post '/searchs_localname2_search',to:'search#localname2_search'							
+  get '/searchs_localname2_search',to:'search#top'			
+
+  post '/searchs_place_search',to:'search#place_search'							
+  get '/searchs_place_search',to:'search#top'					
+  																					
+  post '/searchs_type_search',to:'search#type_search'							
+  get '/searchs_type_search',to:'search#top'																										
+
+  post '/searchs_field_search',to:'search#field_search'							
+  get '/searchs_field_search',to:'search#top'				
+
+  post '/searchs_saw_search',to:'search#saw_search'
+  get '/searchs_saw_search',to:'search#top' 
+
   post '/reportschools_localname1_search',to:'reportschools#localname1_search'							
   get '/reportschools_localname1_search',to:'reportschools#index'																										
 
@@ -41,6 +66,9 @@ Rails.application.routes.draw do
   post '/reportschools_search',to:'reportschools#search'							
   get '/reportschools_search',to:'reportschools#index'																										
 
+  post '/reportschools_saw_search',to:'reportschools#saw_search'
+  get '/reportschools_saw_search',to:'reportschools#index'
+
   post '/manage_school_manydestory',to:'manage#manydestory'							
   get '/manage_school_manydestory',to:'manage#school'		
   
@@ -56,14 +84,17 @@ Rails.application.routes.draw do
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
  
-  post '/reportschools_saw_search',to:'reportschools#saw_search'
-  get '/reportschools_saw_search',to:'reportschools#index'
- 
   post '/reportjobs_zigyousyo_search',to:'reportjobs#zigyousyo_search'
   get '/reportjobs_zigyousyo_search',to:'reportjobs#index'
 
   post '/reportjobs_field_search',to:'reportjobs#field_search'
   get '/reportjobs_field_search',to:'reportjobs#index'
+
+  post '/serveys_zigyousyo_search',to:'servey#zigyousyo_search'
+  get '/serveys_zigyousyo_search',to:'servey#top'
+
+  post '/serveys_field_search',to:'servey#field_search'
+  get '/serveys_field_search',to:'servey#top'
 
   post '/mensetus_status_search',to:'mensetus#status_search'
   get '/mensetus_status_search',to:'mensetus#index'

@@ -1,114 +1,147 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<table>
+<tr>
+<td>
   <strong>氏名:</strong>
   <%= @student.name %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>ふりがな（名前）:</strong>
   <%= @student.namehurigana %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>生年月日:</strong>
   <%= @student.seinen %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>番号:</strong>
   <%= @student.no %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>性別:</strong>
   <%= @student.seibetsu %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>住所:</strong>
   <%= @student.zyusho %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>ふりがな（住所）:</strong>
   <%= @student.zyushohurigana %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>ファイルネーム:</strong>
   <%= @student.filename %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>資格名称:</strong>
   <%= simple_format(@student.shikaku) %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>資格取得日:</strong>
   <%= simple_format(@student.syutokubi) %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴１:</strong>
   <%= @student.gakureki1 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴２:</strong>
   <%= @student.gakureki2 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴３:</strong>
   <%= @student.gakureki3 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴４:</strong>
   <%= @student.gakureki4 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴５:</strong>
   <%= @student.gakureki5 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴・就歴６:</strong>
   <%= @student.gakureki6 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴日付１:</strong>
   <%= @student.hiduke1 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴日付２:</strong>
   <%= @student.hiduke2 %>
 </p>
-
-<p>
+</tr>
+<tr>
+<td>
   <strong>学歴日付３:</strong>
   <%= @student.hiduke3 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴日付４:</strong>
   <%= @student.hiduke4 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴日付５:</strong>
   <%= @student.hiduke5 %>
-</p>
-
-<p>
+</td>
+</tr>
+<tr>
+<td>
   <strong>学歴日付６:</strong>
   <%= @student.hiduke6 %>
-</p>
+</td>
+</tr>
+</table>
 
-<%= link_to '編集', edit_student_path(@student) %> |
-<%= link_to '戻る', students_path %>
+<br>
+
+<table>
+<tbody>
+<tr>
+<td><pre style="font-size: 12px;"><%= link_to '編集', edit_student_path(@student) %></td>
+<td>　</td>
+<td><pre style="font-size: 12px;"><%= link_to '戻る', students_path %></td>
+</tr>
+</tbody>
+</tatble>
