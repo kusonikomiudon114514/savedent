@@ -1,28 +1,29 @@
 <p id="notice"><%= notice %></p>
-<a>　　　　　　　　　　</a>
+<div class="box3">
 <a href="http://localhost:3000/rirekisyos" class="btn-flat-bottom-border1">
   <h1>　履歴書　</h1>
 </a>
-<a>　　　　　　</a>
-<a href="http://localhost:3000/rirekisyos" class="btn-flat-bottom-border2">
+</div>
+<div class="box4">
+<a href="http://localhost:3000/reportmenu/menu" class="btn-flat-bottom-border2">
   <h1>受験報告書</h1>
 </a>
-<h1></h1>
-<a>　　　　　　　　　　</a>
-<a href="http://localhost:3000/rirekisyos" class="btn-flat-bottom-border3">
-  <h1>    　面接　　     </h1>
+</div>
+<div class="box5">
+<a href="http://localhost:3000/mensetus" class="btn-flat-bottom-border3">
+  <h1>　面接　</h1>
 </a>
-<a>　　　　　　</a>
-<a href="http://localhost:3000/rirekisyos" class="btn-flat-bottom-border4">
-  <h1>　メモ　　   </h1>
+</div>
+<div class="box6">
+<a href="http://localhost:3000/memos" class="btn-flat-bottom-border4">
+  <h1>　メモ　</h1>
 </a>
-
+</div>
 
     <%if @sensei == false %>
      
     <% else %>
-     <br></br>
-     <h3>届いたメール</h3>
+     <h2>届いたメール</h2>
       <table border="1" class="table table-striped">
       <tr>
        <th>報告書ID</th>

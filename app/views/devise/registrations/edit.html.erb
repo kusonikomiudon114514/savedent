@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= resource_name.to_s.humanize %>変更</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :パスワード %> <i></i><br />
+    <%= f.password_field :password, autocomplete: "新しいパスワード" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %>文字以上</em>
@@ -27,16 +27,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.label :現在のパスワード %> <i>(変更するには現在のパスワードが必要です)</i><br />
+    <%= f.password_field :current_password, autocomplete: "現在のパスワード" %>
   </div>
 
   <div class="actions">
     <%= f.submit "更新" %>
   </div>
 <% end %>
-
+<br></br>
 <h3>アカウントを削除されますか？</h3>
+<br></br>
 
  <%= button_to "削除", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %>
 
