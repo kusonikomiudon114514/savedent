@@ -4,13 +4,14 @@ class Reportjob < ApplicationRecord
   has_many :rjlogs, :dependent => :destroy
   
   belongs_to :field
-  belongs_to :zigyousyo
+  # belongs_to :zigyousyo
   belongs_to :mediation
-  belongs_to :syozaiti
-  belongs_to :shikenzyou
+  # belongs_to :syozaiti
+  # belongs_to :shikenzyou
   belongs_to :interview
+                                # ~~_idがあるものだけ書く
 
-  validate :error_check
+  #validate :error_check
   #def error_check
   #  if zigyousyo.blank?
   #    errors[:base]<<"事業所名を入力してください"

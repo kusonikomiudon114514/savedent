@@ -23,15 +23,6 @@
 
 </style>
 </head>
-
-<p>就職試験受験報告書</p>
-<a href="http://localhost:3000/reportjobs" class="btn-flat-vertical-border">　　見る　　</a>
-<a href="http://localhost:3000/reportjobs/new" class="btn-flat-vertical-border">　　作成　　</a>
-
-<p>進学試験受験報告書</p>
-<a href="http://localhost:3000/reportschools" class="btn-flat-vertical-border">　　見る　　</a>
-<a href="http://localhost:3000/reportschools/new" class="btn-flat-vertical-border">　　作成　　</a>
-
 <table>
 <h3>~就職試験受験報告書~</h3>
 <br>
@@ -61,6 +52,9 @@
 <%if @sensei == true %>
 <br>
 <br>
-<a href="http://localhost:3000/manage/school" class="btn-flat-vertical-border">　マスター管理　</a>
-
+<table>
+<tr>
+<td><pre style="font-size: 15px;"><%= link_to '　マスター管理　', manage_school_path %></td>
+</tr>
+</table>
 <% end %>

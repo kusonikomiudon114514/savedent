@@ -8,20 +8,24 @@ class MensetusController < ApplicationController
     @mensetus_ok_teacher = Mensetu.where(status: 0).order(created_at: :desc)
     @mensetus_kakunin_teacher = Mensetu.where(status: 1).order(created_at: :desc)
     @mensetus_yoyaku_teacher = Mensetu.where(status: 2).order(created_at: :desc)
+    @sensei = checksensei
   end
 
   # GET /mensetus/1
   # GET /mensetus/1.json
   def show
+    @sensei = checksensei
   end
 
   # GET /mensetus/new
   def new
-    @mensetu = Mensetu.new
+    @mensetu = Mensetu.new 
+    @sensei = checksensei
   end
 
   # GET /mensetus/1/edit
   def edit
+    @sensei = checksensei
   end
 
   # POST /mensetus
