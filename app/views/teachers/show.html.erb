@@ -15,5 +15,12 @@
   <%= @teacher.admin %>
 </p>
 
-<%= link_to '編集', edit_teacher_path(@teacher) %> |
-<%= link_to '戻る', teachers_path %>
+<table>
+<tbody>
+<tr>
+<td><pre style="font-size: 12px;"><%= link_to '編集', edit_teacher_path(@teacher) %></td>
+<td>　</td>
+<td><pre style="font-size: 12px;"><%= link_to '戻る', teachers_path %></td>
+</tr>
+</tbody>
+</tatble>
