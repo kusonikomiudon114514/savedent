@@ -81,7 +81,7 @@ th {
 <h2>就職試験報告書<h5>（作成履歴・検索結果）</h5></h2>
 <table>
   <thead>
-  <tr>
+    <tr>
      <th class="example" style="width:90px">受験日</th>
      <th class="example" style="width:150px">職種</th>
      <th class="example" style="width:150px">事業所名</th>
@@ -94,31 +94,31 @@ th {
   </thead>
   </table>
 
-    <% @reportjobs.each do |reportjob| %>
-       <div class="box2">
-       <table>
+  <% @reportjobs.each do |reportjob| %>
+    <div class="box2">
+      <table>
        <tboby>
-       <tr>
-       <td colspan=10 align="right"><%= link_to '>', reportjob, {class: "btn-flat-logo"} %></td>
-       </tr>
-       <tr align="center">
-        <td><%= reportjob.day %></td>
-        <td><%= reportjob.field.name %></td>
-        <td><%= reportjob.zigyousyo %></td>
-        <td><%= reportjob.mediation.name %></td>
-        <td><%= reportjob.syozaiti %></td>
-        <td><%= reportjob.shikennzyou %></td>
-        <td><%= reportjob.interview.name %></td>
-        <!--
-        <td style="width:30px"><%= link_to '詳細', reportjob %></td>
-        -->
-        <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
-        <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-        </tr> 
-        </tbody>
-         </table>
-         </div>         
-    <% end %>
+         <tr>
+           <td colspan=10 align="right"><%= link_to '>', reportjob, {class: "btn-flat-logo"} %></td>
+         </tr>
+         <tr align="center">
+           <td><%= reportjob.day %></td>
+           <td><%= reportjob.field.name %></td>
+           <td><%= reportjob.zigyousyo %></td>
+           <td><%= reportjob.mediation.name %></td>
+           <td><%= reportjob.syozaiti %></td>
+           <td><%= reportjob.shikennzyou %></td>
+           <td><%= reportjob.interview.name %></td>
+           <!--
+           <td style="width:30px"><%= link_to '詳細', reportjob %></td>
+            -->
+           <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
+           <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+         </tr> 
+       </tbody>
+      </table>
+    </div>         
+  <% end %>
 
 <br>
 
