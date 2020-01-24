@@ -13,7 +13,7 @@
   <div class="container-fluid">
   <div class="box1"> 
   <div class="box2">
-  <h1><center><marquee>Savedent</marquee></center></h1>
+  <h1><center><marquee>Savedent<font size="5">　　　～あなたの進路実現をサポートします～</font></marquee></center></h1>
   </div>
   <nav align = "right">
   <% if user_signed_in? %>
@@ -21,7 +21,7 @@
        <%= image_tag "initprofile.png",:size => "50x50" %>
     <% else %>
        <% if current_user.students[0].present? && current_user.students[0].filename.present? %>
-         <%= image_tag current_user.students[0].filename,:size => "75x75" %>
+        <%= image_tag current_user.students[0].filename,:size => "75x75" %>
        <% else %>
          <%= image_tag "initprofile.png",:size => "100x100" %>
        <% end %>
@@ -51,6 +51,15 @@
         <li><%= link_to '受験報告書',reportmenu_menu_path %></li>
         <li><%= link_to '面接サポート',mensetus_path %></li>
         <li><%= link_to 'メモ', memos_path %></li>
+        
+        <li><%= link_to '入試形態', exams_path %></li>
+        <li><%= link_to '面接方法',interviews_path %></li>
+        <li><%= link_to '地方', places_path %></li>
+        <li><%= link_to '斡旋方法', mediations_path %></li>
+        <li><%= link_to '学校種', types_path %></li>
+        <li><%= link_to '分野', fields_path %></li>
+        <li><%= link_to '推薦形態', recommendeds_path %></li>
+         
         <li><%= link_to '先生', teachers_path %></li>
         <li><%= link_to '利用者', students_path %></li>
   </ul>
