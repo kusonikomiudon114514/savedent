@@ -2,8 +2,10 @@
 
 <h1><メモ></h1>
 
+<br>
+
 <table class="table table-striped table-bordered">
-  <thead>
+  <thead bgcolor="lightsteelblue">
     <tr>
       <th width=150px><center>タイトル</center></th>
       <th width=150px><center>更新日</center></th>
@@ -11,7 +13,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody bgcolor="white">
     <% @memos.each do |memo| %>
       <tr>
         <td><center><%= memo.title %></center></td>
