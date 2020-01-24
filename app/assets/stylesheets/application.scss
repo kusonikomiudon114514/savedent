@@ -86,7 +86,9 @@ body {
       background: #f1f1f1;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
       width: 160px;
-      height: 500px
+      height: 500px;
+      position: relative;
+      top: -30px
 
   }
    .box30 h2{
@@ -119,7 +121,7 @@ body {
    color: black;
    font-family :'Times New Roman';
    font-size: 70px;
-
+   font-style: italic;
  }
   .box2{
     background-color:whitesmoke;  /*線の太さ・色*/
@@ -139,6 +141,7 @@ body {
     background: #a180dc;
     transition: .4s;
     border:2px solid whitesmoke;
+    box-sizing: 50×50
 
   }
   .btn-flat-bottom-border2 {
@@ -208,4 +211,12 @@ body {
   top:-120px
 
 }
-
+.box7{
+  position: relative;
+  right: -180px;
+  top :-41px;
+}
+.box8{
+  position: relative;
+  left: -30px;
+}
