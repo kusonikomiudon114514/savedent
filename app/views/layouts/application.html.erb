@@ -11,34 +11,39 @@
 
   <body>
   <div class="container-fluid">
-   <h1>Savedent</h1>
-      <nav align = "right">
-        <% if user_signed_in? %>
-          <% if current_user.students.nil? %>
-             <%= image_tag "initprofile.png",:size => "100x100" %>
-          <% else %>
-             <% if current_user.students[0].present? && current_user.students[0].filename.present? %>
-               <%= image_tag current_user.students[0].filename,:size => "100x100" %>
-             <% else %>
-               <%= image_tag "initprofile.png",:size => "100x100" %>
-             <% end %>
-          <% end %> 
-          <strong><%= current_user.email %></strong>
-          <%= link_to 'パスワード変更＆アカウントの削除', edit_user_registration_path %>
-          <%= link_to '　　ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-        <br></br>  
-        <%= link_to '　　アカウントの登録', new_user_registration_path %>
-          <%= link_to '　　ログイン', new_user_session_path %>
-        <% end %>
-        </nav>
-    <p class="notice"><%# notice %></p>
-    <p class="alert"><%# alert %></p>
+  <div class="box1"> 
+  <div class="box2">
+  <h1><center><marquee>Savedent</marquee></center></h1>
+  </div>
+  <nav align = "right">
+  <% if user_signed_in? %>
+    <% if current_user.students.nil? %>
+       <%= image_tag "initprofile.png",:size => "50x50" %>
+    <% else %>
+       <% if current_user.students[0].present? && current_user.students[0].filename.present? %>
+        <%= image_tag current_user.students[0].filename,:size => "75x75" %>
+       <% else %>
+         <%= image_tag "initprofile.png",:size => "100x100" %>
+       <% end %>
+    <% end %> 
+    <strong><%= current_user.email %></strong>
+    <%= link_to 'パスワード変更＆アカウントの削除', edit_user_registration_path %>
+    <tr></tr>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <% else %>
+  <br></br>  
+  <%= link_to '　　アカウントの登録', new_user_registration_path %>
+    <%= link_to '　　ログイン', new_user_session_path %>
+  <% end %></h1>
+  </nav>
+  </div>
+  <br></br>
+  <p class="notice"><%# notice %></p>
 
-<div class="row">
-<div class="col-md-2">
-<div class="box30">
-<div><h2>MENU</h2>
+  <div class="row">
+  <div class="col-md-2">
+  <div class="box30">
+  <div><h2>MENU</h2>
   <ul>
         <li><%= link_to 'TOP',home_top_path %></li> 
         <li><%= link_to '履歴書作成',rirekisyos_path %></li>
@@ -46,6 +51,7 @@
         <li><%= link_to '受験報告書',reportmenu_menu_path %></li>
         <li><%= link_to '面接サポート',mensetus_path %></li>
         <li><%= link_to 'メモ', memos_path %></li>
+        
         <li><%= link_to '入試形態', exams_path %></li>
         <li><%= link_to '面接方法',interviews_path %></li>
         <li><%= link_to '地方', places_path %></li>
@@ -53,12 +59,15 @@
         <li><%= link_to '学校種', types_path %></li>
         <li><%= link_to '分野', fields_path %></li>
         <li><%= link_to '推薦形態', recommendeds_path %></li>
+         
         <li><%= link_to '先生', teachers_path %></li>
         <li><%= link_to '利用者', students_path %></li>
   </ul>
 </div>
 </div>
-      </div>
+</div>
+
+<p class="alert"><%# alert %></p>
 
       <div class="col-md-10">
         <%= yield %> 

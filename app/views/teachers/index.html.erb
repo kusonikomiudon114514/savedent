@@ -6,14 +6,14 @@
 
 <table class="table table-striped table-bordered">
   <thead>
-    <tr>
-      <th width=250px><center>email</center></th>
+    <tr bgcolor="lightsteelblue">
+      <th width=250px><center>メールアドレス</center></th>
       <th width=200px><center>名前</center></th>
       <th width=100px><center>管理者</center></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody bgcolor="white">
     <% @teachers.each do |teacher| %>
       <tr>
         <td><center><%= teacher.user.email %></center></td>   
