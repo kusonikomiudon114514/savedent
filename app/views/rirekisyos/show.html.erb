@@ -8,7 +8,7 @@
 </p>
 
 <table border="1" width="500" >
-<tr align="right">
+<tr align="right" bgcolor="white">
 <td colspan=3 style="width:400px">
   <%= @rirekisyo.hizuke %>
 </td>
@@ -21,16 +21,16 @@
 </td>
 </tr>
 
-<tr>
-<th><center>ふりがな</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
 <td style="width:257px">
 <center><%= @rirekisyo.user.students[0].namehurigana %></center>
 </td>
-<th><center>性別</center></th>
+<th bgcolor="lightsteelblue"><center>性別</center></th>
 </tr>
 
-<tr>
-<th><center>氏名</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>氏名</center></th>
 <td>
 <center><%= @rirekisyo.user.students[0].name %></center>
 </td>
@@ -41,8 +41,8 @@
 </table>
 
 <table border="1"  width="500">
-<tr>
-<th><center>生年月日</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>生年月日</center></th>
 <td style="width:408px">
 <center><%= @rirekisyo.user.students[0].seinen %></center>
 </td>
@@ -50,15 +50,15 @@
 </table>
 
 <table border="1" width="500">
-<tr>
-<th><center>ふりがな</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
 <td style="width:408px">
 <center><%= @rirekisyo.user.students[0].zyushohurigana %></center>
 </td>
 </tr>
 
-<tr>
-<th><center>現住所</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>現住所</center></th>
 <td style="width:350px">
 <center><%= @rirekisyo.user.students[0].zyusho %></center>
 </td>
@@ -66,15 +66,15 @@
 </table>
 
 <table border="1" width="500">
-<tr>
-<th><center>ふりがな</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
 <td style="width:408px">
 <center><%= @rirekisyo.renhuri %></center>
 </td>
 </tr>
 
-<tr>
-<th><center>連絡先</center></th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>連絡先</center></th>
 <td style="width:350px">
 <center><%= @rirekisyo.renraku %></center>
 </td>
@@ -82,9 +82,8 @@
 </table>
 
 <table border="1" width="500">
-<tr>
-<th style="width:10px" rowspan="7">学歴就歴</th>
-<tr>
+<tr bgcolor="white">
+<th style="width:10px" rowspan="7" bgcolor="lightsteelblue">学歴就歴</th>
 <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke1 %>
 </td>
@@ -93,7 +92,7 @@
 </td>
 </tr>
 
-<tr>
+<tr bgcolor="white">
   <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke2 %>
   </td>
@@ -102,7 +101,7 @@
   </td>
 </tr>
 
-<tr>
+<tr bgcolor="white">
   <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke3 %>
   </td>
@@ -111,7 +110,7 @@
   </td>
 </tr>
 
-<tr>
+<tr bgcolor="white">
   <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke4 %>
   </td>
@@ -120,7 +119,7 @@
   </td>
 </tr>
 
-<tr>
+<tr bgcolor="white">
   <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke5 %>
   </td>
@@ -129,7 +128,7 @@
   </td>
 </tr>
 
-<tr>
+<tr bgcolor="white">
   <td style="width:100px">
   <%= @rirekisyo.user.students[0].hiduke6 %>
   </td>
@@ -141,12 +140,12 @@
 </table>
 
 <table border="1" width="500">
-<tr>
-<th>資格取得日</th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">資格取得日</th>
 <td style="width:250px">
   <%= simple_format(@rirekisyo.user.students[0].syutokubi) %>
 </td>
-<th>資格名称</th>
+<th bgcolor="lightsteelblue">資格名称</th>
 <td style="width:250px">
   <%= simple_format(@rirekisyo.user.students[0].shikaku) %>
 </td>
@@ -154,12 +153,12 @@
 </table>
 
 <table border="1" width="500">
-<tr>
-<th>趣味特技</th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">趣味特技</th>
 <td style="width:250px">
   <%= simple_format(@rirekisyo.syumi) %>
 </td>
-  <th>校内外の諸活動</th>
+  <th bgcolor="lightsteelblue">校内外の諸活動</th>
   <td style="width:250px">
   <%= simple_format(@rirekisyo.katsudo) %>
 </td>
@@ -167,8 +166,8 @@
 </table>
 
 <table border="1" width="500" height="300">
-<tr>
-<th>志望理由</th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">志望理由</th>
 <td style="width:490px">
   <%= simple_format(@rirekisyo.reason) %>
 </td>
@@ -176,8 +175,8 @@
 </table>
 
 <table border="1" width="500" height="50">
-<tr>
-<th>備考</th>
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">備考</th>
 <td style="width:490px">
   <%= @rirekisyo.biko %>
   <%= simple_format(@rirekisyo.biko) %>
