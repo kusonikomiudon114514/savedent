@@ -69,7 +69,7 @@ th {
      <% end %> 
   </td>
 
-  <th class="example2" style="width:200px">事業所(完全一致)</th>
+  <th class="example2" style="width:300px">事業所(完全一致)</th>
   <td>
    <%= form_tag('/serveys_zigyousyo_search') do %>
    <%= text_field_tag 'search[zigyousyo]' , session[:search_zigyousyo], :placeholder => "（例）セラヤ株式会社" %><%= submit_tag '検索' %>
@@ -83,12 +83,12 @@ th {
   <thead>
     <tr>
      <th class="example" style="width:90px">受験日</th>
-     <th class="example" style="width:150px">職種</th>
-     <th class="example" style="width:150px">事業所名</th>
-     <th class="example" style="width:150px">斡旋方法</th>
-     <th class="example" style="width:150px" 所在地</th>
-     <th class="example" style="width:150px">試験会場</th>
-     <th class="example" style="width:150px">面接方法</th>
+     <th class="example" style="width:130px">職種</th>
+     <th class="example" style="width:130px">事業所名</th>
+     <th class="example" style="width:100px">斡旋方法</th>
+     <th class="example" style="width:150px"> 所在地</th>
+     <th class="example" style="width:100px">試験会場</th>
+     <th class="example" style="width:110px">面接方法</th>
      <th colspan="3"></th> 
     </tr>
   </thead>
@@ -102,18 +102,17 @@ th {
            <td colspan=10 align="right"><%= link_to '>', reportjob, {class: "btn-flat-logo"} %></td>
          </tr>
          <tr align="center">
-           <td><%= reportjob.day %></td>
-           <td><%= reportjob.field.name %></td>
-           <td><%= reportjob.zigyousyo %></td>
-           <td><%= reportjob.mediation.name %></td>
-           <td><%= reportjob.syozaiti %></td>
-           <td><%= reportjob.shikennzyou %></td>
-           <td><%= reportjob.interview.name %></td>
-           <!--
-           <td style="width:30px"><%= link_to '詳細', reportjob %></td>
-            -->
-           <td style="width:30px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
-           <td style="width:30px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+           <td style="width:70px"><%= reportjob.day %></td>
+           <td style="width:150px"><%= reportjob.field.name %></td>
+           <td style="width:100px"><%= reportjob.zigyousyo %></td>
+           <td style="width:110px"><%= reportjob.mediation.name %></td>
+           <td style="width:150px"><%= reportjob.syozaiti %></td>
+           <td style="width:100px"><%= reportjob.shikennzyou %></td>
+           <td style="width:120px"><%= reportjob.interview.name %></td>
+          <!-- <td style="width:50px"><%= link_to '詳細', reportjob %></td>
+          -->
+           <td style="width:50px"><%= link_to '編集', edit_reportjob_path(reportjob) %></td>
+           <td style="width:50px"><%= link_to '削除', reportjob, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
          </tr> 
        </tbody>
       </table>
@@ -128,14 +127,14 @@ th {
 <table>
   <thead>
     <tr>
-      <th class="example" style="width:90px">閲覧日</th>
-      <th class="example" style="width:90px">受験日</th>
-      <th class="example" style="width:150px">職種</th>
-      <th class="example" style="width:150px">事業所名</th>
-      <th class="example" style="width:150px">斡旋方法</th>
+      <th class="example" style="width:100px">閲覧日</th>
+      <th class="example" style="width:140px">受験日</th>
+      <th class="example" style="width:100px">職種</th>
+      <th class="example" style="width:120px">事業所名</th>
+      <th class="example" style="width:80px">斡旋方法</th>
       <th class="example" style="width:150px">所在地</th>
-      <th class="example" style="width:150px">試験会場</th>
-      <th class="example" style="width:150px">面接方法</th>
+      <th class="example" style="width:120px">試験会場</th>
+      <th class="example" style="width:80px">面接方法</th>
       <th> <colspan="3"></th>
     </tr>
   </thead>
@@ -150,16 +149,16 @@ th {
       </tr>
       <tr align="center">
 
-      <td><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= joblog.reportjob.day %></td>
-        <td><%= joblog.reportjob.field.name %></td>
-        <td><%= joblog.reportjob.zigyousyo %></td>
-        <td><%= joblog.reportjob.mediation.name %></td>
-        <td><%= joblog.reportjob.syozaiti %></td>
-        <td><%= joblog.reportjob.shikennzyou %></td>
-        <td><%= joblog.reportjob.interview.name %></td>
+        <td style="width:90px"><%= joblog.created_at.strftime('%Y/%m/%d') %></td>
+        <td style="width:130px"><%= joblog.reportjob.day %></td>
+        <td style="width:100px"><%= joblog.reportjob.field.name %></td>
+        <td style="width:100px"><%= joblog.reportjob.zigyousyo %></td>
+        <td style="width:90px"><%= joblog.reportjob.mediation.name %></td>
+        <td style="width:150px"><%= joblog.reportjob.syozaiti %></td>
+        <td style="width:120px"><%= joblog.reportjob.shikennzyou %></td>
+        <td style="width:80px"><%= joblog.reportjob.interview.name %></td>
 
-        <td style="width:30px"><%= link_to '詳細', joblog %></td>
+        <td style="width:50px"><%= link_to '詳細', joblog %></td>
        <!--
         <td><%= link_to '編集', edit_reportjob_path(joblog) %></td>
         <td><%= link_to '削除', joblog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> 
@@ -170,7 +169,6 @@ th {
 </div>
 <% end %>
 
-<br>
 <br>
 <br>
 <br>
