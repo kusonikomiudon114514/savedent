@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
-
 <table border="1" width="400">
+
 <br>
+
 <br>
-<th><center><%= @memo.title %></center></th>
-<tr>
+
+<th bgcolor="lightsteelblue"><center><%= @memo.title %></center></th>
+<tr bgcolor="white">
 <td height="300"><%= simple_format(@memo.content) %></td>
 </tr>
-<tr>
+<tr bgcolor="lightsteelblue">
 <td><center><strong>大事なメモ:</strong>
 <%= @memo.important %></center></td>
 </tr>

@@ -1,21 +1,83 @@
 <head>
 <style>
+/*見出し*/
+h3 {
+  position: relative;
+  line-height: 1.4;
+  padding:0.25em 1em;
+  display: inline-block;
+  top:0;
+}
+
+h3:before, h1:after { 
+  position: absolute;
+  top: 0;
+  content:'';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+
+h3:before {
+  border-top: dotted 1px #535aaa;
+  border-left: dotted 1px #535aaa;
+  border-bottom: dotted 1px #535aaa;
+  left: 0;
+}
+
+h3:after {
+  content: '';
+  border-top: dotted 1px #535aaa;
+  border-right: dotted 1px #535aaa;
+  border-bottom: dotted 1px #535aaa;
+  right: 0;
+}
+
+/*カレンダー*/
 .box7{
     padding: 0.5em 1em;
     margin: 2em 0;
     color: #474747;
     background: whitesmoke;/*背景色*/
-    border-left: double 7px #4ec4d3;/*左線*/
-    border-right: double 7px #4ec4d3;/*右線*/
+    border-left: double 7px #008000;/*左線*/
+    border-right: double 7px #008000;/*右線*/
 }
 .box7 p {
     margin: 0; 
     padding: 0;
 }
+
+/*掲示板*/
+.box27 {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #008000;
+    background: #fffacd;
+}
+.box27 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #008000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.box27 p {
+    margin: 0; 
+    padding: 0;
+}
+
 </style>
 </head>
 
-<h1><面接練習サポートシステム></h1>
+<p><面接練習サポートシステム></p>
 
 <p id="notice"><%= notice %></p>
 <%if @sensei == true %>
@@ -76,7 +138,7 @@
 
 <br><br>
 
-<p>予約状況</p>
+<h3>予約状況</h3>
 <table border="2" bordercolor="green" width="500">
   <thead>
     <th>状況</th>
@@ -92,7 +154,7 @@
         <td><%= mensetu.start_time %></td>
         <td><%= link_to '詳細', mensetu %></td>
 
-        <%if @sensei == false %>
+        <%if @sensei == true %>
          <td><%= link_to '編集', edit_mensetu_path(mensetu) %></td>
          <td><%= link_to '削除', mensetu, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         <% end %>
@@ -101,17 +163,21 @@
   </tbody>
 </table>
 
-<p>掲示板</p>
+<br>
+
+<div class="box27">    
+ <span class="box-title">掲示板</span>
+ <p>
  ・10/7~10/11 は商業の先生は全員不在です <br>
- ・11/18 本日坂本先生は風邪でお休みです<br>
+ ・11/18 本日矢野先生は風邪でお休みです<br>
  ・11/15 放課後に放送委員会の集まりがあります。委員の人は面接予定を入れないでください。<br>
  </p>
+</div>
 
  <p>あなたの面接予定</p>
  <div class="box7">
    <%= month_calendar events: @mensetus do |date, mensetus| %>
    <%= date %>
    <% end %>
-   </div>
-
+  </div>
 <br><br>
