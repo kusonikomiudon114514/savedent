@@ -69,10 +69,10 @@ th {
      <% end %> 
   </td>
 
-  <th class="example2" style="width:150px">事業所(完全一致)</th>
+  <th class="example2" style="width:200px">事業所(完全一致)</th>
   <td>
    <%= form_tag('/serveys_zigyousyo_search') do %>
-   <%= text_field_tag 'search[zigyousyo]' , session[:search_zigyousyo] %><%= submit_tag '検索' %>
+   <%= text_field_tag 'search[zigyousyo]' , session[:search_zigyousyo], :placeholder => "（例）セラヤ株式会社" %><%= submit_tag '検索' %>
    <% end %> 
   </td>
   </tr>
