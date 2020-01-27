@@ -10,6 +10,10 @@
                     border-collapse: collapse;
                     table-layout: fixed; 
                    }
+
+      table {
+              background-color: #FFFFFF;
+            }
      </style>
   </head>
   <p id="notice"><%= notice %></p>
@@ -67,7 +71,7 @@
 
       <tr>
         <th class="example" style="height:40px">コース</rh>
-        <td>
+        <td colspan=3>
           <%= @reportschool.course %>
         </td>
       </tr>
@@ -190,7 +194,7 @@
   <%= link_to '編集', edit_reportschool_path(@reportschool) %> |
    -->
   <%= link_to '戻る', :back %>
-  <%if @sensei == true %>
-    |<%= link_to 'マスター管理画面へ戻る', manage_school_path %>
-  <% end %>
+  
+  |<%= link_to '受験報告書トップ画面へ', reportschools_path %>
+
 </html>
