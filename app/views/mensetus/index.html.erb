@@ -9,7 +9,7 @@ h3 {
   top:0;
 }
 
-h3:before, h1:after { 
+h3:before, h3:after { 
   position: absolute;
   top: 0;
   content:'';
@@ -77,14 +77,16 @@ h3:after {
 </style>
 </head>
 
-<p><面接練習サポートシステム></p>
+<h1><面接練習サポートシステム></h1>
 
 <p id="notice"><%= notice %></p>
 <%if @sensei == true %>
  <%= link_to '面接予定追加', new_mensetu_path %>
 <% end %>
 
-<p>面接OKの先生</p>
+<br><br>
+
+<h3>面接OKの先生</h3>
 <table border="2" bordercolor="green" width="500">
   <thead>
     <th>状況</th>
@@ -111,7 +113,7 @@ h3:after {
 
 <br><br>
 
-<p>確認中</p>
+<h3>確認中</h3>
 <table border="2" bordercolor="green" width="500">
   <thead>
       <th>状況</th>
@@ -174,7 +176,7 @@ h3:after {
  </p>
 </div>
 
- <p>あなたの面接予定</p>
+ <p>あなたの面接予定</p><br>
  <div class="box7">
    <%= month_calendar events: @mensetus do |date, mensetus| %>
    <%= date %>
