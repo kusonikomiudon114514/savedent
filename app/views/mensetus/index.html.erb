@@ -96,7 +96,7 @@ h3:after {
       <tr align="center">
         <td><%= mensetu.status %></td>
         <td bgcolor="cornsilk"><%= mensetu.name %></td>
-        <td><%= mensetu.start_time %></td>
+        <td><%= mensetu.start_time.strftime("%Y-%m-%d %H:%M") %></td>
         <td><%= link_to '詳細', mensetu %></td>
 
         <%if @sensei == true %>

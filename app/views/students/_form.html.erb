@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= form.label :生年月日 %>
-    <%= form.date_select :seinen, id: :student_seinen %>
+    <%= form.date_select(:seinen,start_year: 2000,end_year: (Time.now.year), default: Date.new(2000, 1, 1), id: :student_seinen) %>
   </div>
 
   <div class="field">
