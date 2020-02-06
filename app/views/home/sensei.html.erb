@@ -1,51 +1,192 @@
+<div class="box7">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>タイトル:</strong>
   <%= @rirekisyo.title %>
-</p>
-
-<p>
-  <strong>日付:</strong>
-  <%= @rirekisyo.hizuke %>
-</p>
-
-<p>
-  <strong>志望理由:</strong>
-  <%= @rirekisyo.reason %>
-</p>
-
-<p>
-  <strong>趣味・特技:</strong>
-  <%= @rirekisyo.syumi %>
-</p>
-
-<p>
-  <strong>校内外の諸活動:</strong>
-  <%= @rirekisyo.katsudo %>
-</p>
-
-<p>
-  <strong>備考:</strong>
-  <%= @rirekisyo.biko %>
-</p>
-
-<p>
-  <strong>連絡先:</strong>
-  <%= @rirekisyo.renraku %>
-</p>
-
-<p>
-  <strong>連絡先ふりがな:</strong>
-  <%= @rirekisyo.renhuri %>
-</p>
-
-<p>
-  <strong>User:</strong>
+  <strong>ユーザー:</strong>
   <%= @rirekisyo.user.students[0].name %>
 </p>
+
+<table border="1" width="500" >
+<tr align="right" bgcolor="white">
+<td colspan=3 style="width:400px">
+  <%= @rirekisyo.hizuke %>
+</td>
+<td rowspan =3 style="width:100px">
+<% if @rirekisyo.filename.present? %>
+<%= image_tag @rirekisyo.filename,:size => "100x110" %>
+<% else %>
+<%= image_tag "initprofile.png",:size => "100x110" %>
+<% end %> 
+</td>
+</tr>
+
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
+<td style="width:257px">
+<center><%= @rirekisyo.user.students[0].namehurigana %></center>
+</td>
+<th bgcolor="lightsteelblue"><center>性別</center></th>
+</tr>
+
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>氏名</center></th>
+<td>
+<center><%= @rirekisyo.user.students[0].name %></center>
+</td>
+<td style="width:50px">
+<center><%= @rirekisyo.user.students[0].seibetsu %></center>
+</td>
+</tr>
+</table>
+
+<table border="1"  width="500">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>生年月日</center></th>
+<td style="width:408px">
+<center><%= @rirekisyo.user.students[0].seinen %></center>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
+<td style="width:408px">
+<center><%= @rirekisyo.user.students[0].zyushohurigana %></center>
+</td>
+</tr>
+
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>現住所</center></th>
+<td style="width:350px">
+<center><%= @rirekisyo.user.students[0].zyusho %></center>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>ふりがな</center></th>
+<td style="width:408px">
+<center><%= @rirekisyo.renhuri %></center>
+</td>
+</tr>
+
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue"><center>連絡先</center></th>
+<td style="width:350px">
+<center><%= @rirekisyo.renraku %></center>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500">
+<tr bgcolor="white">
+<th style="width:10px" rowspan="7" bgcolor="lightsteelblue">学歴就歴</th>
+<td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke1 %>
+</td>
+<td>
+  <%= @rirekisyo.user.students[0].gakureki1 %>
+</td>
+</tr>
+
+<tr bgcolor="white">
+  <td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke2 %>
+  </td>
+  <td>
+  <%= @rirekisyo.user.students[0].gakureki2 %>
+  </td>
+</tr>
+
+<tr bgcolor="white">
+  <td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke3 %>
+  </td>
+  <td>
+  <%= @rirekisyo.user.students[0].gakureki3 %>
+  </td>
+</tr>
+
+<tr bgcolor="white">
+  <td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke4 %>
+  </td>
+  <td>
+  <%= @rirekisyo.user.students[0].gakureki4 %>
+  </td>
+</tr>
+
+<tr bgcolor="white">
+  <td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke5 %>
+  </td>
+  <td>
+  <%= @rirekisyo.user.students[0].gakureki5 %>
+  </td>
+</tr>
+
+<tr bgcolor="white">
+  <td style="width:100px">
+  <%= @rirekisyo.user.students[0].hiduke6 %>
+  </td>
+  <td>
+  <%= @rirekisyo.user.students[0].gakureki6 %>
+  </td>
+</tr>
+</tr>
+</table>
+
+<table border="1" width="500">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">資格取得日</th>
+<td style="width:250px">
+  <%= simple_format(@rirekisyo.user.students[0].syutokubi) %>
+</td>
+<th bgcolor="lightsteelblue">資格名称</th>
+<td style="width:250px">
+  <%= simple_format(@rirekisyo.user.students[0].shikaku) %>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">趣味特技</th>
+<td style="width:250px">
+  <%= simple_format(@rirekisyo.syumi) %>
+</td>
+  <th bgcolor="lightsteelblue">校内外の諸活動</th>
+  <td style="width:250px">
+  <%= simple_format(@rirekisyo.katsudo) %>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500" height="300">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">志望理由</th>
+<td style="width:490px">
+  <%= simple_format(@rirekisyo.reason) %>
+</td>
+</tr>
+</table>
+
+<table border="1" width="500" height="50">
+<tr bgcolor="white">
+<th bgcolor="lightsteelblue">備考</th>
+<td style="width:490px">
+  <%= @rirekisyo.biko %>
+  <%= simple_format(@rirekisyo.biko) %>
+</td>
+</tr>
+</table>
 
 
 
 
 <%= link_to '戻る', "http://localhost:3000/home/top" %>
+</div>
