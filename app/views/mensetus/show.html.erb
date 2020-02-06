@@ -12,7 +12,7 @@
 
 <p>
   <strong>開始時間:</strong>
-  <%= @mensetu.start_time %>
+  <%= @mensetu.start_time.strftime("%Y-%m-%d %H:%M") %>
 </p>
 
 <%= link_to '編集', edit_mensetu_path(@mensetu) %> |

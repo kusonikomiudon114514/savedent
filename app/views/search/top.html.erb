@@ -165,11 +165,11 @@ th {
         <td style="width:150px"><%= reportschool.gakubu %></td>
         <td style="width:150px"><%= reportschool.gakka %></td>
         <td style="width:150px"><%= reportschool.course %></td>
-        </tr>
-        <!--
+        <%if @sensei == true %>
         <td style="width:30px"><%= link_to '編集', edit_reportschool_path(reportschool) %></td>
-        <td style="width:30px"><%= link_to '削除', reportschool, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-         -->
+        <% end %>
+        </tr>
+
          </tbody>
          </table>
         </div>         
